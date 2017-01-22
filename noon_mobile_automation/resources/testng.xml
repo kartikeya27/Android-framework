@@ -1,0 +1,25 @@
+<suite name="Noon App Automation for Android" >
+	
+	
+	<test name="Find Electronic Page Test" allow-return-values="true">
+		<classes>
+			<class name="com.noon.mobileapp.FindElectronicPageTest" />
+		</classes>
+	</test>
+	
+	<test name="Side Bar menu Test" allow-return-values="true">
+		<classes>
+			<class name="com.noon.mobileapp.ApplyFilterTest" />
+		</classes>
+	</test>
+	
+	<test name="Apply Filter Test" allow-return-values="true">
+		<classes>
+			<class name="com.noon.mobileapp.SideBarMenuTest" />
+		</classes>
+	</test>
+	
+	
+	
+</suite>
+

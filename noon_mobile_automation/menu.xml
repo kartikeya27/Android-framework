@@ -1,0 +1,36 @@
+<menu id="mainmenu">
+    <item id="Shop by category">
+		<item id="Electronics &amp; Applicances">
+			<item>Audio,Video &amp; Camera</item>
+			<item>Computers &amp; Mobile</item>
+			<item>Appliances</item>
+		</item>
+
+		<item id="Entertainment &amp; Leisure">
+			<item>Books</item>
+			<item>Movies &amp; TV</item>
+			<item>Music</item>
+			<item>Toys &amp; Board Games</item>
+			<item>Video Gaming</item>
+		</item>
+	
+		<item id="Fashion">
+	    	<item>Women's Fashion</item>
+	    	<item>Men's Fashion</item>
+	    	<item>Girls Fashion</item>
+	    	<item>Boys Fashion</item>
+	    	<item>Baby Fashion</item>
+	    	<item>Jewellery &amp; Watches</item>
+	    	<item>Eyewear</item>
+	    	<item>Travel &amp; Bags</item>
+	    </item>
+	    
+		<item>Health,Beauty &amp; Family></item>
+		
+		<item>Home,Garden &amp; Tools></item>
+		
+	    <item>Sports &amp; Recreation></item>
+		
+	</item>
+
+</menu>
