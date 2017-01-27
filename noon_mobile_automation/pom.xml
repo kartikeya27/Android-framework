@@ -108,12 +108,5 @@
       <artifactId>mail</artifactId>
       <version>1.4</version>
     </dependency>
-  
-<!--  Andoird -->  
-	<dependency>
-      <groupId>android</groupId>
-      <artifactId>android</artifactId>
-      <version>4.4.2_r4</version>
-	  </dependency>
- </dependencies>	 
+</dependencies>	 
 </project>
