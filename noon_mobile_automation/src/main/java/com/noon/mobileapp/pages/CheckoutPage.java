@@ -19,11 +19,6 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 //import com.thoughtworks.selenium.condition.ConditionRunner.Context;
 
-
-import android.view.inputmethod.InputMethodManager;
-import android.app.Activity;
-import android.content.Context;
-
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import jdk.internal.instrumentation.InstrumentationTarget;
