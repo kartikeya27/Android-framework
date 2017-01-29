@@ -35,9 +35,6 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import com.sun.org.apache.xerces.internal.dom.DeferredTextImpl;
 
-import android.R;
-import android.widget.LinearLayout;
-
 public class BasePage {
 	public AndroidDriver<AndroidElement> aDriver;
 	public ExtentTest test;
