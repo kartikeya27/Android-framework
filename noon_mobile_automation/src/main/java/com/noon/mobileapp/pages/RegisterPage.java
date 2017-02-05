@@ -62,12 +62,15 @@ public class RegisterPage extends BasePage {
 	
 	public void registerTest() {
 		
+		WebDriverWait wait = new WebDriverWait(aDriver, 20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.NAVIGATION_MENU_IMAGE)));
+		
 		test.log(LogStatus.INFO, "Selecting home button from navigation menu");
 		navigationMenuImage.click();
 		
 		test.log(LogStatus.INFO, "Sign in inside Application - ");
 		
-		WebDriverWait wait = new WebDriverWait(aDriver, 20);
+		wait = new WebDriverWait(aDriver, 20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SIGN_IN_LINK)));
 		Assert.assertTrue(isElementPresent(NConstants.SIGN_IN_LINK), "Could not find sign in link");
 		signinLink.click();
@@ -78,7 +81,7 @@ public class RegisterPage extends BasePage {
 		registerTab.click();
 		
 		Assert.assertTrue(isElementPresent(NConstants.REGISTER_TAB), "Could not find registration tab");
-		Assert.assertTrue(isElementPresent(NConstants.REGISTER_WITH), "Could not find registration with text");
+		//Assert.assertTrue(isElementPresent(NConstants.REGISTER_WITH), "Could not find registration with text");
 		Assert.assertTrue(isElementPresent(NConstants.GOOGLE_BUTTON), "Could not google button");
 		Assert.assertTrue(isElementPresent(NConstants.FACEBOOK_BUTTON), "Could not find facebook button");
 		Assert.assertTrue(isElementPresent(NConstants.TWITTER_BUTTON), "Could not find twitter button");
@@ -87,12 +90,12 @@ public class RegisterPage extends BasePage {
 		Assert.assertTrue(isElementPresent(NConstants.USE_MOBILE), "Could not find use moabile number link");
 		Assert.assertTrue(isElementPresent(NConstants.PASSWORD_VIEW_IMAGE), "Could not find password view image");
 		Assert.assertTrue(isElementPresent(NConstants.REGISTER_PASSWORD), "Could not find create password field");
-		Dimension dimensions = aDriver.manage().window().getSize();
+		/*Dimension dimensions = aDriver.manage().window().getSize();
 		Double screenHeightStart = dimensions.getHeight() * 0.5;
 		int scrollStart = screenHeightStart.intValue();
 		Double screenHeightEnd = dimensions.getHeight() * 0.2;
 		int scrollEnd = screenHeightEnd.intValue();
-		aDriver.swipe(0,scrollStart,0,scrollEnd,2000);
+		aDriver.swipe(0,scrollStart,0,scrollEnd,2000);*/
 		Assert.assertTrue(isElementPresent(NConstants.REGISTER_BUTTON), "Could not find registration button");
 
 

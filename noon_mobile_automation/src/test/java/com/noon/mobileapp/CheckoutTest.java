@@ -24,6 +24,10 @@ public class CheckoutTest extends BaseTest {
 		
 		CheckoutPage checkoutPage = new CheckoutPage(aDriver,test);
 		PageFactory.initElements(new AppiumFieldDecorator(aDriver),checkoutPage);
-		checkoutPage.checkout();
+		String userName = "noontesting2+11@gmail.com";
+		String password = "1200@Villa";
+		//String searchText = "TheBalm Bronzer/Blush";
+		
+		checkoutPage.checkout(userName, password);
 	}
 }	

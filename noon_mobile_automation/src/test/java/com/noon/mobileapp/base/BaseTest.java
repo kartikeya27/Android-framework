@@ -20,6 +20,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.remote.AndroidMobileCapabilityType;
 
 public class BaseTest {
 	
@@ -35,12 +36,14 @@ public class BaseTest {
 		
 		//real device settings on local system
 		DesiredCapabilities caps = DesiredCapabilities.android();
-		//caps.setCapability("appiumVersion",NConstants.APPIUM_VERSION);
+		caps.setCapability("appiumVersion",NConstants.APPIUM_VERSION);
+		//caps.setCapability("AVD_NAME", NConstants.AVD_NAME);
 		caps.setCapability("deviceName",NConstants.DEVICE_NAME);
 		caps.setCapability("deviceOrientation", NConstants.DEVICE_ORIENTATION);
 		//cap.setCapability("browserName", NConstants.BROWSER_NAME);
 		caps.setCapability("platformVersion",NConstants.PLATFORM_VERSION);
 		caps.setCapability("platformName",NConstants.PLATFORM_NAME);
+		caps.setCapability(AndroidMobileCapabilityType.AVD_LAUNCH_TIMEOUT,500000);
 		caps.setCapability("app", app.getAbsolutePath());
 		
 		//sauce labs android emulator settings

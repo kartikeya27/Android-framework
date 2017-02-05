@@ -18,6 +18,7 @@ import com.noon.mobileapp.util.NConstants;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 //import com.thoughtworks.selenium.condition.ConditionRunner.Context;
+import com.sun.glass.events.KeyEvent;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -33,11 +34,20 @@ public class CheckoutPage extends BasePage {
 		
 	}
 	
-	@FindBy(xpath=NConstants.NAVIGATION_MENU_IMAGE)
-	public AndroidElement navigationMenuImage;
+	@FindBy(xpath=NConstants.SIGNIN_CENTRAL_BUTTON)
+	public AndroidElement signinCentalButton;
 	
-	@FindBy(xpath=NConstants.SIGN_IN_LINK)
-	public AndroidElement signinLink;
+	@FindBy(xpath=NConstants.SIGN_IN_TAB)
+	public AndroidElement signinTab;
+	
+	@FindBy(xpath=NConstants.SIGNIN_EMAIL)
+	public AndroidElement signinEmail;
+	
+	@FindBy(xpath=NConstants.SIGNIN_PASSWORD)
+	public AndroidElement signinPassword;
+	
+	@FindBy(xpath=NConstants.SIGNIN_BUTTON)
+	public AndroidElement signinButton;
 	
 	@FindBy(xpath=NConstants.MY_ACCOUNT)
 	public AndroidElement myAccount;
@@ -45,11 +55,14 @@ public class CheckoutPage extends BasePage {
 	@FindBy(xpath=NConstants.NO_ORDERS)
 	public AndroidElement noOrders;
 	
-	@FindBy(xpath=NConstants.SEARCH_AREA)
-	public AndroidElement searchArea;
+	@FindBy(xpath=NConstants.SEARCH_TEXT_VIEW)
+	public AndroidElement searchTextView;
 	
-	@FindBy(xpath=NConstants.SEARCH_EDIT)
-	public AndroidElement searchEdit;
+	@FindBy(xpath=NConstants.SEARCH_IMAGEVIEW)
+	public AndroidElement searchImageview;
+	
+	@FindBy(xpath=NConstants.SEARCH_BAR_CONTAINER)
+	public AndroidElement searchBarContainer;
 	
 	@FindBy(xpath=NConstants.PRODUCT_TITILE)
 	public AndroidElement productTitle;
@@ -172,34 +185,55 @@ public class CheckoutPage extends BasePage {
 	
 	
 	
-	public void checkout() {
-		navigationMenuImage.click();
+	public void checkout(String userName, String userPassword) {
 		
 		WebDriverWait wait = new WebDriverWait(aDriver, 20);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_ACCOUNT)));
-		
-		Assert.assertTrue(isElementPresent(NConstants.MY_ACCOUNT), "Could not find my account link");
-		myAccount.click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SIGNIN_CENTRAL_BUTTON)));
+		signinCentalButton.click();
 		
 		wait = new WebDriverWait(aDriver, 20);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.NO_ORDERS)));
-		Assert.assertTrue(isElementPresent(NConstants.NO_ORDERS), "Could not find no orders show");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SIGN_IN_TAB)));
+		signinTab.click();
+		
+		signinEmail.sendKeys(userName);
+		aDriver.hideKeyboard();
+		
+		signinPassword.sendKeys(userPassword);
+		aDriver.hideKeyboard();
+		
+		signinButton.click();
+		
+		//wait = new WebDriverWait(aDriver, 20);
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SEARCH_IMAGEVIEW)));
+		//searchImageview.sendKeys(Keys.RETURN);
+		//aDriver.pressKeyCode(66);
+		//wait = new WebDriverWait(aDriver, 20);
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_ACCOUNT)));
+		
+		//Assert.assertTrue(isElementPresent(NConstants.MY_ACCOUNT), "Could not find my account link");
+		//myAccount.click();
+		
+		//wait = new WebDriverWait(aDriver, 20);
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.NO_ORDERS)));
+		//Assert.assertTrue(isElementPresent(NConstants.NO_ORDERS), "Could not find no orders show");
 		
 		wait = new WebDriverWait(aDriver, 20);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SEARCH_AREA)));
-		Assert.assertTrue(isElementPresent(NConstants.SEARCH_AREA), "Could not find search text area");
-		searchArea.sendKeys(Keys.RETURN);
-		
-		wait = new WebDriverWait(aDriver, 100);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SEARCH_EDIT)));
-		//searchEdit.clear();
-		searchEdit.sendKeys("Bahama Mama Bronzer");
-		//searchEdit.sendKeys(Keys.RETURN);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SEARCH_TEXT_VIEW)));
+		Assert.assertTrue(isElementPresent(NConstants.SEARCH_TEXT_VIEW), "Could not find search text area");
+		searchTextView.sendKeys(Keys.RETURN);
+		//searchTextView.sendKeys("");
+	
+		//searchTextView.clear();
+		//aDriver.pressKeyCode(66);
 		wait = new WebDriverWait(aDriver, 20);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SEARCH_LABEL)));
-		Assert.assertTrue(isElementPresent(NConstants.SEARCH_LABEL), "Could not select search product label"+NConstants.SEARCH_LABEL);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SEARCH_BAR_CONTAINER)));
+		searchBarContainer.sendKeys("TheBalm Bronzer/Blush");
+		//aDriver.hideKeyboard();
 		
-            
+		//searchTextView.sendKeys(Keys.RETURN);
+		wait = new WebDriverWait(aDriver, 20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.LIST_ITEM_LABEL)));
+		Assert.assertTrue(isElementPresent(NConstants.LIST_ITEM_LABEL), "Could not select search product label"+NConstants.LIST_ITEM_LABEL);
 		aDriver.pressKeyCode(66); // This is virtual keyboard enter key value
 		
 	    //InputMethodManager imm = (InputMethodManager)getSystemService(Activity.INPUT_METHOD_SERVICE);
