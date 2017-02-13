@@ -220,9 +220,10 @@ public class CheckoutPage extends BasePage {
 		wait = new WebDriverWait(aDriver, 20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SEARCH_TEXT_VIEW)));
 		Assert.assertTrue(isElementPresent(NConstants.SEARCH_TEXT_VIEW), "Could not find search text area");
-		searchTextView.sendKeys(Keys.RETURN);
+		aDriver.findElement(By.xpath("NConstants.SEARCH_TEXT_VIEW")).sendKeys(Keys.RETURN);;
+		//searchTextView.sendKeys(Keys.RETURN);
 		//searchTextView.sendKeys("");
-	
+		//searchBarContainer.sendKeys(Keys.RETURN);
 		//searchTextView.clear();
 		//aDriver.pressKeyCode(66);
 		wait = new WebDriverWait(aDriver, 20);

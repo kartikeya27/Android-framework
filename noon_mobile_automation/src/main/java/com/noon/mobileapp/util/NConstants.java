@@ -18,8 +18,8 @@ public interface NConstants {
 	
 	//local device settings on real device
 	//String APK_PATH = System.getProperty("user.dir")+"/apk/app-sit-preRelease.apk";
-	String APK_PATH = System.getProperty("user.dir")+"/apk/app-sit-debug.apk";
-	String APPIUM_VERSION= "1.5.3";
+	String APK_PATH = System.getProperty("user.dir")+"/apk/app-production-debug.apk";
+	String APPIUM_VERSION= "1.6";
 	
 	//String DEVICE_NAME = "A33f";
 	String DEVICE_NAME = "Nexus";
