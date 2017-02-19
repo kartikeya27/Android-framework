@@ -21,9 +21,6 @@ public class SigninPage extends BasePage {
 		super(aDriver, test);
 	}
 	
-	@FindBy(xpath=NConstants.INITIAL_SCREEN)
-	public AndroidElement initialScreen;
-	
 	@FindBy(xpath=NConstants.NAVIGATION_MENU_IMAGE)
 	public AndroidElement navigationMenuImage;
 	
@@ -33,14 +30,26 @@ public class SigninPage extends BasePage {
 	@FindBy(xpath=NConstants.SIGN_IN_TAB)
 	public AndroidElement signinTab;
 	
+	@FindBy(xpath=NConstants.SIGNIN_WITH)
+	public AndroidElement signinWith;
+	
+	@FindBy(xpath=NConstants.SIGNIN_DETAILS)
+	public AndroidElement  signinDetails;
+	
 	@FindBy(xpath=NConstants.GOOGLE_BUTTON)
 	public AndroidElement googleButton;
+	
+	@FindBy(xpath=NConstants.GOOGLE_SIGNIN)
+	public AndroidElement googleSingin;
 	
 	@FindBy(xpath=NConstants.SIGNIN_EMAIL)
 	public AndroidElement signinEmail;
 	
-	//@FindBy(className=NConstants.NAME)
-	//public AndroidElement name;
+	@FindBy(className=NConstants.MOBILE_NUMBER_LINK)
+	public AndroidElement mobileNumberLink;
+	
+	@FindBy(xpath=NConstants.EMAIL_LINK)
+	public AndroidElement emailLink;
 	
 	@FindBy(xpath=NConstants.PASSWORD_TAB)
 	public AndroidElement passwordTab;
@@ -87,34 +96,37 @@ public class SigninPage extends BasePage {
     @FindBy(xpath=NConstants.MY_PROFILE_USER_SIGNOUT)
     public WebElement myProfileUserSignout;
     
-	
-	
-	public void signin(String userName, String userPassword) {
+	public void signin(String userName, String userPassword) throws InterruptedException {
 		
-		/*WebDriverWait wait = new WebDriverWait(aDriver, 20);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.INITIAL_SCREEN)));
-		test.log(LogStatus.INFO, "Allow noon sit to access photos,media, and files on your device?");
-		initialScreen.click();*/
-		
+		test.log(LogStatus.INFO, "Launch Android Application - ");
 		WebDriverWait wait = new WebDriverWait(aDriver, 20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.NAVIGATION_MENU_IMAGE)));
 		test.log(LogStatus.INFO, "Selecting home button from navigation menu");
 		navigationMenuImage.click();
-		
-		test.log(LogStatus.INFO, "Sign in inside Application - ");
-		
-		wait = new WebDriverWait(aDriver, 20);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SIGN_IN_LINK)));
 		
 		Assert.assertTrue(isElementPresent(NConstants.SIGN_IN_LINK), "Could not find sign in link");
 		signinLink.click();
 		
 		wait = new WebDriverWait(aDriver, 20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SIGN_IN_TAB)));
-		
 		Assert.assertTrue(isElementPresent(NConstants.SIGN_IN_TAB), "Could not find sign in tab");
 		signinTab.click();
+		emailLink.click();
 		
+		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_WITH), "Could not find signin with text");
+		Assert.assertTrue(isElementPresent(NConstants.FACEBOOK_BUTTON), "Could not find facebook button");
+		Assert.assertTrue(isElementPresent(NConstants.TWITTER_BUTTON), "Could not find twitter button");
+		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_DETAILS), "Could not find Or sign in with your details text");
+		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_EMAIL), "Could not find email address input field");
+		Assert.assertTrue(isElementPresent(NConstants.MOBILE_NUMBER_LINK), "Could not find mobile number link");
+		Assert.assertTrue(isElementPresent(NConstants.PASSWORD_VIEW_IMAGE), "Could not find password image ");
+		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_PASSWORD), "Could not find passowrd input field");
+		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_BUTTON), "Could not find Sign in button");
+		Assert.assertTrue(isElementPresent(NConstants.FORGOT_PASSWORD), "Could not find forgot password link");
+		/*googleButton.click();
+		wait = new WebDriverWait(aDriver, 20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.GOOGLE_SIGNIN)));
+		googleSingin.click();*/
 		
 		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_EMAIL), "Could not find email address field");
 		signinEmail.sendKeys(userName);
@@ -129,14 +141,9 @@ public class SigninPage extends BasePage {
 		signinButton.click();
 		
 		wait = new WebDriverWait(aDriver, 20);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.NAVIGATION_MENU_IMAGE)));
-		navigationMenuImage.click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.HELLO_TEXT)));
+		Assert.assertTrue(isElementPresent(NConstants.HELLO_TEXT), "Could not find Ahlan text");
 		
-		Assert.assertTrue(isElementPresent(NConstants.HELLO_TEXT), "Could not find Hello,");
-		Assert.assertTrue(isElementPresent(NConstants.USER_TEXT), "Could not find user name");
-		
-		wait = new WebDriverWait(aDriver, 20);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_ACCOUNT)));
 		myAccount.click();
 		
 		for(int i=0;i<8;i++) {
@@ -148,7 +155,7 @@ public class SigninPage extends BasePage {
         }
 		wait = new WebDriverWait(aDriver, 30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_PROFILE)));
-        Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE), "Could not my profile text");
+        Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE), "Could not find my profile text");
 		myProfile.click();
 		
 		Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_IMAGE), "Could not find user image");
