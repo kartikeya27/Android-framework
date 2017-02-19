@@ -22,8 +22,7 @@ import com.sun.glass.events.KeyEvent;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
-import jdk.internal.instrumentation.InstrumentationTarget;
-import net.sourceforge.htmlunit.corejs.javascript.tools.debugger.Main;
+
 
 
 
@@ -33,7 +32,12 @@ public class CheckoutPage extends BasePage {
 		super(aDriver, test);
 		
 	}
-	
+
+//	Comment CHECKOUT PAGE
+//    TO FIX
+
+    /*
+
 	@FindBy(xpath=NConstants.SIGNIN_CENTRAL_BUTTON)
 	public AndroidElement signinCentalButton;
 	
@@ -476,7 +480,7 @@ public class CheckoutPage extends BasePage {
 
 		
 		
-		
+
 		
 		
 		
@@ -493,4 +497,5 @@ public class CheckoutPage extends BasePage {
 		
 		
 	}
+			*/
 }

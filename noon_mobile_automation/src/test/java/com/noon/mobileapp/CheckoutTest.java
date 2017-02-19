@@ -28,6 +28,6 @@ public class CheckoutTest extends BaseTest {
 		String password = "1200@Villa";
 		//String searchText = "TheBalm Bronzer/Blush";
 		
-		checkoutPage.checkout(userName, password);
+//		checkoutPage.checkout(userName, password);
 	}
 }	
