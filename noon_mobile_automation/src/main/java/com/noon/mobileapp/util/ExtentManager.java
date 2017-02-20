@@ -18,7 +18,7 @@ public class ExtentManager {
 			Date d= new Date();
 			String fileName=d.toString().replace(":", "_").replace(" ", "_")+".html";
 			//extent = new ExtentReports(FKConstants.REPORT_PATH+fileName, true, DisplayOrder.NEWEST_FIRST);
-			extent = new ExtentReports("/Users/kartikbhatt/Automation/Reports/report.html"+fileName, true, DisplayOrder.NEWEST_FIRST);
+			extent = new ExtentReports(System.getProperty("user.dir") + "/target/Reports/report.html"+fileName, true, DisplayOrder.NEWEST_FIRST);
 
 			// optional
 		//	extent.config().documentTitle("Automation Report")

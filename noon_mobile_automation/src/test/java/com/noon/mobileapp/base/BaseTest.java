@@ -5,8 +5,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 
@@ -43,6 +46,9 @@ public class BaseTest {
 		caps.setCapability("platformVersion",NConstants.PLATFORM_VERSION);
 		caps.setCapability("platformName",NConstants.PLATFORM_NAME);
 		caps.setCapability(AndroidMobileCapabilityType.AVD_LAUNCH_TIMEOUT,500000);
+		caps.setCapability("fullReset","true");
+        caps.setCapability("locationServicesAuthorized", true);
+
 		caps.setCapability("app", app.getAbsolutePath());
 		
 		//sauce labs android emulator settings
@@ -60,6 +66,7 @@ public class BaseTest {
 			driver = new AndroidDriver<AndroidElement>(new URL(NConstants.HUB_URL),caps);
 			//driver = new AndroidDriver<AndroidElement>(new URL(NConstants.HUB_URL),caps);
 			aDriver = (AndroidDriver<AndroidElement>)driver;
+
 		} catch (MalformedURLException e) {
 			test.log(LogStatus.FAIL, "Application did not launch" + e.getMessage());
 			e.printStackTrace();
@@ -79,4 +86,29 @@ public class BaseTest {
 			driver.quit();
 		}
 	}
+
+    public void allowAppPermission(){
+
+	    try{
+
+            WebDriverWait wait = new WebDriverWait(aDriver, 10);
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='android.widget.Button'][2]")));
+            aDriver.findElement(By.xpath("//*[@class='android.widget.Button'][2]")).click();
+            test.log(LogStatus.INFO, "App permissions popup displayed");
+
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='android.widget.Button'][2]")));
+            aDriver.findElement(By.xpath("//*[@class='android.widget.Button'][2]")).click();
+
+            test.log(LogStatus.INFO, "App permissions popup displayed");
+
+        }catch(Exception e){
+            test.log(LogStatus.INFO, "App permissions popup did not occur");
+        }
+
+
+//        while (driver.findElements(By.xpath("//*[@class='android.widget.Button'][2]")).size()>0)
+//
+//        {  driver.findElement(By.xpath("//*[@class='android.widget.Button'][2]")).click();
+//        }
+    }
 }
