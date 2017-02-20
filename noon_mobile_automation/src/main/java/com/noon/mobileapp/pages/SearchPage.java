@@ -212,7 +212,7 @@ public class SearchPage extends BasePage {
 	@FindBy(xpath=NConstants.PAY_BUTTON)
 	public AndroidElement payButton;
 	
-	public void checkout(String userName, String userPassword, String searchItem) throws InterruptedException {
+	public void search(String userName, String userPassword, String searchItem) throws InterruptedException {
 		
 		WebDriverWait wait = new WebDriverWait(aDriver, 20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SIGNIN_CENTRAL_BUTTON)));
@@ -253,28 +253,40 @@ public class SearchPage extends BasePage {
 		Assert.assertTrue(isElementPresent(NConstants.PRODUCT_BASIC_INFO), "Could not load product basic info"+NConstants.PRODUCT_BASIC_INFO);
 		Assert.assertTrue(isElementPresent(NConstants.PRODUCT_PRICE), "Could not load product price"+NConstants.PRODUCT_PRICE);
 		navigationMenuImage.click();
-		//wait = new WebDriverWait(aDriver, 30);
-		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_ACCOUNT)));
-		myAccount.click();
-		Thread.sleep(1000);
-		for(int i=0;i<8;i++) {
-			Dimension size = aDriver.manage().window().getSize();
-			int startx = (int) (size.width * 0.70);
-			int endx = (int) (size.width * 0.30);
-			int starty = size.height / 2;
-        	aDriver.swipe(startx, starty, endx, starty, 2000); 
-        }
-		wait = new WebDriverWait(aDriver, 30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_PROFILE)));
-        myProfile.click();
-		
-		Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_IMAGE), "Could not find user image");
-		Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_NAME), "Could not find user name text");
-		Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_EMAIL), "Could not find user email text");
-		Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_PASSWORD), "Could not find user password text");
-		Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_FRAGMENT_PASSWORD), "Could not find user framgement password text");
-		Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_SIGNOUT), "Could not sign out button");
-		myProfileUserSignout.click();
+
+	}
+
+    public void someOtherStuff(){
+
+        //
+//		Log out - removed from this test
+//
+//		wait = new WebDriverWait(aDriver, 30);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_ACCOUNT)));
+//		myAccount.click();
+//		Thread.sleep(1000);
+//		for(int i=0;i<8;i++) {
+//			Dimension size = aDriver.manage().window().getSize();
+//			int startx = (int) (size.width * 0.70);
+//			int endx = (int) (size.width * 0.30);
+//			int starty = size.height / 2;
+//        	aDriver.swipe(startx, starty, endx, starty, 2000);
+//        }
+//		wait = new WebDriverWait(aDriver, 30);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_PROFILE)));
+//        myProfile.click();
+//
+//		Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_IMAGE), "Could not find user image");
+//		Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_NAME), "Could not find user name text");
+//		Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_EMAIL), "Could not find user email text");
+//		Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_PASSWORD), "Could not find user password text");
+//		Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_FRAGMENT_PASSWORD), "Could not find user framgement password text");
+//		Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_SIGNOUT), "Could not sign out button");
+//		myProfileUserSignout.click();
+//
+//		End Log out
+//
+
 		/*itemPickerThumb.click();
 		Assert.assertTrue(isElementPresent(NConstants.PICKABLE_ITEM_TITLE), "Could not load pickable item title"+NConstants.PICKABLE_ITEM_TITLE);
 		Assert.assertTrue(isElementPresent(NConstants.ROW_INFO_IMAGE), "Could not load product image"+NConstants.ROW_INFO_IMAGE);
@@ -287,65 +299,65 @@ public class SearchPage extends BasePage {
 		rowInfoRadio.click();
 		Assert.assertTrue(isElementPresent(NConstants.CENTERED_BUTTON), "Could not load Buy now button"+NConstants.CENTERED_BUTTON);
 		Assert.assertTrue(isElementPresent(NConstants.SUPPLIER_INFO), "Could not load supplier info text"+NConstants.SUPPLIER_INFO);
-		
+
 		Dimension dimensions = aDriver.manage().window().getSize();
 		Double screenHeightStart = dimensions.getHeight() * 0.5;
 		int scrollStart = screenHeightStart.intValue();
 		Double screenHeightEnd = dimensions.getHeight() * 0.2;
 		int scrollEnd = screenHeightEnd.intValue();
-		aDriver.swipe(0, scrollStart, 0, scrollEnd, 700);	
-		
+		aDriver.swipe(0, scrollStart, 0, scrollEnd, 700);
+
 		wait = new WebDriverWait(aDriver, 40);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ITEM_ARROW)));
 		itemArrow.click();
 		Assert.assertTrue(isElementPresent(NConstants.ITEM_DESCRIPTION),"Could not load description text "+NConstants.ITEM_DESCRIPTION);
 		Assert.assertTrue(isElementPresent(NConstants.ITEM_DESCRIPTION_DETAIL),"Could not load description detail text "+NConstants.ITEM_DESCRIPTION_DETAIL);
-		
-		
+
+
 		//Assert.assertTrue(isElementPresent(NConstants.PRODUCT_RESULT), "Could not load product result"+NConstants.PRODUCT_RESULT);
 		//Assert.assertTrue(isElementPresent(NConstants.PRODUCT_IMAGE), "Could not load product image"+NConstants.PRODUCT_IMAGE);
 		//Assert.assertTrue(isElementPresent(NConstants.PRODUCT_TITILE), "Could not load product title"+NConstants.PRODUCT_TITILE);
 		//Assert.assertTrue(isElementPresent(NConstants.PRODUCT_PRICE), "Could not load product price"+NConstants.PRODUCT_PRICE);
-		
+
 		//Assert.assertEquals(productTitle.getText(), "Bahama Mama Bronzer");
 		//Assert.assertEquals(productPrice.getText(), "AED 104");
-		
+
 		/*wait = new WebDriverWait(aDriver, 20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.PRODUCT_CART)));
 		productCart.click();
-		
+
 		wait = new WebDriverWait(aDriver, 20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.PRODUCT_MENU_CART)));
 		productMenuCart.click();
-		
+
 		wait = new WebDriverWait(aDriver, 20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CART_SINGLE_LABEL)));
-		
+
 		Assert.assertTrue(isElementPresent(NConstants.CART_SINGLE_LABEL), "Could not load item label"+NConstants.CART_SINGLE_LABEL);
 		Assert.assertTrue(isElementPresent(NConstants.CART_ITEM_DELETE), "Could not load delete button "+NConstants.CART_ITEM_DELETE);
 		Assert.assertTrue(isElementPresent(NConstants.CART_ITEM_DECREASE), "Could not load decrease image"+NConstants.CART_ITEM_DECREASE);
 		Assert.assertTrue(isElementPresent(NConstants.CART_ITEM_INCREASE), "Could not load increase image"+NConstants.CART_ITEM_INCREASE);
-		
+
 		wait = new WebDriverWait(aDriver, 20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CART_CHECKOUT_BUTTON)));
 		Assert.assertTrue(isElementPresent(NConstants.CART_CHECKOUT_BUTTON), "Could not load checkout button"+NConstants.CART_CHECKOUT_BUTTON);
 		cartCheckoutButton.click();
-		
+
 		wait = new WebDriverWait(aDriver, 20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.PICK_IMAGE)));
 		Assert.assertTrue(isElementPresent(NConstants.PICK_IMAGE), "Could not load pick impage"+NConstants.PICK_IMAGE);
-		
+
 		wait = new WebDriverWait(aDriver, 20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.PICK_LOCATION)));
 		Assert.assertTrue(isElementPresent(NConstants.PICK_LOCATION), "Could not load pick location"+NConstants.PICK_LOCATION);
 		//pickLocation.click();
-		
+
 		//wait = new WebDriverWait(aDriver, 20);
 		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CHECKOUT_ADDRESS)));
 		//Assert.assertTrue(isElementPresent(NConstants.CHECKOUT_ADDRESS), "Could not load pick location"+NConstants.CHECKOUT_ADDRESS);
 		//checkoutAddress.sendKeys("Downtown Dubai - Dubai, United Arab Emirates - Downtown Dubai - Dubai - United Arab Emirates");
 		//checkoutAddress.click();
-		
+
 		//Assert.assertTrue(isElementPresent(NConstants.CHECKOUT_ADDRESS1), "Could not load address1 from map"+NConstants.CHECKOUT_ADDRESS1);
 		//checkoutAddress1.sendKeys("Downtown Dubai - Dubai, United Arab Emirates - Downtown Dubai - Dubai - United Arab Emirates");
 		//checkoutAddress1.click();
@@ -354,8 +366,8 @@ public class SearchPage extends BasePage {
 		//Assert.assertTrue(isElementPresent(NConstants.CHECKOUT_ADDRESS2), "Could not load address2 from map"+NConstants.CHECKOUT_ADDRESS2);
 		//checkoutAddress2.sendKeys("Downtown Dubai - Dubai, United Arab Emirates - Downtown Dubai - Dubai - United Arab Emirates");
 		//checkoutAddress2.click();
-		
-		
+
+
 		wait = new WebDriverWait(aDriver, 20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CHECKOUT_ADDRESS_TYPE)));
 		Assert.assertTrue(isElementPresent(NConstants.CHECKOUT_ADDRESS_TYPE), "Could not select address Spinner button"+NConstants.CHECKOUT_ADDRESS_TYPE);
@@ -368,43 +380,43 @@ public class SearchPage extends BasePage {
 				break;
 			}
 		}
-		
+
 		wait = new WebDriverWait(aDriver, 40);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CHECKOUT_ADDRESS_NAME)));
 		Assert.assertTrue(isElementPresent(NConstants.CHECKOUT_ADDRESS_NAME), "Could not load checkout address"+NConstants.CHECKOUT_ADDRESS_NAME);
 		checkoutAddressName.sendKeys("Home");
 		aDriver.hideKeyboard();
-		
+
 		wait = new WebDriverWait(aDriver, 40);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CHECKOUT_PERSON_NAME)));
 		Assert.assertTrue(isElementPresent(NConstants.CHECKOUT_PERSON_NAME),"Could not load checkout person name field"+NConstants.CHECKOUT_PERSON_NAME);
 		checkoutPersonName.sendKeys("Mr. Kartik");
 		aDriver.hideKeyboard();
-		
+
 		wait = new WebDriverWait(aDriver, 40);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CHECKOUT_PERSON_MOBILE)));
 		Assert.assertTrue(isElementPresent(NConstants.CHECKOUT_PERSON_MOBILE),"Could not load checkout person mobile field"+NConstants.CHECKOUT_PERSON_MOBILE);
 		checkoutPersonMobile.sendKeys("0566681264");
 		aDriver.hideKeyboard();
-		
+
 		wait = new WebDriverWait(aDriver, 40);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CHECKOUT_PERSON_APARTMENT)));
 		Assert.assertTrue(isElementPresent(NConstants.CHECKOUT_PERSON_APARTMENT),"Could not load checkout person apartment number field"+NConstants.CHECKOUT_PERSON_APARTMENT);
 		checkoutPersonApartment.sendKeys("3927");
 		aDriver.hideKeyboard();
-		
+
 		wait = new WebDriverWait(aDriver, 40);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CHECKOUT_PERSON_FLOOR)));
 		Assert.assertTrue(isElementPresent(NConstants.CHECKOUT_PERSON_FLOOR),"Could not load checkout person floor number field"+NConstants.CHECKOUT_PERSON_FLOOR);
 		checkoutPersonFloor.sendKeys("39");
 		aDriver.hideKeyboard();
-		
+
 		wait = new WebDriverWait(aDriver, 40);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CHECKOUT_PERSON_BUILDING)));
 		Assert.assertTrue(isElementPresent(NConstants.CHECKOUT_PERSON_BUILDING),"Could not load checkout person building number field"+NConstants.CHECKOUT_PERSON_BUILDING);
 		checkoutPersonBuilding.sendKeys("3");
 		aDriver.hideKeyboard();
-		
+
 		wait = new WebDriverWait(aDriver, 40);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CHECKOUT_PERSON_AREA_NAME)));
 		Assert.assertTrue(isElementPresent(NConstants.CHECKOUT_PERSON_AREA_NAME),"Could not load checkout person area name"+NConstants.CHECKOUT_PERSON_AREA_NAME);
@@ -412,7 +424,7 @@ public class SearchPage extends BasePage {
 		//wait = new WebDriverWait(aDriver, 40);
 		//checkoutPersonAreaName.sendKeys("Downtown Dubai");
 		//aDriver.hideKeyboard();
-		
+
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CHECKOUT_PERSON_LANDMARK)));
 		Assert.assertTrue(isElementPresent(NConstants.CHECKOUT_PERSON_LANDMARK),"Could not load checkout person landmark name field"+NConstants.CHECKOUT_PERSON_LANDMARK);
 		checkoutPersonLandmark.sendKeys("Burj Al-Arab");
@@ -423,28 +435,28 @@ public class SearchPage extends BasePage {
 		Double screenHeightEnd = dimensions.getHeight() * 0.2;
 		int scrollEnd = screenHeightEnd.intValue();
 		aDriver.swipe(0,scrollStart,0,scrollEnd,2000);
-		
+
 		wait = new WebDriverWait(aDriver, 40);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CHECKOUT_PERSON_CITY)));
 		Assert.assertTrue(isElementPresent(NConstants.CHECKOUT_PERSON_CITY),"Could not load checkout person city name field"+NConstants.CHECKOUT_PERSON_CITY);
 		checkoutPersonCity.sendKeys("Dubai");
 		aDriver.hideKeyboard();
-		
+
 		wait = new WebDriverWait(aDriver, 40);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CHECKOUT_PERSON_COUNTRY)));
 		Assert.assertTrue(isElementPresent(NConstants.CHECKOUT_PERSON_COUNTRY),"Could not load checkout person country name field"+NConstants.CHECKOUT_PERSON_COUNTRY);
-		
+
 		//checkoutPersonCountry.sendKeys("United Arab Emirates");
 		//aDriver.hideKeyboard();
-		
+
 		wait = new WebDriverWait(aDriver, 100);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CHECKOUT_SAVE_ADDRESS)));
 		Assert.assertTrue(isElementPresent(NConstants.CHECKOUT_SAVE_ADDRESS),"Could not load checkout person save address field"+NConstants.CHECKOUT_SAVE_ADDRESS);
 		checkoutSaveAddress.click();
 		//aDriver.pressKeyCode(66);
-		
-		
-		
+
+
+
 		wait = new WebDriverWait(aDriver, 40);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.PLACE_ORDER)));
 		Assert.assertTrue(isElementPresent(NConstants.PLACE_ORDER),"Could not load place order field"+NConstants.PLACE_ORDER);
@@ -463,17 +475,17 @@ public class SearchPage extends BasePage {
 		Assert.assertTrue(isElementPresent(NConstants.SHIP_ITEM_PRICE),"Could not load shipping item price"+NConstants.SHIP_ITEM_PRICE);
 		Assert.assertTrue(isElementPresent(NConstants.SHIP_ITEM_QUANTITY),"Could not load shipping item quantity"+NConstants.SHIP_ITEM_QUANTITY);
 		Assert.assertTrue(isElementPresent(NConstants.SHIP_ITEM_VALUE),"Could not load shipping item value"+NConstants.SHIP_ITEM_VALUE);
-		
+
 		dimensions = aDriver.manage().window().getSize();
 		Double screenHeightStart1 = dimensions.getHeight() * 0.5;
 		int scrollStart1 = screenHeightStart1.intValue();
 		Double screenHeightEnd1 = dimensions.getHeight() * 0.2;
 		int scrollEnd1 = screenHeightEnd1.intValue();
 		aDriver.swipe(0,scrollStart1,0,scrollEnd1,500);
-		
-		
 
-		
+
+
+
 		Assert.assertTrue(isElementPresent(NConstants.SHIP_INFO),"Could not load shipping delivery info"+NConstants.SHIP_INFO);
 		Assert.assertTrue(isElementPresent(NConstants.SHIP_INFO_IMAGE),"Could not load shipping delivery info image"+NConstants.SHIP_INFO_IMAGE);
 		Shipinfo.click();
@@ -497,7 +509,7 @@ public class SearchPage extends BasePage {
 		Assert.assertTrue(isElementPresent(NConstants.SHIP_GRAND_TOTAL_VALUE),"Could not load shipping item grand total value"+NConstants.SHIP_GRAND_TOTAL_VALUE);
 		Assert.assertTrue(isElementPresent(NConstants.SHIP_CONTINUE_BUTTON),"Could not load continue button"+NConstants.SHIP_CONTINUE_BUTTON);
 		shipContinueButton.click();
-		
+
 		Assert.assertTrue(isElementPresent(NConstants.PAYMENT_DETAILS),"Could not load payment details label"+NConstants.PAYMENT_DETAILS);
 		Assert.assertTrue(isElementPresent(NConstants.PAYMENT_CARD_TITLE),"Could not load credit card title"+NConstants.PAYMENT_CARD_TITLE);
 		Assert.assertTrue(isElementPresent(NConstants.PAYMENT_AMOUNT),"Could not load amount text"+NConstants.PAYMENT_AMOUNT);
@@ -540,5 +552,6 @@ public class SearchPage extends BasePage {
 		Assert.assertTrue(isElementPresent(NConstants.FOOTER_LOGO),"Could not load footer logo"+NConstants.FOOTER_LOGO);
 		Assert.assertTrue(isElementPresent(NConstants.PAY_BUTTON),"Could not load pay button"+NConstants.PAY_BUTTON);
 		payButton.click();*/
-	}
+
+    }
 }

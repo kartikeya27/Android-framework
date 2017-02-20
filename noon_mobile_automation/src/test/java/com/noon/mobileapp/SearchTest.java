@@ -17,18 +17,19 @@ public class SearchTest extends BaseTest {
 	String testName="SearchTest";
 	
 	@Test
-	public void checkoutTest() throws InterruptedException {
+	public void searchTest() throws InterruptedException {
 		test = rep.startTest(testName);
 		test.log(LogStatus.INFO, "Starting the search item test");
 		launchApp();
-		
-		SearchPage checkoutPage = new SearchPage(aDriver,test);
-		PageFactory.initElements(new AppiumFieldDecorator(aDriver),checkoutPage);
+		allowAppPermission();
+
+		SearchPage searchPage = new SearchPage(aDriver,test);
+		PageFactory.initElements(new AppiumFieldDecorator(aDriver),searchPage);
 		String userName = "noontesting2+12@gmail.com";
 		String password = "1200@Villa";
 		String searchText = "The Girl With No Name";
 		
-		checkoutPage.checkout(userName, password, searchText);
+		searchPage.search(userName, password, searchText);
 		test.log(LogStatus.INFO, "Search test passed");
 	}
 }	

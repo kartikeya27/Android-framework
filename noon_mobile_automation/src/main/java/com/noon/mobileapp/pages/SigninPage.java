@@ -96,7 +96,7 @@ public class SigninPage extends BasePage {
     @FindBy(xpath=NConstants.MY_PROFILE_USER_SIGNOUT)
     public WebElement myProfileUserSignout;
     
-	public void signin(String userName, String userPassword) throws InterruptedException {
+	public void signinWithEmail(String userName, String userPassword) throws InterruptedException {
 		
 		test.log(LogStatus.INFO, "Launch Android Application - ");
 		WebDriverWait wait = new WebDriverWait(aDriver, 20);
@@ -111,40 +111,45 @@ public class SigninPage extends BasePage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SIGN_IN_TAB)));
 		Assert.assertTrue(isElementPresent(NConstants.SIGN_IN_TAB), "Could not find sign in tab");
 		signinTab.click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.EMAIL_LINK)));
 		emailLink.click();
 		
-		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_WITH), "Could not find signin with text");
-		Assert.assertTrue(isElementPresent(NConstants.FACEBOOK_BUTTON), "Could not find facebook button");
-		Assert.assertTrue(isElementPresent(NConstants.TWITTER_BUTTON), "Could not find twitter button");
-		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_DETAILS), "Could not find Or sign in with your details text");
-		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_EMAIL), "Could not find email address input field");
-		Assert.assertTrue(isElementPresent(NConstants.MOBILE_NUMBER_LINK), "Could not find mobile number link");
-		Assert.assertTrue(isElementPresent(NConstants.PASSWORD_VIEW_IMAGE), "Could not find password image ");
-		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_PASSWORD), "Could not find passowrd input field");
-		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_BUTTON), "Could not find Sign in button");
-		Assert.assertTrue(isElementPresent(NConstants.FORGOT_PASSWORD), "Could not find forgot password link");
+//		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_WITH), "Could not find signin with text");
+//		Assert.assertTrue(isElementPresent(NConstants.FACEBOOK_BUTTON), "Could not find facebook button");
+//		Assert.assertTrue(isElementPresent(NConstants.TWITTER_BUTTON), "Could not find twitter button");
+//		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_DETAILS), "Could not find Or sign in with your details text");
+//		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_EMAIL), "Could not find email address input field");
+//		Assert.assertTrue(isElementPresent(NConstants.MOBILE_NUMBER_LINK), "Could not find mobile number link");
+//		Assert.assertTrue(isElementPresent(NConstants.PASSWORD_VIEW_IMAGE), "Could not find password image ");
+//		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_PASSWORD), "Could not find passowrd input field");
+//		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_BUTTON), "Could not find Sign in button");
+//		Assert.assertTrue(isElementPresent(NConstants.FORGOT_PASSWORD), "Could not find forgot password link");
 		/*googleButton.click();
 		wait = new WebDriverWait(aDriver, 20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.GOOGLE_SIGNIN)));
 		googleSingin.click();*/
-		
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SIGNIN_EMAIL)));
 		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_EMAIL), "Could not find email address field");
 		signinEmail.sendKeys(userName);
 		aDriver.hideKeyboard();
-		
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SIGNIN_PASSWORD)));
 		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_PASSWORD), "Could not find password field");
 		signinPassword.sendKeys(userPassword);
 		aDriver.hideKeyboard();
-		
-		
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SIGNIN_BUTTON)));
 		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_BUTTON), "Could not find Sign in button");
 		signinButton.click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_ACCOUNT)));
+        Assert.assertTrue(isElementPresent(NConstants.MY_ACCOUNT), "Could not find My Account in button");
+        myAccount.click();
 		
 		wait = new WebDriverWait(aDriver, 20);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.HELLO_TEXT)));
-		Assert.assertTrue(isElementPresent(NConstants.HELLO_TEXT), "Could not find Ahlan text");
-		
-		myAccount.click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_ORDERS)));
+		Assert.assertTrue(isElementPresent(NConstants.MY_ORDERS), "Could not find My Orders section");
 		
 		for(int i=0;i<8;i++) {
 			Dimension size = aDriver.manage().window().getSize();
@@ -165,7 +170,7 @@ public class SigninPage extends BasePage {
 		Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_FRAGMENT_PASSWORD), "Could not find user framgement password text");
 		Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_SIGNOUT), "Could not sign out button");
 		myProfileUserSignout.click();
-		//return signin(userPassword, userPassword);
+
 	}
 	
 }

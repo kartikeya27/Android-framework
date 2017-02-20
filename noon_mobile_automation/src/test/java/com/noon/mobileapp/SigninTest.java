@@ -27,6 +27,7 @@ String testName="SigninTest";
 					throw new SkipException("Skipping the test as Runmode was NO");
 				}*/
 		launchApp();
+		allowAppPermission();
 		test.log(LogStatus.INFO, "App Launch successfully");
 		
 		SigninPage signinPage = new SigninPage(aDriver,test);
@@ -37,7 +38,7 @@ String testName="SigninTest";
 		String userName = "noontesting2+11@gmail.com";
 		String password = "1200@Villa";
 		
-		signinPage.signin(userName,password);
+		signinPage.signinWithEmail(userName,password);
 		//execute
 		
 		//test.log(LogStatus.PASS, "Test Passed");
