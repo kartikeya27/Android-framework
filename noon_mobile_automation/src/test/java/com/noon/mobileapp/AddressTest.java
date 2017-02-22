@@ -27,13 +27,17 @@ String testName="AddressTest";
 		AddressPage addressPage = new AddressPage(aDriver,test);
 		PageFactory.initElements(new AppiumFieldDecorator(aDriver),addressPage);
 
-		String userName = "noontesting2+11@gmail.com";
-		String password = "1200@Villa";
+//		String userName = "noontesting2+11@gmail.com";
+//		String password = "1200@Villa";
+
+ 		String userName = "testnoon10@gmail.com";
+		String password = "Test1234";
 		
 		signinPage.signinWithEmail(userName,password);
 		addressPage.goToAddressBook();
-		addressPage.addFirstAddress();
-		addressPage.addAddressSteps();
+		addressPage.addAnotherAddress();
+//		addressPage.addFirstAddress();
+		addressPage.addAddressSteps("Building1","1", "2", "street a", "055000000000");
 
 		
 		test.log(LogStatus.PASS, "Test Passed");

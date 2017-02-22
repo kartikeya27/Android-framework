@@ -38,7 +38,9 @@ public class BasePage {
 	public ExtentTest test;
 	public TopMenuPage menu;
 	int level=0;
-	
+	public static final String DOWN = "down";
+	public static final String UP = "up";
+
 	public BasePage(AndroidDriver<AndroidElement> aDriver, ExtentTest test) {
 		menu = new TopMenuPage(aDriver,test);
 		PageFactory.initElements(new AppiumFieldDecorator(aDriver), menu);
@@ -282,4 +284,47 @@ public class BasePage {
 		}
 		return false;
 	}
+
+    public void verticalScrollDown()
+    {
+        Dimension size = aDriver.manage().window().getSize();
+        int y_start=(int)(size.height*0.60);
+        int y_end=(int)(size.height*0.30);
+        int x=size.width/2;
+        aDriver.swipe(x,y_start,x,y_end,1000);
+    }
+
+    public void verticalScrollUp()
+    {
+        Dimension size = aDriver.manage().window().getSize();
+        int y_start=(int)(size.height*0.30);
+        int y_end=(int)(size.height*0.60);
+        int x=size.width/2;
+        aDriver.swipe(x,y_start,x,y_end,1000);
+    }
+
+    public boolean scrollToElement(String elem, String direction) {
+        WebDriverWait wait = new WebDriverWait(aDriver, 1);
+        try{
+            wait.until(ExpectedConditions.visibilityOf(aDriver.findElement(By.xpath(elem))));
+            return true;
+        }catch(TimeoutException | NoSuchElementException e){
+            test.log(LogStatus.INFO,"Scroll Down");
+        }
+
+        for(int i=0;i<10;i++) {
+            if(direction.equalsIgnoreCase("down")){
+                verticalScrollDown();
+            }else{
+                verticalScrollUp();
+            }
+            try{
+                wait.until(ExpectedConditions.visibilityOf(aDriver.findElement(By.xpath(elem))));
+                return true;
+            }catch(TimeoutException | NoSuchElementException e){
+                test.log(LogStatus.INFO,"Scroll");
+            }
+        }
+        return false;
+    }
 }
