@@ -274,6 +274,7 @@ public interface NConstants {
 
 //    Address Page
     String ADD_FIRST_ADDRESS = "//*[contains(@text,\"Add address\")]";
+    String ADD_ANOTHER_ADDRESS = "//*[contains(@text,\"Add another address\")]";
     String MAP_DONE = "//*[contains(@text,\"Done\")]";
     String MAP_CANCEL = "//*[contains(@text,\"Cancel\")]";
     String LOCATE_SEARCHING_PROGRESS = "//*[contains(@resource-id,\"com.noon:id/checkout_add_address_searching\")]";

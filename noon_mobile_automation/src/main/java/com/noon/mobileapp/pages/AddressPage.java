@@ -29,6 +29,9 @@ public class AddressPage extends BasePage {
 	@FindBy(xpath=NConstants.ADD_FIRST_ADDRESS)
 	public AndroidElement addFirstAddress;
 
+	@FindBy(xpath=NConstants.ADD_ANOTHER_ADDRESS)
+	public AndroidElement addAnotherAddress;
+
 	@FindBy(xpath=NConstants.MAP_DONE)
 	public AndroidElement mapDone;
 
@@ -125,12 +128,14 @@ public class AddressPage extends BasePage {
 	    // Current location Address Book main view
         WebDriverWait wait = new WebDriverWait(aDriver, 30);
 
-        // ToDo scroll to add another address button
+        // scroll to add another address button
+        scrollToElement(NConstants.ADD_ANOTHER_ADDRESS, DOWN);
 
         //Add another address button
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ADD_FIRST_ADDRESS)));
-        Assert.assertTrue(isElementPresent(NConstants.ADD_FIRST_ADDRESS), "Could not find Another Address button");
-        addFirstAddress.click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ADD_ANOTHER_ADDRESS)));
+        Assert.assertTrue(isElementPresent(NConstants.ADD_ANOTHER_ADDRESS), "Could not find Another Address button");
+        addAnotherAddress.click();
+
 
     }
 
@@ -147,7 +152,7 @@ public class AddressPage extends BasePage {
 
     }
 
-    public void addAddressSteps(){
+    public void addAddressSteps(String building, String flatNo, String floorNo, String street, String phone){
         // Current location Address Form
         WebDriverWait wait = new WebDriverWait(aDriver, 30);
 
@@ -171,6 +176,30 @@ public class AddressPage extends BasePage {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.DELIVERY_ADDRESS_LABEL)));
         Assert.assertTrue(isElementPresent(NConstants.DELIVERY_ADDRESS_LABEL), "Could not find delivery address label");
+
+        scrollToElement(NConstants.ADDRESS_BUILDING, DOWN);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ADDRESS_BUILDING)));
+        addressBuilding.sendKeys(building);
+
+        scrollToElement(NConstants.ADDRESS_FLAT_NO, DOWN);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ADDRESS_FLAT_NO)));
+        addressFlat.sendKeys(flatNo);
+
+        scrollToElement(NConstants.ADDRESS_FLOOR_NO, DOWN);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ADDRESS_FLOOR_NO)));
+        addressFloor.sendKeys(floorNo);
+
+        scrollToElement(NConstants.ADDRESS_STREEET, DOWN);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ADDRESS_STREEET)));
+        addressStreet.sendKeys(street);
+
+        scrollToElement(NConstants.ADDRESS_PHONE, DOWN);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ADDRESS_PHONE)));
+        addressPhone.sendKeys(phone);
+
+        scrollToElement(NConstants.ADDRESS_SAVE, DOWN);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ADDRESS_SAVE)));
+        addressSave.click();
 
     }
 
