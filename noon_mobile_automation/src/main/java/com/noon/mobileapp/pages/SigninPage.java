@@ -143,34 +143,57 @@ public class SigninPage extends BasePage {
 		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_BUTTON), "Could not find Sign in button");
 		signinButton.click();
 
+
+		
+//		wait = new WebDriverWait(aDriver, 20);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_ORDERS)));
+//		Assert.assertTrue(isElementPresent(NConstants.MY_ORDERS), "Could not find My Orders section");
+//
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_ACCOUNT)));
+//        Assert.assertTrue(isElementPresent(NConstants.MY_ACCOUNT), "Could not find My Account button");
+////          myAccount.click();
+//
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MENU_HOME)));
+//        Assert.assertTrue(isElementPresent(NConstants.MENU_HOME), "Could not find HOME button");
+
+		
+
+
+	}
+
+	public void logout(){
+
+        WebDriverWait wait = new WebDriverWait(aDriver, 30);
+
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.NAVIGATION_MENU_IMAGE)));
+//        Assert.assertTrue(isElementPresent(NConstants.NAVIGATION_MENU_IMAGE), "Could not find Menu button");
+//        navigationMenuImage.click();
+
+
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_ACCOUNT)));
         Assert.assertTrue(isElementPresent(NConstants.MY_ACCOUNT), "Could not find My Account in button");
         myAccount.click();
-		
-		wait = new WebDriverWait(aDriver, 20);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_ORDERS)));
-		Assert.assertTrue(isElementPresent(NConstants.MY_ORDERS), "Could not find My Orders section");
-		
-		for(int i=0;i<8;i++) {
-			Dimension size = aDriver.manage().window().getSize();
-			int startx = (int) (size.width * 0.70);
-			int endx = (int) (size.width * 0.30);
-			int starty = size.height / 2;
-        	aDriver.swipe(startx, starty, endx, starty, 2000); 
-        }
-		wait = new WebDriverWait(aDriver, 30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_PROFILE)));
-        Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE), "Could not find my profile text");
-		myProfile.click();
-		
-		Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_IMAGE), "Could not find user image");
-		Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_NAME), "Could not find user name text");
-		Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_EMAIL), "Could not find user email text");
-		Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_PASSWORD), "Could not find user password text");
-		Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_FRAGMENT_PASSWORD), "Could not find user framgement password text");
-		Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_SIGNOUT), "Could not sign out button");
-		myProfileUserSignout.click();
 
-	}
+        for(int i=0;i<8;i++) {
+            Dimension size = aDriver.manage().window().getSize();
+            int startx = (int) (size.width * 0.70);
+            int endx = (int) (size.width * 0.30);
+            int starty = size.height / 2;
+            aDriver.swipe(startx, starty, endx, starty, 2000);
+        }
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_PROFILE)));
+        Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE), "Could not find my profile text");
+        myProfile.click();
+
+        Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_IMAGE), "Could not find user image");
+        Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_NAME), "Could not find user name text");
+        Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_EMAIL), "Could not find user email text");
+        Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_PASSWORD), "Could not find user password text");
+        Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_FRAGMENT_PASSWORD), "Could not find user framgement password text");
+        Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_SIGNOUT), "Could not sign out button");
+        myProfileUserSignout.click();
+
+    }
 	
 }

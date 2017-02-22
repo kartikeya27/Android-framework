@@ -17,21 +17,19 @@ public interface NConstants {
 	String PLATFORM_NAME = "Android";*/
 	
 	//local device settings on real device
-	//String APK_PATH = System.getProperty("user.dir")+"/apk/app-sit-preRelease.apk";
 	String APK_PATH = System.getProperty("user.dir")+"/apk/app-production-debug.apk";
-	//String APPIUM_VERSION= "1.6";
 	String APPIUM_VERSION= "1.5.3";
+
 	//String DEVICE_NAME = "A33f";
-	String DEVICE_NAME = "Nexus";
-	//String DEVICE_NAME = "Nexus_6_API_25";
-	//String DEVICE_NAME = "Nexus_5_API_23";
-	//String AVD_NAME = "Nexus_7";
+//	String DEVICE_NAME = "LGD85592753e80";
+//	String DEVICE_NAME ="BH913A6Q0D";
+    String DEVICE_NAME ="emulator-5554";
 	String DEVICE_ORIENTATION = "portrait";
 	//String BROWSER_NAME="";
-	String PLATFORM_VERSION = "5.1.1";
+	String PLATFORM_VERSION = "6.0";
 	//String PLATFORM_VERSION = "6.0";
 	String PLATFORM_NAME = "Android";
-	String HUB_URL = "http://0.0.0.0:4723/wd/hub";
+	String HUB_URL = "http://127.0.0.1:4723/wd/hub";
 	
 	//sauce labs android emulator settings
 	//String APK_PATH = System.getProperty("user.dir")+"/apk/app-sit-debug.apk";
@@ -44,7 +42,7 @@ public interface NConstants {
 	String PLATFORM_NAME = "Android";*/
 	
 	//Report
-	String REPORT_PATH = "/Users/kartikbhatt/Automation/Reports/screenshots/";
+	String REPORT_PATH = System.getProperty("user.dir")+ "/target/";
 	String XLS_PATH = System.getProperty("user.dir")+"/data/TestData.xlsx";
 	
 	//Elements for signin & register page
@@ -56,10 +54,10 @@ public interface NConstants {
 	String ENTERTAINMENT_TEXT = "//android.widget.TextView[@text='Entertainment & Leisure']";
 	String SIGN_IN_LINK = "//android.widget.TextView[@text='Register or Sign In >']";
 	String SIGN_IN_TAB = "//android.widget.TextView[contains(@resource-id,'android:id/text1') and @text='Sign in']";
-	String SIGNIN_PASSWORD="//android.widget.LinearLayout[@text='Password']"; 
+	String SIGNIN_PASSWORD="//*[@text='Password']";
 	String SIGNIN_BUTTON="//android.widget.Button[@text='Sign in']";
 	String FORGOT_PASSWORD="//android.widget.TextView[@text='Forgot password?']";
-	String SIGNIN_EMAIL="//android.widget.LinearLayout[@text='Your email address']"; 
+	String SIGNIN_EMAIL="//*[@text='Your email address']";
 	String SIGNIN_WITH="//android.widget.TextView[@text='Sign in with']";
 	String MOBILE_NUMBER_LINK="//android.widget.TextView[@text='Use mobile number']";
 	String EMAIL_LINK="//android.widget.TextView[@text='Use email address']";
@@ -78,7 +76,7 @@ public interface NConstants {
 	String REGISTER_PASSWORD="//android.widget.LinearLayout[@index='7']";
 	String REGISTER_BUTTON="//android.widget.Button[@index='8']";
 	String PASSWORD_TAB="//android.widget.EditText[@index='0']";
-	String HELLO_TEXT="//android.widget.TextView[@text='Ahlan, noon']";
+	String HELLO_TEXT="//*[contains(@text='Ahlan']";
 	
 	//Element for Category-Fashion page
 	String CATEGORY_TEXT="//android.widget.TextView[@text='Categories']";
@@ -136,18 +134,6 @@ public interface NConstants {
 	
 	//Element for Checkout page
 	String SIGNIN_CENTRAL_BUTTON="//android.widget.TextView[@text='Sign in with email or phone >']";
-	String MY_ACCOUNT="//android.widget.CheckedTextView[@text='My account']";
-	String MY_ORDERS="//android.widget.TextView[@text='My Orders']";
-	String RETURN_EXCHANGE="//android.widget.TextView[@text='Return & exchange']";
-	String ADDRESS_BOOK="//android.widget.TextView[@text='Address book']";
-	String WALLET="//android.widget.TextView[@text='Wallet']";
-	String MY_PROFILE="//android.widget.TextView[@text='My profile']";
-	String MY_PROFILE_USER_IMAGE="//android.widget.ImageView[@index='0']";
-	String MY_PROFILE_USER_NAME="//android.widget.TextView[@index='0']";
-	String MY_PROFILE_USER_EMAIL="//android.widget.TextView[@index='1']";
-	String MY_PROFILE_USER_PASSWORD="//android.widget.TextView[@index='2']";
-	String MY_PROFILE_USER_FRAGMENT_PASSWORD="//android.widget.TextView[@index='3']";
-	String MY_PROFILE_USER_SIGNOUT="//android.widget.Button[@text='Sign out']";
 	
 	String NO_ORDERS="//android.widget.TextView[@text='No orders to show']";
 	String SEARCH_TEXT_VIEW="//android.widget.TextView[contains(@resource-id,'com.noon:id/search_text_view')]";
@@ -251,20 +237,69 @@ public interface NConstants {
 	String PAY_BUTTON="//android.widget.Button[contains(@resource-id,'btnCardCSPayment')]";
 	String FOOTER_TEXT="//android.view.View[contains(@resource-id,'footer-text')]";
 	String FOOTER_LOGO="//android.view.View[contains(@resource-id,'footer-logo')]";
+
+
+//	MyAccount page elements
+    String MY_ACCOUNT="//android.widget.CheckedTextView[@text='My account']";
+    String MY_ORDERS="//*[@text='My Orders']";
+    String RETURN_EXCHANGE="//*[@text='Returns & exchange']";
+    String ADDRESS_BOOK="//android.widget.TextView[@text='Address book']";
+    String WALLET="//android.widget.TextView[@text='Wallet']";
+    String MY_PROFILE="//android.widget.TextView[@text='My profile']";
+    String MY_PROFILE_USER_IMAGE="//android.widget.ImageView[@index='0']";
+    String MY_PROFILE_USER_NAME="//android.widget.TextView[@index='0']";
+    String MY_PROFILE_USER_EMAIL="//android.widget.TextView[@index='1']";
+    String MY_PROFILE_USER_PASSWORD="//android.widget.TextView[@index='2']";
+    String MY_PROFILE_USER_FRAGMENT_PASSWORD="//android.widget.TextView[@index='3']";
+    String MY_PROFILE_USER_SIGNOUT="//android.widget.Button[@text='Sign out']";
+
+//    Side Menu elements
+    String MY_ORDERS_MENU="//*[@text='My orders']";
+    String MENU_HOME = "//android.widget.CheckedTextView[@text='Home']";
+    String SHOP_BY_CATEGORY = "//android.widget.CheckedTextView[@text='Shop by category']";
+    String TODAYS_DEALS = "//android.widget.CheckedTextView[contains(@text,'deals')]";
+    String INVITE_FRIENDS = "//*[contains(@text,'Invite your friends')]";
+    String CUSTOMER_SERVICE = "//*[contains(@text,'Customer service')]";
+    String CHAT = "//*[contains(@text,'Chat with us')]";
+    String ABOUT = "//*[contains(@text,'About noon')]";
+
+    String TOOLBAR_LOGO = "//*[@resource-id='com.noon:id/toolbar_logo']";
+
+//
+    String CATEGORIES_LABEL = "//*[@text='Categories']";
+    String TODAYS_DEALS_LABEL = "//*[contains(@text,\"Today\")]";
+    String SEE_ALL = "//*[contains(@text,\"See all\")]";
+    String ITEMS_YOU_VIEWD_LABEL = "//*[contains(@text,\"Items you viewed\")]";
+    String RETURN_ITEMS = "//*[contains(@text,\"Return items\")]";
+
+//    Address Page
+    String ADD_FIRST_ADDRESS = "//*[contains(@text,\"Add address\")]";
+    String MAP_DONE = "//*[contains(@text,\"Done\")]";
+    String MAP_CANCEL = "//*[contains(@text,\"Cancel\")]";
+    String LOCATE_SEARCHING_PROGRESS = "//*[contains(@resource-id,\"com.noon:id/checkout_add_address_searching\")]";
+    String LOCATE_MY_LOCATION ="//*[contains(@text,\"Locate me\")]";
+	String ALMOST_DONE_ADDRESS = "//*[contains(@text,\"Almost done!\")]";
+	String DELIVERY_ADDRESS_LABEL = "//*[contains(@text,\"Delivery address\")]";
+    String ADDRESS_COUNTRY = "//TextInputLayout[contains(@text,\"Country\")]/android.widget.FrameLayout/android.widget.EditText";
+    String ADDRESS_CITY = "//TextInputLayout[contains(@text,\"City\")]/android.widget.FrameLayout/android.widget.EditText";
+    String ADDRESS_BUILDING = "//TextInputLayout[contains(@text,\"Building\")]/android.widget.FrameLayout/android.widget.EditText";
+    String ADDRESS_FLAT_NO = "//TextInputLayout[contains(@text,\"Flat Number\")]/android.widget.FrameLayout/android.widget.EditText";
+    String ADDRESS_FLOOR_NO = "//TextInputLayout[contains(@text,\"Floor Number\")]/android.widget.FrameLayout/android.widget.EditText";
+    String ADDRESS_AREA = "//TextInputLayout[contains(@text,\"Area\")]/android.widget.FrameLayout/android.widget.EditText";
+    String ADDRESS_STREEET = "//TextInputLayout[contains(@text,\"Street\")]/android.widget.FrameLayout/android.widget.EditText";
+    String ADDRESS_DETAILS = "//TextInputLayout[contains(@text,\"Details for courier\")]/android.widget.FrameLayout/android.widget.EditText";
+    String ADDRESS_BUSINESS_CHECKBOX = "//android.widget.CheckBox[contains(@text,\"business address\")]";
+    String ADDRESS_DEFAULT_CHECKBOX = "//android.widget.CheckBox[contains(@text,\"default address\")]";
+    String ADDRESS_NAME = "//TextInputLayout[contains(@text,\"Name\")]/android.widget.FrameLayout/android.widget.EditText";
+    String ADDRESS_PHONE = "//TextInputLayout[contains(@text,\"Phone\")]/android.widget.FrameLayout/android.widget.EditText";
+    String ADDRESS_SAVE = "//android.widget.Button[contains(@text,\"Save address\")]";
+
 	
 	
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	
 	
