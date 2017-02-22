@@ -1,5 +1,6 @@
 package com.noon.mobileapp.base;
 
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -15,14 +16,11 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 //import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -256,5 +254,32 @@ public class BasePage {
 			//report an error 
 			//e.printStackTrace();
 		}
-	}	
+	}
+
+	public boolean swipeToElement(MobileElement elem) {
+		WebDriverWait wait = new WebDriverWait(aDriver, 1);
+		try{
+			wait.until(ExpectedConditions.visibilityOf(elem));
+			return true;
+		}catch(TimeoutException e){
+			test.log(LogStatus.INFO,"Swipe");
+		}
+
+		for(int i=0;i<10;i++) {
+			Dimension size = aDriver.manage().window().getSize();
+			int startx = (int) (size.width * 0.70);
+			int endx = (int) (size.width * 0.30);
+			int starty = size.height / 2;
+			aDriver.swipe(startx, starty, endx, starty, 200);
+
+			try{
+				wait.until(ExpectedConditions.visibilityOf(elem));
+				return true;
+			}catch(TimeoutException e){
+				test.log(LogStatus.INFO,"Swipe");
+			}
+
+		}
+		return false;
+	}
 }

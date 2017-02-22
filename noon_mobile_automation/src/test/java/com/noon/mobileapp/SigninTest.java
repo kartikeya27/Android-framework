@@ -1,14 +1,9 @@
 package com.noon.mobileapp;
 
-import java.util.Hashtable;
-
 import org.openqa.selenium.support.PageFactory;
-import org.testng.SkipException;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import com.noon.mobileapp.base.BaseTest;
 import com.noon.mobileapp.pages.SigninPage;
-import com.noon.mobileapp.util.DataUtil;
 import com.relevantcodes.extentreports.LogStatus;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
@@ -39,7 +34,8 @@ String testName="SigninTest";
 		String password = "1200@Villa";
 		
 		signinPage.signinWithEmail(userName,password);
-		//execute
+		signinPage.logout();
+
 		
 		//test.log(LogStatus.PASS, "Test Passed");
 	}
