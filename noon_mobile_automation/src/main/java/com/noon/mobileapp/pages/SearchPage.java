@@ -217,20 +217,20 @@ public class SearchPage extends BasePage {
 		WebDriverWait wait = new WebDriverWait(aDriver, 20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SIGNIN_CENTRAL_BUTTON)));
 		signinCentalButton.click();
-		
+
 		wait = new WebDriverWait(aDriver, 20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SIGN_IN_TAB)));
 		signinTab.click();
 		emailLink.click();
-		
+
 		signinEmail.sendKeys(userName);
 		aDriver.hideKeyboard();
-		
+
 		signinPassword.sendKeys(userPassword);
 		aDriver.hideKeyboard();
-		
+
 		signinButton.click();
-		
+
 		wait = new WebDriverWait(aDriver, 20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SEARCH_TEXT_VIEW)));
 		MultiTouchAction multiTouch = new MultiTouchAction(aDriver);
@@ -255,6 +255,35 @@ public class SearchPage extends BasePage {
 		navigationMenuImage.click();
 
 	}
+
+    public void search(String searchItem) throws InterruptedException {
+
+        WebDriverWait wait = new WebDriverWait(aDriver, 20);
+
+        wait = new WebDriverWait(aDriver, 20);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SEARCH_TEXT_VIEW)));
+        MultiTouchAction multiTouch = new MultiTouchAction(aDriver);
+        TouchAction action1 = new TouchAction(aDriver);
+        action1.press(searchTextView).waitAction(300).moveTo(10, 0).release();
+        multiTouch.add(action1).perform();
+
+        wait = new WebDriverWait(aDriver, 100);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SEARCH_BAR_CONTAINER)));
+        searchBarContainer.sendKeys(searchItem);
+        aDriver.hideKeyboard();
+
+        Assert.assertTrue(isElementPresent(NConstants.LIST_ITEM_LABEL), "Could not select search product label"+NConstants.LIST_ITEM_LABEL);
+        aDriver.pressKeyCode(66); // This is virtual keyboard enter key value
+        itemProductTitle.click();
+
+        wait = new WebDriverWait(aDriver, 100);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ITEM_IMAGE)));
+        Assert.assertTrue(isElementPresent(NConstants.ITEM_IMAGE), "Could not load product image"+NConstants.ITEM_IMAGE);
+        Assert.assertTrue(isElementPresent(NConstants.PRODUCT_BASIC_INFO), "Could not load product basic info"+NConstants.PRODUCT_BASIC_INFO);
+        Assert.assertTrue(isElementPresent(NConstants.PRODUCT_PRICE), "Could not load product price"+NConstants.PRODUCT_PRICE);
+//        navigationMenuImage.click();
+
+    }
 
     public void someOtherStuff(){
 

@@ -47,17 +47,17 @@ public interface NConstants {
 	
 	//Elements for signin & register page
 	String INITIAL_SCREEN="//android.widget.Button[@index='1']";
-	String NAVIGATION_MENU_IMAGE="//android.widget.ImageButton[contains(@content-desc,'Drawer Open')]";
+	String NAVIGATION_MENU_IMAGE="//android.widget.ImageButton[contains(@content-desc,'Open drawer')]";
 	String ELECTRONIC_TEXT = "//android.widget.TextView[@text='Electronics & Applicances']";
 	String SHOP_CATEGORY = "//android.widget.CheckedTextView[@text='Shop by category']";
 	String ELECTRONIC_LINK = "//android.widget.TextView[@text='Electronics & Applicances']";
 	String ENTERTAINMENT_TEXT = "//android.widget.TextView[@text='Entertainment & Leisure']";
-	String SIGN_IN_LINK = "//android.widget.TextView[@text='Register or Sign In >']";
+	String SIGN_IN_LINK = "//android.widget.TextView[@text='Register or Sign In']";
 	String SIGN_IN_TAB = "//android.widget.TextView[contains(@resource-id,'android:id/text1') and @text='Sign in']";
-	String SIGNIN_PASSWORD="//*[@text='Password']";
-	String SIGNIN_BUTTON="//android.widget.Button[@text='Sign in']";
+	String SIGNIN_PASSWORD="//*[contains(@text,'Password')]";
+	String SIGNIN_BUTTON="//*[contains(@text,'Login')]";
 	String FORGOT_PASSWORD="//android.widget.TextView[@text='Forgot password?']";
-	String SIGNIN_EMAIL="//*[@text='Your email address']";
+	String SIGNIN_EMAIL="//*[contains(@text,'Phone number or email address*')]";
 	String SIGNIN_WITH="//android.widget.TextView[@text='Sign in with']";
 	String MOBILE_NUMBER_LINK="//android.widget.TextView[@text='Use mobile number']";
 	String EMAIL_LINK="//android.widget.TextView[@text='Use email address']";
@@ -77,6 +77,7 @@ public interface NConstants {
 	String REGISTER_BUTTON="//android.widget.Button[@index='8']";
 	String PASSWORD_TAB="//android.widget.EditText[@index='0']";
 	String HELLO_TEXT="//*[contains(@text='Ahlan']";
+	String SIGN_IN_MAIN = "//*[contains(@text,'Sign in with email or phone')]";
 	
 	//Element for Category-Fashion page
 	String CATEGORY_TEXT="//android.widget.TextView[@text='Categories']";
@@ -240,18 +241,18 @@ public interface NConstants {
 
 
 //	MyAccount page elements
-    String MY_ACCOUNT="//android.widget.CheckedTextView[@text='My account']";
+    String MY_ACCOUNT="//*[contains(@text,'My Account')]";
     String MY_ORDERS="//*[@text='My Orders']";
     String RETURN_EXCHANGE="//*[@text='Returns & exchange']";
     String ADDRESS_BOOK="//android.widget.TextView[@text='Address book']";
     String WALLET="//android.widget.TextView[@text='Wallet']";
-    String MY_PROFILE="//android.widget.TextView[@text='My profile']";
+    String MY_PROFILE="//*[@text='My Profile']";
     String MY_PROFILE_USER_IMAGE="//android.widget.ImageView[@index='0']";
     String MY_PROFILE_USER_NAME="//android.widget.TextView[@index='0']";
     String MY_PROFILE_USER_EMAIL="//android.widget.TextView[@index='1']";
     String MY_PROFILE_USER_PASSWORD="//android.widget.TextView[@index='2']";
     String MY_PROFILE_USER_FRAGMENT_PASSWORD="//android.widget.TextView[@index='3']";
-    String MY_PROFILE_USER_SIGNOUT="//android.widget.Button[@text='Sign out']";
+    String MY_PROFILE_USER_SIGNOUT="//*[@text='Logout']";
 
 //    Side Menu elements
     String MY_ORDERS_MENU="//*[@text='My orders']";
@@ -296,8 +297,21 @@ public interface NConstants {
     String ADDRESS_SAVE = "//android.widget.Button[contains(@text,\"Save address\")]";
 
 	
-	
-	
+    //
+    // Product page
+    //
+    String ADD_TO_CART = "//*[contains(@text,'Add to cart')]";
+    String CART_ICON = "//*[contains(@resource-id,'com.noon:id/toolbar_menu_cart')]";
+
+
+
+
+    //
+    // Cart
+    //
+    String SECURE_CHECKOUT = "//*[contains(@text,'Secure checkout')]";
+
+
 	
 	
 
