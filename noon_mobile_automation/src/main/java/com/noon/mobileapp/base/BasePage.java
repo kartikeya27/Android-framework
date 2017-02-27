@@ -258,26 +258,39 @@ public class BasePage {
 		}
 	}
 
-	public boolean swipeToElement(MobileElement elem) {
+    public void swipeRight()
+    {
+            Dimension size = aDriver.manage().window().getSize();
+            int startx = (int) (size.width * 0.90);
+            int endx = (int) (size.width * 0.10);
+            int starty = size.height / 2;
+            aDriver.swipe(startx, starty, endx, starty, 2000);
+    }
+
+    public void swipeLeft()
+    {
+        Dimension size = aDriver.manage().window().getSize();
+        int startx = (int) (size.width * 0.10);
+        int endx = (int) (size.width * 0.90);
+        int starty = size.height / 2;
+        aDriver.swipe(startx, starty, endx, starty, 2000);
+    }
+
+	public boolean swipeToElement(String elem) {
 		WebDriverWait wait = new WebDriverWait(aDriver, 1);
 		try{
-			wait.until(ExpectedConditions.visibilityOf(elem));
+			wait.until(ExpectedConditions.visibilityOf(aDriver.findElement(By.xpath(elem))));
 			return true;
-		}catch(TimeoutException e){
+		}catch(Exception e){
 			test.log(LogStatus.INFO,"Swipe");
 		}
 
 		for(int i=0;i<10;i++) {
-			Dimension size = aDriver.manage().window().getSize();
-			int startx = (int) (size.width * 0.70);
-			int endx = (int) (size.width * 0.30);
-			int starty = size.height / 2;
-			aDriver.swipe(startx, starty, endx, starty, 200);
-
+            swipeRight();
 			try{
-				wait.until(ExpectedConditions.visibilityOf(elem));
+				wait.until(ExpectedConditions.visibilityOf(aDriver.findElement(By.xpath(elem))));
 				return true;
-			}catch(TimeoutException e){
+			}catch(Exception e){
 				test.log(LogStatus.INFO,"Swipe");
 			}
 
