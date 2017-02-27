@@ -1,22 +1,20 @@
 package com.noon.mobileapp;
 
-import com.noon.mobileapp.pages.*;
+import com.noon.mobileapp.base.BaseTest;
+import com.noon.mobileapp.pages.ProductPage;
+import com.noon.mobileapp.pages.SearchPage;
+import com.noon.mobileapp.pages.SigninPage;
+import com.relevantcodes.extentreports.LogStatus;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
-import com.noon.mobileapp.base.BaseTest;
-import com.noon.mobileapp.util.NConstants;
-import com.relevantcodes.extentreports.LogStatus;
-
-import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import sun.launcher.resources.launcher_zh_CN;
-
-public class SearchTest extends BaseTest {
+public class CartTest extends BaseTest {
 	
 	String testName="SearchTest";
 	
 	@Test
-	public void searchTest() throws InterruptedException {
+	public void cartTest() throws InterruptedException {
 		test = rep.startTest(testName);
 		test.log(LogStatus.INFO, "Starting the search item test");
 		launchApp();
@@ -35,7 +33,7 @@ public class SearchTest extends BaseTest {
 
         signinPage.signinWithEmail(userName,password);
 		searchPage.search(searchText);
-		test.log(LogStatus.INFO, "Search test passed");
-
+		productPage.addProductToCart();
+		test.log(LogStatus.INFO, "Cart test passed");
 	}
 }	
