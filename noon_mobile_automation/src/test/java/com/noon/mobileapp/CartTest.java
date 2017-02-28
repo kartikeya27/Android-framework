@@ -1,6 +1,7 @@
 package com.noon.mobileapp;
 
 import com.noon.mobileapp.base.BaseTest;
+import com.noon.mobileapp.pages.CartPage;
 import com.noon.mobileapp.pages.ProductPage;
 import com.noon.mobileapp.pages.SearchPage;
 import com.noon.mobileapp.pages.SigninPage;
@@ -23,10 +24,13 @@ public class CartTest extends BaseTest {
 		SearchPage searchPage = new SearchPage(aDriver,test);
 		SigninPage signinPage = new SigninPage(aDriver,test);
         ProductPage productPage = new ProductPage(aDriver,test);
+        CartPage cartPage = new CartPage(aDriver,test);
 
         PageFactory.initElements(new AppiumFieldDecorator(aDriver),productPage);
 		PageFactory.initElements(new AppiumFieldDecorator(aDriver),searchPage);
 		PageFactory.initElements(new AppiumFieldDecorator(aDriver),signinPage);
+        PageFactory.initElements(new AppiumFieldDecorator(aDriver),cartPage);
+
 		String searchText = "The Girl With No Name";
         String userName = "noontesting2+11@gmail.com";
         String password = "1200@Villa";
@@ -34,6 +38,12 @@ public class CartTest extends BaseTest {
         signinPage.signinWithEmail(userName,password);
 		searchPage.search(searchText);
 		productPage.addProductToCart();
+		cartPage.increase();
+		cartPage.increase();
+        cartPage.increase();
+        cartPage.decrease();
+        cartPage.removeFromCart();
 		test.log(LogStatus.INFO, "Cart test passed");
+
 	}
 }	

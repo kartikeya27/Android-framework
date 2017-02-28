@@ -1,5 +1,6 @@
 package com.noon.mobileapp.util;
 
+import com.noon.mobileapp.pages.CheckoutPage;
 import io.appium.java_client.android.AndroidElement;
 
 public interface NConstants {
@@ -310,13 +311,25 @@ public interface NConstants {
     // Cart
     //
     String SECURE_CHECKOUT = "//*[contains(@text,'Secure checkout')]";
+    String REMOVE_FROM_CART = "//*[contains(@text,\"Remove\")]";
+    //To be replaced
+    String INCREASE_QUANTITY_IN_CART =  "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.support.v7.widget.RecyclerView[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ImageButton[2]";
+    String DECREASE_QUANTITY_IN_CART = "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.support.v7.widget.RecyclerView[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ImageButton[1]";
+
+    String CART_TOTAL = "//android.widget.TextView[contains(@text,'AED')]";
+    String ITEMS_IN_CART_INFO = "//android.widget.TextView[contains(@text,'in your cart')]";
+    String PRODUCT_QUANTITY = "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.support.v7.widget.RecyclerView[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]";
 
 
-	
-	
-
-	
-	
-	
+    //
+    // Checkout
+    //
+    String SELECT_DELIVERY_MSG = "//*[contains(@text,'Select your delivery method')]";
+    String DEFAULT_ADDRESS = "//*[contains(@text,'Default')]";
+    String PAYMENT_PAY_WITH_MSG = "//*[contains(@text,'Pay with')]";
+    String PAY_ON_DELIVERY = "//*[contains(@text,'Pay on delivery')]";
+    String PLACE_ORDER_BTN = "//*[contains(@text,\"Place Order\")]";
+    String SUBTOTAL = "//*[contains(@resource-id,\"com.noon:id/checkout_subtotal_value\")]";
+    String GRAND_TOTAL = "//*[contains(@resource-id,\"com.noon:id/checkout_grandtotal\")]";
 	
 }
