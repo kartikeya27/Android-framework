@@ -298,10 +298,41 @@ public class BasePage {
 		return false;
 	}
 
+
+    public boolean swipeToElement(String elem, String direction) {
+        WebDriverWait wait = new WebDriverWait(aDriver, 1);
+        try{
+            wait.until(ExpectedConditions.visibilityOf(aDriver.findElement(By.xpath(elem))));
+            return true;
+        }catch(Exception e){
+            test.log(LogStatus.INFO,"Swipe");
+        }
+
+        for(int i=0;i<10;i++) {
+            if(direction.equalsIgnoreCase("right")){
+                swipeRight();
+            }else if(direction.equalsIgnoreCase("left")){
+                swipeLeft();
+            } else{
+                test.log(LogStatus.INFO,"swipe direction not specified");
+                break;
+            }
+            try{
+                wait.until(ExpectedConditions.visibilityOf(aDriver.findElement(By.xpath(elem))));
+                return true;
+            }catch(Exception e){
+                test.log(LogStatus.INFO,"Swipe");
+            }
+
+        }
+        return false;
+    }
+
+
     public void verticalScrollDown()
     {
         Dimension size = aDriver.manage().window().getSize();
-        int y_start=(int)(size.height*0.60);
+        int y_start=(int)(size.height*0.70);
         int y_end=(int)(size.height*0.30);
         int x=size.width/2;
         aDriver.swipe(x,y_start,x,y_end,1000);
@@ -309,9 +340,10 @@ public class BasePage {
 
     public void verticalScrollUp()
     {
+        System.out.println("@ Vertical scroll up @ ");
         Dimension size = aDriver.manage().window().getSize();
-        int y_start=(int)(size.height*0.30);
-        int y_end=(int)(size.height*0.60);
+        int y_start=(int)(size.height*0.70);
+        int y_end=(int)(size.height*0.30);
         int x=size.width/2;
         aDriver.swipe(x,y_start,x,y_end,1000);
     }
@@ -322,17 +354,102 @@ public class BasePage {
             wait.until(ExpectedConditions.visibilityOf(aDriver.findElement(By.xpath(elem))));
             return true;
         }catch(TimeoutException | NoSuchElementException e){
-            test.log(LogStatus.INFO,"Scroll Down");
+            test.log(LogStatus.INFO,"Scroll to element");
         }
 
-        for(int i=0;i<10;i++) {
-            if(direction.equalsIgnoreCase("down")){
+        if(direction.equalsIgnoreCase("down")){
+            for(int i=0;i<10;i++){
                 verticalScrollDown();
-            }else{
-                verticalScrollUp();
+                test.log(LogStatus.INFO,"Scroll DOWN");
+                try{
+                    wait.until(ExpectedConditions.visibilityOf(aDriver.findElement(By.xpath(elem))));
+                    return true;
+                }catch(TimeoutException | NoSuchElementException e){
+                    test.log(LogStatus.INFO,"Scroll");
+                }
             }
+        }else if(direction.equalsIgnoreCase("up")){
+            for(int i=0;i<10;i++){
+                verticalScrollUp();
+                test.log(LogStatus.INFO,"Scroll UP");
+                try{
+                    wait.until(ExpectedConditions.visibilityOf(aDriver.findElement(By.xpath(elem))));
+                    return true;
+                }catch(TimeoutException | NoSuchElementException e){
+                    test.log(LogStatus.INFO,"Scroll");
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean scrollToElement(String elem) {
+        WebDriverWait wait = new WebDriverWait(aDriver, 1);
+        try{
+            wait.until(ExpectedConditions.visibilityOf(aDriver.findElement(By.xpath(elem))));
+            return true;
+        }catch(TimeoutException | NoSuchElementException e){
+            test.log(LogStatus.INFO,"Scroll to element");
+        }
+        for(int i=0;i<10;i++){
+                verticalScrollDown();
+                test.log(LogStatus.INFO,"Scroll DOWN");
+                try{
+                    wait.until(ExpectedConditions.visibilityOf(aDriver.findElement(By.xpath(elem))));
+                    return true;
+                }catch(TimeoutException | NoSuchElementException e){
+                    test.log(LogStatus.INFO,"Scroll");
+                }
+        }
+        for(int j=0;j<10;j++){
+            verticalScrollUp();
+            test.log(LogStatus.INFO,"Scroll UP");
             try{
                 wait.until(ExpectedConditions.visibilityOf(aDriver.findElement(By.xpath(elem))));
+                return true;
+            }catch(TimeoutException | NoSuchElementException e){
+                test.log(LogStatus.INFO,"Scroll");
+            }
+        }
+        return false;
+    }
+
+    public boolean scrollDownToElement(String elem) {
+        WebDriverWait wait = new WebDriverWait(aDriver, 1);
+        try{
+            wait.until(ExpectedConditions.visibilityOf(aDriver.findElement(By.xpath(elem))));
+            return true;
+        }catch(TimeoutException | NoSuchElementException e){
+            test.log(LogStatus.INFO,"Scroll to element");
+        }
+        for(int i=0;i<10;i++){
+            verticalScrollDown();
+            test.log(LogStatus.INFO,"Scroll DOWN");
+            try{
+                wait.until(ExpectedConditions.visibilityOf(aDriver.findElement(By.xpath(elem))));
+                return true;
+            }catch(TimeoutException | NoSuchElementException e){
+                test.log(LogStatus.INFO,"Scroll");
+            }
+        }
+        return false;
+    }
+
+    public boolean scrollUpToElement(String elem) {
+        WebDriverWait wait = new WebDriverWait(aDriver, 1);
+        try{
+//            wait.until(ExpectedConditions.visibilityOf(aDriver.findElement(By.xpath(elem))));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(elem)));
+            return true;
+        }catch(TimeoutException | NoSuchElementException e){
+            test.log(LogStatus.INFO,"Scroll to element");
+        }
+        for(int j=0;j<10;j++){
+            verticalScrollUp();
+            test.log(LogStatus.INFO,"Scroll UP");
+            try{
+//                wait.until(ExpectedConditions.visibilityOf(aDriver.findElement(By.xpath(elem))));
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(elem)));
                 return true;
             }catch(TimeoutException | NoSuchElementException e){
                 test.log(LogStatus.INFO,"Scroll");

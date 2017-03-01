@@ -270,7 +270,6 @@ public interface NConstants {
 //
     String CATEGORIES_LABEL = "//*[@text='Categories']";
     String TODAYS_DEALS_LABEL = "//*[contains(@text,\"Today\")]";
-    String SEE_ALL = "//*[contains(@text,\"See all\")]";
     String ITEMS_YOU_VIEWD_LABEL = "//*[contains(@text,\"Items you viewed\")]";
     String RETURN_ITEMS = "//*[contains(@text,\"Return items\")]";
 
@@ -303,6 +302,15 @@ public interface NConstants {
     //
     String ADD_TO_CART = "//*[contains(@text,'Add to cart')]";
     String CART_ICON = "//*[contains(@resource-id,'com.noon:id/toolbar_menu_cart')]";
+    String FREQUENTLY_BOUGHT_TOGETHER = ".//*[contains(@text,'Frequently bought together')]";
+    String PRODUCT_DESCRIPTION = ".//*[contains(@text,'Description')]";
+    String PRODUCT_SPECIFICATIONS = ".//*[contains(@text,'Specifications')]";
+    String PRODUCT_RELATED_VIDEOS = ".//*[contains(@text,'Related videos')]";
+    String PRODUCT_RELATED_PRODUCTS = ".//*[contains(@text,'Related products')]";
+    String PRODUCT_SIZE_GUIDE = ".//*[contains(@text,'Size guide')]";
+    String BUY_NOW = ".//*[contains(@text,'Buy now')]";
+    String MORE_OFFERS = ".//*[contains(@text,'offers available')]";
+    String SEE_ALL = ".//*[contains(@text,'See all')]";
 
 
 
