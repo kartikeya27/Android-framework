@@ -11,7 +11,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
+import org.testng.annotations.*;
 
 import com.noon.mobileapp.util.ExtentManager;
 import com.noon.mobileapp.util.NConstants;
@@ -46,7 +46,7 @@ public class BaseTest {
 		caps.setCapability("platformVersion",NConstants.PLATFORM_VERSION);
 		caps.setCapability("platformName",NConstants.PLATFORM_NAME);
 		caps.setCapability(AndroidMobileCapabilityType.AVD_LAUNCH_TIMEOUT,500000);
-		caps.setCapability("fullReset","true");
+		caps.setCapability("fullReset","false");
         caps.setCapability("locationServicesAuthorized", true);
 
 		caps.setCapability("app", app.getAbsolutePath());
@@ -76,16 +76,7 @@ public class BaseTest {
 		//Thread.sleep(500);
 	}
 	
-	@AfterMethod
-	public void quit() {
-		if(rep != null) {
-			rep.endTest(test);
-			rep.flush();
-		}
-		if(driver != null) {
-			driver.quit();
-		}
-	}
+
 
     public void allowAppPermission(){
 
@@ -111,4 +102,76 @@ public class BaseTest {
 //        {  driver.findElement(By.xpath("//*[@class='android.widget.Button'][2]")).click();
 //        }
     }
+
+
+    public void quit() {
+        if(rep != null) {
+            rep.endTest(test);
+            rep.flush();
+        }
+        if(driver != null) {
+            driver.quit();
+        }
+    }
+
+	@BeforeMethod
+
+	public void beforeMethod() {
+
+		System.out.println("Started Method");
+
+	}
+
+	@AfterMethod
+	public void afterMethod() {
+        quit();
+		System.out.println("Finished Method");
+
+	}
+
+	@BeforeClass
+
+	public void beforeClass() {
+
+		System.out.println("Started Class");
+
+	}
+
+	@AfterClass
+
+	public void afterClass() {
+
+		System.out.println("Finished Class");
+
+	}
+
+	@BeforeTest
+
+	public void beforeTest() {
+		System.out.println("Started the Test");
+
+	}
+
+	@AfterTest
+
+	public void afterTest() {
+
+		System.out.println("Finished the Test");
+
+	}
+
+	@BeforeSuite
+
+	public void beforeSuite() {
+		System.out.println("Started the Test Suite");
+
+	}
+
+	@AfterSuite
+
+	public void afterSuite() {
+//        quit();
+		System.out.println("Finished the Test Suite");
+
+	}
 }
