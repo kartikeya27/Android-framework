@@ -319,6 +319,7 @@ public interface NConstants {
     String CART_TOTAL = "//android.widget.TextView[contains(@text,'AED')]";
     String ITEMS_IN_CART_INFO = "//android.widget.TextView[contains(@text,'in your cart')]";
     String PRODUCT_QUANTITY = "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.support.v7.widget.RecyclerView[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]";
+    String CART_EMPTY_LABEL = "//*[contains(@text,'Your cart is empty')]";
 
 
     //
