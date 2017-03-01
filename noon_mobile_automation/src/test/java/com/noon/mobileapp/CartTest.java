@@ -17,7 +17,7 @@ public class CartTest extends BaseTest {
 	@Test
 	public void cartTest() throws InterruptedException {
 		test = rep.startTest(testName);
-		test.log(LogStatus.INFO, "Starting the search item test");
+		test.log(LogStatus.INFO, "Starting the cart test");
 		launchApp();
 		allowAppPermission();
 
