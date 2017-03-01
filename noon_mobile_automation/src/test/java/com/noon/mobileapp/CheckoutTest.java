@@ -28,15 +28,19 @@ public class CheckoutTest extends BaseTest {
 		ProductPage productPage = new ProductPage(aDriver,test);
 		CheckoutPage checkoutPage = new CheckoutPage(aDriver,test);
 		CartPage cartPage = new CartPage(aDriver,test);
+        TopMenuPage topMenuPage = new TopMenuPage(aDriver,test);
 
 
-		PageFactory.initElements(new AppiumFieldDecorator(aDriver),searchPage);
+
+        PageFactory.initElements(new AppiumFieldDecorator(aDriver),searchPage);
 		PageFactory.initElements(new AppiumFieldDecorator(aDriver),signinPage);
 		PageFactory.initElements(new AppiumFieldDecorator(aDriver),checkoutPage);
 		PageFactory.initElements(new AppiumFieldDecorator(aDriver),cartPage);
         PageFactory.initElements(new AppiumFieldDecorator(aDriver),productPage);
+        PageFactory.initElements(new AppiumFieldDecorator(aDriver),topMenuPage);
 
-		String userName = "noontesting2+11@gmail.com";
+
+        String userName = "noontesting2+11@gmail.com";
 		String password = "1200@Villa";
 		String searchText = "The Girl With No Name";
 
@@ -48,6 +52,11 @@ public class CheckoutTest extends BaseTest {
 
         cartPage.checkout();
         checkoutPage.checkoutVerify();
+
+        topMenuPage.gotoHome();
+        topMenuPage.gotoCart();
+        cartPage.removeFromCart();
+        cartPage.verifyCartIsEmpty();
 
 		test.log(LogStatus.INFO, "Checkout test passed");
 	}

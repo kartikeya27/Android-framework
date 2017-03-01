@@ -41,11 +41,14 @@ public class CartPage extends BasePage {
    @FindBy(xpath = NConstants.SECURE_CHECKOUT)
     public AndroidElement secureCheckout;
 
+    @FindBy(xpath = NConstants.CART_EMPTY_LABEL)
+    public AndroidElement cartEmplyLabel;
+
 
 
 	public void removeProductFromCart(String productName){
 
-        WebDriverWait wait = new WebDriverWait(aDriver, 20);
+        WebDriverWait wait;
 
         scrollToElement(NConstants.ADD_TO_CART,"down");
         wait = new WebDriverWait(aDriver, 20);
@@ -59,10 +62,10 @@ public class CartPage extends BasePage {
     }
 
     public void increase(){
-        WebDriverWait wait = new WebDriverWait(aDriver, 20);
+        WebDriverWait wait;
 
         scrollToElement(NConstants.INCREASE_QUANTITY_IN_CART,"down");
-        wait = new WebDriverWait(aDriver, 20);
+        wait = new WebDriverWait(aDriver, 10);
         int initialQuantity = 0;
         int finalQuantity = 0;
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.PRODUCT_QUANTITY)));
@@ -81,7 +84,7 @@ public class CartPage extends BasePage {
         WebDriverWait wait = new WebDriverWait(aDriver, 20);
 
         scrollToElement(NConstants.INCREASE_QUANTITY_IN_CART,"down");
-        wait = new WebDriverWait(aDriver, 20);
+        wait = new WebDriverWait(aDriver, 10);
         int initialQuantity = 0;
         int finalQuantity = 0;
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.PRODUCT_QUANTITY)));
@@ -101,7 +104,7 @@ public class CartPage extends BasePage {
         WebDriverWait wait = new WebDriverWait(aDriver, 20);
 
         scrollToElement(NConstants.REMOVE_FROM_CART,"down");
-        wait = new WebDriverWait(aDriver, 20);
+        wait = new WebDriverWait(aDriver, 10);
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.REMOVE_FROM_CART)));
         removeProduct.click();
@@ -112,10 +115,20 @@ public class CartPage extends BasePage {
         WebDriverWait wait = new WebDriverWait(aDriver, 20);
 
         scrollToElement(NConstants.SECURE_CHECKOUT,"down");
-        wait = new WebDriverWait(aDriver, 20);
+        wait = new WebDriverWait(aDriver, 10);
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SECURE_CHECKOUT)));
         secureCheckout.click();
+
+    }
+
+    public void verifyCartIsEmpty(){
+        WebDriverWait wait = new WebDriverWait(aDriver, 20);
+
+//        scrollToElement(NConstants.SECURE_CHECKOUT,"down");
+        wait = new WebDriverWait(aDriver, 10);
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CART_EMPTY_LABEL)));
 
     }
 
