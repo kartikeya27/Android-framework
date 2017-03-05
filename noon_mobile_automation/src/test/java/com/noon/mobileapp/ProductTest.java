@@ -35,7 +35,7 @@ public class ProductTest extends BaseTest {
 
         String userName = "noontesting2+11@gmail.com";
 		String password = "1200@Villa";
-		String searchText = "The Girl With No Name";
+		String searchText = "New One Minute Manager";
 
         signinPage.signinWithEmail(userName,password);
         searchPage.search(searchText);
