@@ -243,10 +243,10 @@ public interface NConstants {
 
 //	MyAccount page elements
     String MY_ACCOUNT="//*[contains(@text,'My Account')]";
-    String MY_ORDERS="//*[@text='My Orders']";
-    String RETURN_EXCHANGE="//*[@text='Returns & exchange']";
-    String ADDRESS_BOOK="//android.widget.TextView[@text='Address book']";
-    String WALLET="//android.widget.TextView[@text='Wallet']";
+    String MY_ORDERS="//*[@text='All Orders']";
+    String RETURN_EXCHANGE="//*[@text='Returns & exchanges']";
+    String ADDRESS_BOOK="//android.widget.TextView[@text='Address Book']";
+    String WALLET="//android.widget.TextView[@text='My Wallet']";
     String MY_PROFILE="//*[@text='My Profile']";
     String MY_PROFILE_USER_IMAGE="//android.widget.ImageView[@index='0']";
     String MY_PROFILE_USER_NAME="//android.widget.TextView[@index='0']";
@@ -256,13 +256,14 @@ public interface NConstants {
     String MY_PROFILE_USER_SIGNOUT="//*[@text='Logout']";
 
 //    Side Menu elements
-    String MY_ORDERS_MENU="//*[@text='My orders']";
+    String MY_ORDERS_MENU="//*[@text='My Orders']";
     String MENU_HOME = "//android.widget.CheckedTextView[@text='Home']";
-    String SHOP_BY_CATEGORY = "//android.widget.CheckedTextView[@text='Shop by category']";
-    String TODAYS_DEALS = "//android.widget.CheckedTextView[contains(@text,'deals')]";
+    String MENU_RETURN_EXCHANGE="//*[@text='Returns & exchange']";
+    String SHOP_BY_CATEGORY = "//android.widget.CheckedTextView[@text='Shop by Category']";
+    String TODAYS_DEALS = "//android.widget.CheckedTextView[contains(@text,'Deals')]";
     String INVITE_FRIENDS = "//*[contains(@text,'Invite your friends')]";
-    String CUSTOMER_SERVICE = "//*[contains(@text,'Customer service')]";
-    String CHAT = "//*[contains(@text,'Chat with us')]";
+    String CUSTOMER_SERVICE = "//*[contains(@text,'Customer Service')]";
+    String CHAT = "//*[contains(@text,'Chat With us')]";
     String ABOUT = "//*[contains(@text,'About noon')]";
 
     String TOOLBAR_LOGO = "//*[@resource-id='com.noon:id/toolbar_logo']";
@@ -272,10 +273,11 @@ public interface NConstants {
     String TODAYS_DEALS_LABEL = "//*[contains(@text,\"Today\")]";
     String ITEMS_YOU_VIEWD_LABEL = "//*[contains(@text,\"Items you viewed\")]";
     String RETURN_ITEMS = "//*[contains(@text,\"Return items\")]";
+    String RETURN_HISTORY = "//*[contains(@text,\"Return history\")]";
 
 //    Address Page
     String ADD_FIRST_ADDRESS = "//*[contains(@text,\"Add address\")]";
-    String ADD_ANOTHER_ADDRESS = "//*[contains(@text,\"Add another address\")]";
+    String ADD_ANOTHER_ADDRESS = "//*[contains(@text,\"Add new address\")]";
     String MAP_DONE = "//*[contains(@text,\"Done\")]";
     String MAP_CANCEL = "//*[contains(@text,\"Cancel\")]";
     String LOCATE_SEARCHING_PROGRESS = "//*[contains(@resource-id,\"com.noon:id/checkout_add_address_searching\")]";
@@ -285,7 +287,7 @@ public interface NConstants {
     String ADDRESS_COUNTRY = "//TextInputLayout[contains(@text,\"Country\")]/android.widget.FrameLayout/android.widget.EditText";
     String ADDRESS_CITY = "//TextInputLayout[contains(@text,\"City\")]/android.widget.FrameLayout/android.widget.EditText";
     String ADDRESS_BUILDING = "//TextInputLayout[contains(@text,\"Building\")]/android.widget.FrameLayout/android.widget.EditText";
-    String ADDRESS_FLAT_NO = "//TextInputLayout[contains(@text,\"Flat Number\")]/android.widget.FrameLayout/android.widget.EditText";
+    String ADDRESS_FLAT_NO = "//TextInputLayout[contains(@text,\"Flat number\")]/android.widget.FrameLayout/android.widget.EditText";
     String ADDRESS_FLOOR_NO = "//TextInputLayout[contains(@text,\"Floor Number\")]/android.widget.FrameLayout/android.widget.EditText";
     String ADDRESS_AREA = "//TextInputLayout[contains(@text,\"Area\")]/android.widget.FrameLayout/android.widget.EditText";
     String ADDRESS_STREEET = "//TextInputLayout[contains(@text,\"Street\")]/android.widget.FrameLayout/android.widget.EditText";
@@ -293,7 +295,7 @@ public interface NConstants {
     String ADDRESS_BUSINESS_CHECKBOX = "//android.widget.CheckBox[contains(@text,\"business address\")]";
     String ADDRESS_DEFAULT_CHECKBOX = "//android.widget.CheckBox[contains(@text,\"default address\")]";
     String ADDRESS_NAME = "//TextInputLayout[contains(@text,\"Name\")]/android.widget.FrameLayout/android.widget.EditText";
-    String ADDRESS_PHONE = "//TextInputLayout[contains(@text,\"Phone\")]/android.widget.FrameLayout/android.widget.EditText";
+    String ADDRESS_PHONE = "//TextInputLayout[contains(@text,\"Mobile\")]/android.widget.FrameLayout/android.widget.EditText";
     String ADDRESS_SAVE = "//android.widget.Button[contains(@text,\"Save address\")]";
 
 	

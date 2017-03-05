@@ -41,7 +41,7 @@ public class SideMenuPage extends BasePage {
     @FindBy(xpath=NConstants.MY_ORDERS)
     public AndroidElement myOrders;
 
-    @FindBy(xpath=NConstants.RETURN_EXCHANGE)
+    @FindBy(xpath=NConstants.MENU_RETURN_EXCHANGE)
     public AndroidElement returnExchange;
 
     @FindBy(xpath=NConstants.INVITE_FRIENDS)
@@ -138,80 +138,41 @@ public class SideMenuPage extends BasePage {
 
     
 	public void menuTest(String userName, String userPassword) throws InterruptedException {
-		
+
 		test.log(LogStatus.INFO, "Launch Android Application - ");
-		WebDriverWait wait = new WebDriverWait(aDriver, 20);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.NAVIGATION_MENU_IMAGE)));
-		test.log(LogStatus.INFO, "Selecting home button from navigation menu");
-		navigationMenuImage.click();
-		
-		Assert.assertTrue(isElementPresent(NConstants.SIGN_IN_LINK), "Could not find sign in link");
-		signinLink.click();
-		
-		wait = new WebDriverWait(aDriver, 20);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SIGN_IN_TAB)));
-		Assert.assertTrue(isElementPresent(NConstants.SIGN_IN_TAB), "Could not find sign in tab");
-		signinTab.click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.EMAIL_LINK)));
-		emailLink.click();
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SIGNIN_EMAIL)));
-		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_EMAIL), "Could not find email address field");
-		signinEmail.sendKeys(userName);
-		aDriver.hideKeyboard();
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SIGNIN_PASSWORD)));
-		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_PASSWORD), "Could not find password field");
-		signinPassword.sendKeys(userPassword);
-		aDriver.hideKeyboard();
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SIGNIN_BUTTON)));
-		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_BUTTON), "Could not find Sign in button");
-		signinButton.click();
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MENU_HOME)));
-        Assert.assertTrue(isElementPresent(NConstants.MENU_HOME), "Could not find Home button");
-        navigationMenuHome.click();
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.NAVIGATION_MENU_IMAGE)));
-        Assert.assertTrue(isElementPresent(NConstants.NAVIGATION_MENU_IMAGE), "Could not find Nav Image Menu button");
-        navigationMenuImage.click();
+		WebDriverWait wait = new WebDriverWait(aDriver, 10);
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SHOP_BY_CATEGORY)));
         Assert.assertTrue(isElementPresent(NConstants.SHOP_BY_CATEGORY), "Could not find Shop by Catehory button");
-//        shopByCategory.click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.TODAYS_DEALS)));
         Assert.assertTrue(isElementPresent(NConstants.TODAYS_DEALS), "Could not find Today's Deals button");
-//        todaysDeals.click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_ORDERS_MENU)));
         Assert.assertTrue(isElementPresent(NConstants.MY_ORDERS_MENU), "Could not find My Orders button");
-//        myOrdersMenu.click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_ACCOUNT)));
         Assert.assertTrue(isElementPresent(NConstants.MY_ACCOUNT), "Could not find My Account button");
-//        myAccount.click();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.RETURN_EXCHANGE)));
-        Assert.assertTrue(isElementPresent(NConstants.RETURN_EXCHANGE), "Could not find Retutns button");
-//        returnExchange.click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MENU_RETURN_EXCHANGE)));
+        Assert.assertTrue(isElementPresent(NConstants.MENU_RETURN_EXCHANGE), "Could not find Retutns button");
 
        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.INVITE_FRIENDS)));
        Assert.assertTrue(isElementPresent(NConstants.INVITE_FRIENDS), "Could not find Invite Friends button");
-//        inviteFriends.click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CUSTOMER_SERVICE)));
         Assert.assertTrue(isElementPresent(NConstants.CUSTOMER_SERVICE), "Could not find Customer Service button");
-//        customerService.click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CHAT)));
         Assert.assertTrue(isElementPresent(NConstants.CHAT), "Could not find Chat in button");
-//        chat.click();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ABOUT)));
-        Assert.assertTrue(isElementPresent(NConstants.ABOUT), "Could not find About button");
-//        about.click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.TOOLBAR_LOGO)));
+        toolbarLogo.click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.TOOLBAR_LOGO)));
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.NAVIGATION_MENU_IMAGE)));
+        Assert.assertTrue(isElementPresent(NConstants.NAVIGATION_MENU_IMAGE), "Could not find side menu home button");
+        navigationMenuImage.click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SHOP_BY_CATEGORY)));
         shopByCategory.click();
@@ -220,6 +181,9 @@ public class SideMenuPage extends BasePage {
         toolbarLogo.click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.TOOLBAR_LOGO)));
 
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.NAVIGATION_MENU_IMAGE)));
+        Assert.assertTrue(isElementPresent(NConstants.NAVIGATION_MENU_IMAGE), "Could not find side menu home button");
+        navigationMenuImage.click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.TODAYS_DEALS)));
         Assert.assertTrue(isElementPresent(NConstants.TODAYS_DEALS), "Could not find Today's Deals button");
@@ -229,57 +193,71 @@ public class SideMenuPage extends BasePage {
         toolbarLogo.click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.TOOLBAR_LOGO)));
 
-
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.NAVIGATION_MENU_IMAGE)));
+        Assert.assertTrue(isElementPresent(NConstants.NAVIGATION_MENU_IMAGE), "Could not find side menu home button");
+        navigationMenuImage.click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_ORDERS_MENU)));
-        Assert.assertTrue(isElementPresent(NConstants.MY_ORDERS), "Could not find My Orders button");
+        Assert.assertTrue(isElementPresent(NConstants.MY_ORDERS_MENU), "Could not find My Orders button");
         myOrdersMenu.click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.TOOLBAR_LOGO)));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_ORDERS)));
         toolbarLogo.click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.TOOLBAR_LOGO)));
 
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.NAVIGATION_MENU_IMAGE)));
+        Assert.assertTrue(isElementPresent(NConstants.NAVIGATION_MENU_IMAGE), "Could not find side menu home button");
+        navigationMenuImage.click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_ACCOUNT)));
-        Assert.assertTrue(isElementPresent(NConstants.MY_ACCOUNT), "Could not find Sign in button");
+        Assert.assertTrue(isElementPresent(NConstants.MY_ACCOUNT), "Could not find My Account button");
         myAccount.click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.TOOLBAR_LOGO)));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_ORDERS)));
         toolbarLogo.click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.TOOLBAR_LOGO)));
 
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.NAVIGATION_MENU_IMAGE)));
+        Assert.assertTrue(isElementPresent(NConstants.NAVIGATION_MENU_IMAGE), "Could not find side menu home button");
+        navigationMenuImage.click();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.RETURN_EXCHANGE)));
-        Assert.assertTrue(isElementPresent(NConstants.RETURN_EXCHANGE), "Could not find Sign in button");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MENU_RETURN_EXCHANGE)));
+        Assert.assertTrue(isElementPresent(NConstants.MENU_RETURN_EXCHANGE), "Could not find Returns button");
         returnExchange.click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.TOOLBAR_LOGO)));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.RETURN_ITEMS)));
         toolbarLogo.click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.TOOLBAR_LOGO)));
 
-                                /*
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.INVITE_FRIENDS)));
-        Assert.assertTrue(isElementPresent(NConstants.INVITE_FRIENDS), "Could not find Sign in button");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.NAVIGATION_MENU_IMAGE)));
+        Assert.assertTrue(isElementPresent(NConstants.NAVIGATION_MENU_IMAGE), "Could not find side menu home button");
+        navigationMenuImage.click();
+
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.INVITE_FRIENDS)));
+//        Assert.assertTrue(isElementPresent(NConstants.INVITE_FRIENDS), "Could not find Sign in button");
 //        inviteFriends.click();
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CUSTOMER_SERVICE)));
-        Assert.assertTrue(isElementPresent(NConstants.CUSTOMER_SERVICE), "Could not find Sign in button");
+//
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CUSTOMER_SERVICE)));
+//        Assert.assertTrue(isElementPresent(NConstants.CUSTOMER_SERVICE), "Could not find Sign in button");
 //        customerService.click();
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CHAT)));
-        Assert.assertTrue(isElementPresent(NConstants.CHAT), "Could not find Sign in button");
+//
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CHAT)));
+//        Assert.assertTrue(isElementPresent(NConstants.CHAT), "Could not find Sign in button");
 //        chat.click();
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ABOUT)));
-        Assert.assertTrue(isElementPresent(NConstants.ABOUT), "Could not find Sign in button");
+//
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ABOUT)));
+//        Assert.assertTrue(isElementPresent(NConstants.ABOUT), "Could not find Sign in button");
 //        about.click();
 
-*/
 
 
+    }
 
-
-
+    public void goToMenuPage(){
+        WebDriverWait wait = new WebDriverWait(aDriver, 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.NAVIGATION_MENU_IMAGE)));
+        Assert.assertTrue(isElementPresent(NConstants.NAVIGATION_MENU_IMAGE), "Could not find side menu home button");
+        navigationMenuImage.click();
     }
 
 	

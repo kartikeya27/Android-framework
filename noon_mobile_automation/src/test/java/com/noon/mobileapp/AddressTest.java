@@ -2,6 +2,7 @@ package com.noon.mobileapp;
 
 import com.noon.mobileapp.base.BaseTest;
 import com.noon.mobileapp.pages.AddressPage;
+import com.noon.mobileapp.pages.SideMenuPage;
 import com.noon.mobileapp.pages.SigninPage;
 import com.relevantcodes.extentreports.LogStatus;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -14,7 +15,7 @@ String testName="AddressTest";
 	
 
 	@Test
-	public void AddressTest() throws InterruptedException {
+	public void addressTest() throws InterruptedException {
 		test = rep.startTest(testName);
 		test.log(LogStatus.INFO, "Starting the Address in test");
 
@@ -26,14 +27,14 @@ String testName="AddressTest";
 		PageFactory.initElements(new AppiumFieldDecorator(aDriver),signinPage);
 		AddressPage addressPage = new AddressPage(aDriver,test);
 		PageFactory.initElements(new AppiumFieldDecorator(aDriver),addressPage);
-
-//		String userName = "noontesting2+11@gmail.com";
-//		String password = "1200@Villa";
+		SideMenuPage sideMenuPage = new SideMenuPage(aDriver,test);
+		PageFactory.initElements(new AppiumFieldDecorator(aDriver),sideMenuPage);
 
  		String userName = "testnoon10@gmail.com";
 		String password = "Test1234";
 		
 		signinPage.signinWithEmail(userName,password);
+		sideMenuPage.goToMenuPage();
 		addressPage.goToAddressBook();
 		addressPage.addAnotherAddress();
 //		addressPage.addFirstAddress();

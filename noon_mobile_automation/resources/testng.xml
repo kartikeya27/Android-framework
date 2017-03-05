@@ -1,25 +1,34 @@
 <suite name="Noon App Automation for Android" >
-	
-	
-	<test name="Find Electronic Page Test" allow-return-values="true">
+
+	<test name="Product Details Test" allow-return-values="true">
 		<classes>
-			<class name="com.noon.mobileapp.FindElectronicPageTest" />
+			<class name="com.noon.mobileapp.ProductTest" />
+		</classes>
+	</test>
+
+	<!--<test name="Address Test" allow-return-values="true">-->
+		<!--<classes>-->
+			<!--<class name="com.noon.mobileapp.AddressTest" />-->
+		<!--</classes>-->
+	<!--</test>-->
+
+    <test name="Menu Test" allow-return-values="true">
+        <classes>
+            <class name="com.noon.mobileapp.SideBarMenuTest" />
+        </classes>
+    </test>
+
+	<test name="Cart Test" allow-return-values="true">
+		<classes>
+			<class name="com.noon.mobileapp.CartTest" />
 		</classes>
 	</test>
 	
-	<test name="Side Bar menu Test" allow-return-values="true">
+	<test name="Checkout Test" allow-return-values="true">
 		<classes>
-			<class name="com.noon.mobileapp.ApplyFilterTest" />
+			<class name="com.noon.mobileapp.CheckoutTest" />
 		</classes>
 	</test>
-	
-	<test name="Apply Filter Test" allow-return-values="true">
-		<classes>
-			<class name="com.noon.mobileapp.SideBarMenuTest" />
-		</classes>
-	</test>
-	
-	
-	
+
 </suite>
 
