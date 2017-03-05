@@ -272,15 +272,17 @@ public class SearchPage extends BasePage {
         searchBarContainer.sendKeys(searchItem);
         aDriver.hideKeyboard();
 
-        Assert.assertTrue(isElementPresent(NConstants.LIST_ITEM_LABEL), "Could not select search product label"+NConstants.LIST_ITEM_LABEL);
+        String label = String.format(NConstants.LIST_ITEM_LABEL,searchItem);
+        Assert.assertTrue(isElementPresent(label), "Could not select search product label: "+label);
         aDriver.pressKeyCode(66); // This is virtual keyboard enter key value
         itemProductTitle.click();
 
         wait = new WebDriverWait(aDriver, 100);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ITEM_IMAGE)));
-        Assert.assertTrue(isElementPresent(NConstants.ITEM_IMAGE), "Could not load product image"+NConstants.ITEM_IMAGE);
-        Assert.assertTrue(isElementPresent(NConstants.PRODUCT_BASIC_INFO), "Could not load product basic info"+NConstants.PRODUCT_BASIC_INFO);
-        Assert.assertTrue(isElementPresent(NConstants.PRODUCT_PRICE), "Could not load product price"+NConstants.PRODUCT_PRICE);
+        Assert.assertTrue(isElementPresent(NConstants.ITEM_IMAGE), "Could not load product image: "+NConstants.ITEM_IMAGE);
+        String basicInfo = String.format(NConstants.PRODUCT_BASIC_INFO,searchItem);
+        Assert.assertTrue(isElementPresent(basicInfo), "Could not load product basic info: "+basicInfo);
+        Assert.assertTrue(isElementPresent(NConstants.PRODUCT_PRICE), "Could not load product price: "+NConstants.PRODUCT_PRICE);
 //        navigationMenuImage.click();
 
     }

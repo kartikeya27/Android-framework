@@ -141,11 +141,11 @@ public interface NConstants {
 	String SEARCH_TEXT_VIEW="//android.widget.TextView[contains(@resource-id,'com.noon:id/search_text_view')]";
 	String SEARCH_IMAGEVIEW="//android.widget.ImageView[@index='1']";
 	String SEARCH_BAR_CONTAINER="//android.widget.EditText[contains(@resource-id,'com.noon:id/search_edit_text_view')]";
-	String LIST_ITEM_LABEL="//android.widget.TextView[@text='The Girl With No Name']";
+	String LIST_ITEM_LABEL="//android.widget.TextView[@text=\"%s\"]";
 	String PRODUCT_RESULT="//android.widget.TextView[contains(@resource-id,'com.noon:id/search_results_count')]";
 	String ITEM_IMAGE="//android.view.View[@NAF='true']";
-	String PRODUCT_BASIC_INFO="//android.widget.TextView[@text='The Girl With No Name']";
-	String PRODUCT_PRICE="//android.widget.TextView[@text='AED 35.8']";
+	String PRODUCT_BASIC_INFO="//android.widget.TextView[@text=\"%s\"]";
+	String PRODUCT_PRICE="//android.widget.TextView[contains(@text,'AED')]";
 	String ITEM_PICKER_THUMB="//android.widget.ImageView[contains(@resource-id,'com.noon:id/item_picker_thumb')]";
 	String PICKABLE_ITEM_TITLE="//android.widget.TextView[contains(@resource-id,'com.noon:id/pickable_items_title')]";
 	String ROW_INFO_IMAGE="//android.widget.ImageView[contains(@resource-id,'com.noon:id/multiple_row_info_image')]";

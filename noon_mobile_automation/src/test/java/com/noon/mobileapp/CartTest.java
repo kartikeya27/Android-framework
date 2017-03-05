@@ -31,7 +31,7 @@ public class CartTest extends BaseTest {
 		PageFactory.initElements(new AppiumFieldDecorator(aDriver),signinPage);
         PageFactory.initElements(new AppiumFieldDecorator(aDriver),cartPage);
 
-		String searchText = "The Girl With No Name";
+		String searchText = "New One Minute Manager";
         String userName = "noontesting2+11@gmail.com";
         String password = "1200@Villa";
 

@@ -29,7 +29,7 @@ public class SearchTest extends BaseTest {
         PageFactory.initElements(new AppiumFieldDecorator(aDriver),productPage);
 		PageFactory.initElements(new AppiumFieldDecorator(aDriver),searchPage);
 		PageFactory.initElements(new AppiumFieldDecorator(aDriver),signinPage);
-		String searchText = "The Girl With No Name";
+		String searchText = "New One Minute Manager";
         String userName = "noontesting2+11@gmail.com";
         String password = "1200@Villa";
 
