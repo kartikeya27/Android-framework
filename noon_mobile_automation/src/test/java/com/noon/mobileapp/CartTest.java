@@ -43,6 +43,7 @@ public class CartTest extends BaseTest {
         cartPage.increase();
         cartPage.decrease();
         cartPage.removeFromCart();
+		cartPage.verifyCartIsEmpty();
 		test.log(LogStatus.INFO, "Cart test passed");
 
 	}

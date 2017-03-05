@@ -163,9 +163,9 @@ public class AddressPage extends BasePage {
         Assert.assertTrue(isElementPresent(NConstants.LOCATE_SEARCHING_PROGRESS), "Could not find Map Locating");
         locateSearchiingInProgress.click();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.LOCATE_MY_LOCATION)));
-        Assert.assertTrue(isElementPresent(NConstants.LOCATE_MY_LOCATION), "Could not find locate me icon");
-        locateMe.click();
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.LOCATE_MY_LOCATION)));
+//        Assert.assertTrue(isElementPresent(NConstants.LOCATE_MY_LOCATION), "Could not find locate me icon");
+//        locateMe.click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MAP_DONE)));
         Assert.assertTrue(isElementPresent(NConstants.MAP_DONE), "Could not find Map Locating");
