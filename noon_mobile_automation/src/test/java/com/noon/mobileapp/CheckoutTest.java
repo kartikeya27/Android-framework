@@ -5,11 +5,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
 import com.noon.mobileapp.base.BaseTest;
-import com.noon.mobileapp.util.NConstants;
 import com.relevantcodes.extentreports.LogStatus;
 
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import sun.launcher.resources.launcher_zh_CN;
+
 
 public class CheckoutTest extends BaseTest {
 	
@@ -37,8 +36,8 @@ public class CheckoutTest extends BaseTest {
         PageFactory.initElements(new AppiumFieldDecorator(aDriver),productPage);
         PageFactory.initElements(new AppiumFieldDecorator(aDriver),topMenuPage);
 
-        String userName = "noontesting2+11@gmail.com";
-		String password = "1200@Villa";
+		String userName = "testnoon10@gmail.com";
+		String password = "Test1234";
 		String searchText = "New One Minute Manager";
 
         signinPage.signinWithEmail(userName,password);

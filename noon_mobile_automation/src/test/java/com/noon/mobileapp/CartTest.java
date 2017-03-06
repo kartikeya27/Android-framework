@@ -32,8 +32,8 @@ public class CartTest extends BaseTest {
         PageFactory.initElements(new AppiumFieldDecorator(aDriver),cartPage);
 
 		String searchText = "New One Minute Manager";
-        String userName = "noontesting2+11@gmail.com";
-        String password = "1200@Villa";
+		String userName = "testnoon10@gmail.com";
+		String password = "Test1234";
 
         signinPage.signinWithEmail(userName,password);
 		searchPage.search(searchText);

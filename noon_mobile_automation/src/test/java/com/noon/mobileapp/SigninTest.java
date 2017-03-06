@@ -30,8 +30,8 @@ String testName="SigninTest";
 		
 		//String userName = data.get("userName");
 		//String password = data.get("userPassword");
-		String userName = "noontesting2+11@gmail.com";
-		String password = "1200@Villa";
+		String userName = "testnoon10@gmail.com";
+		String password = "Test1234";
 		
 		signinPage.signinWithEmail(userName,password);
 		signinPage.logout();

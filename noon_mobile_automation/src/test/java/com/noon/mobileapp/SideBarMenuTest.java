@@ -28,8 +28,8 @@ public class SideBarMenuTest extends BaseTest {
         PageFactory.initElements(new AppiumFieldDecorator(aDriver),menuPage);
         PageFactory.initElements(new AppiumFieldDecorator(aDriver),signinPage);
 
-        String userName = "noontesting2+11@gmail.com";
-        String password = "1200@Villa";
+        String userName = "testnoon10@gmail.com";
+        String password = "Test1234";
 
         signinPage.signinWithEmail(userName,password);
         menuPage.goToMenuPage();

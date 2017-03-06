@@ -23,12 +23,19 @@
 			<class name="com.noon.mobileapp.CartTest" />
 		</classes>
 	</test>
-	
+
 	<test name="Checkout Test" allow-return-values="true">
 		<classes>
 			<class name="com.noon.mobileapp.CheckoutTest" />
 		</classes>
 	</test>
+
+	<test name="Signin Test" allow-return-values="true">
+		<classes>
+			<class name="com.noon.mobileapp.SigninTest" />
+		</classes>
+	</test>
+
 
 </suite>
 
