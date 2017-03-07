@@ -85,8 +85,8 @@ public class ProductPage extends BasePage {
         scrollToElement(NConstants.ADD_TO_CART,"down");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ADD_TO_CART)));
 
-        scrollToElement(NConstants.MORE_OFFERS,"down");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MORE_OFFERS)));
+//        scrollToElement(NConstants.MORE_OFFERS,"down");
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MORE_OFFERS)));
 
         scrollToElement(NConstants.PRODUCT_DESCRIPTION,"down");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.PRODUCT_DESCRIPTION)));
