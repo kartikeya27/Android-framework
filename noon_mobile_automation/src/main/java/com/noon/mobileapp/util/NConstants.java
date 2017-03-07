@@ -308,7 +308,8 @@ public interface NConstants {
     String PRODUCT_DESCRIPTION = ".//*[contains(@text,'Description')]";
     String PRODUCT_SPECIFICATIONS = ".//*[contains(@text,'Specifications')]";
     String PRODUCT_RELATED_VIDEOS = ".//*[contains(@text,'Related videos')]";
-    String PRODUCT_RELATED_PRODUCTS = ".//*[contains(@text,'Related products')]";
+//    String PRODUCT_RELATED_PRODUCTS = ".//*[contains(@text,'Related products')]";
+	String RECOMMENDED_PRODUCTS = ".//*[contains(@text,'Recommended products')]";
     String PRODUCT_SIZE_GUIDE = ".//*[contains(@text,'Size guide')]";
     String BUY_NOW = ".//*[contains(@text,'Buy now')]";
     String MORE_OFFERS = ".//*[contains(@text,'offers available')]";

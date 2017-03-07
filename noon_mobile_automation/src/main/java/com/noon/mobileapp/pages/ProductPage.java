@@ -42,8 +42,8 @@ public class ProductPage extends BasePage {
 	@FindBy(xpath = NConstants.PRODUCT_RELATED_VIDEOS)
 	public AndroidElement videos;
 
-	@FindBy(xpath = NConstants.PRODUCT_RELATED_PRODUCTS)
-	public AndroidElement relatedProducts;
+	@FindBy(xpath = NConstants.RECOMMENDED_PRODUCTS)
+	public AndroidElement recommendedProducts;
 
 	@FindBy(xpath = NConstants.PRODUCT_SIZE_GUIDE)
 	public AndroidElement sizeGuide;
@@ -100,8 +100,8 @@ public class ProductPage extends BasePage {
         scrollToElement(NConstants.PRODUCT_RELATED_VIDEOS,"down");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.PRODUCT_RELATED_VIDEOS)));
 
-       scrollToElement(NConstants.PRODUCT_RELATED_PRODUCTS,"down");
-       wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.PRODUCT_RELATED_PRODUCTS)));
+       scrollToElement(NConstants.RECOMMENDED_PRODUCTS,"down");
+       wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.RECOMMENDED_PRODUCTS)));
 
        scrollToElement(NConstants.SEE_ALL,"down");
        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SEE_ALL)));
