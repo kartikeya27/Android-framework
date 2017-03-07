@@ -1,4 +1,4 @@
-# noonmobileautomation
+# qa-automation-android
 To run this project first, we have to do git clone https://github.com/fastfishio/noonmobileautomation.
 Then inside your test automation folder run above git command.
 Inside project folder we can see pom.xml.
