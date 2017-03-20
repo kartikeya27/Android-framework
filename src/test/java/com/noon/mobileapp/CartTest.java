@@ -9,10 +9,12 @@ import com.relevantcodes.extentreports.LogStatus;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
+import dtos.catalog.Page;
+import services.ProductService;
 
 public class CartTest extends BaseTest {
 	
-	String testName="SearchTest";
+	String testName="CartTest";
 	
 	@Test
 	public void cartTest() throws InterruptedException {
@@ -31,7 +33,10 @@ public class CartTest extends BaseTest {
 		PageFactory.initElements(new AppiumFieldDecorator(aDriver),signinPage);
         PageFactory.initElements(new AppiumFieldDecorator(aDriver),cartPage);
 
-		String searchText = "New One Minute Manager";
+        ProductService productService = new ProductService();
+        Page page = productService.getProduct("Cake");
+
+		String searchText = page.getName();
 		String userName = "testnoon10@gmail.com";
 		String password = "Test1234";
 

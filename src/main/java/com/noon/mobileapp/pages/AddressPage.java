@@ -13,6 +13,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import com.noon.mobileapp.util.Utils.*;
+
+import static com.noon.mobileapp.util.Utils.getDateTime;
 
 public class AddressPage extends BasePage {
 
@@ -91,6 +94,9 @@ public class AddressPage extends BasePage {
     @FindBy(xpath=NConstants.ADDRESS_SAVE)
     public AndroidElement addressSave;
 
+   @FindBy(xpath=NConstants.MY_PROFILE)
+    public AndroidElement myProfile;
+
 
 	public void addAddress(String userName, String userPassword) throws InterruptedException {
 
@@ -110,17 +116,11 @@ public class AddressPage extends BasePage {
 		Assert.assertTrue(isElementPresent(NConstants.MY_ACCOUNT), "Could not find My Account in button");
 		myAccount.click();
 
-		for(int i=0;i<8;i++) {
-			Dimension size = aDriver.manage().window().getSize();
-			int startx = (int) (size.width * 0.70);
-			int endx = (int) (size.width * 0.30);
-			int starty = size.height / 2;
-			aDriver.swipe(startx, starty, endx, starty, 2000);
-		}
+        super.swipeToElement(NConstants.MY_PROFILE);
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ADDRESS_BOOK)));
-		Assert.assertTrue(isElementPresent(NConstants.ADDRESS_BOOK), "Could not find Address Book");
-		addressBook.click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_PROFILE)));
+        Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE), "Could not find my profile text");
+        myProfile.click();
 
 	}
 
@@ -168,6 +168,7 @@ public class AddressPage extends BasePage {
 //        locateMe.click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MAP_DONE)));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(NConstants.MAP_DONE)));
         Assert.assertTrue(isElementPresent(NConstants.MAP_DONE), "Could not find Map Locating");
         mapDone.click();
 
@@ -179,27 +180,44 @@ public class AddressPage extends BasePage {
 
         scrollToElement(NConstants.ADDRESS_BUILDING, DOWN);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ADDRESS_BUILDING)));
-        addressBuilding.sendKeys(building);
+        String buildingName = building + getDateTime();
+        addressBuilding.sendKeys(buildingName);
+//        addressBuilding.replaceValue(buildingName);
+        try {
+            aDriver.hideKeyboard();
+            } catch (Exception e) {
+        }
+
 
         scrollToElement(NConstants.ADDRESS_FLAT_NO, DOWN);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ADDRESS_FLAT_NO)));
         addressFlat.sendKeys(flatNo);
+//        aDriver.hideKeyboard();
 
-        scrollToElement(NConstants.ADDRESS_FLOOR_NO, DOWN);
+//        scrollToElement(NConstants.ADDRESS_FLOOR_NO, DOWN);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ADDRESS_FLOOR_NO)));
         addressFloor.sendKeys(floorNo);
+//        aDriver.hideKeyboard();
 
-        scrollToElement(NConstants.ADDRESS_STREEET, DOWN);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ADDRESS_STREEET)));
-        addressStreet.sendKeys(street);
+//        scrollToElement(NConstants.ADDRESS_STREEET, DOWN);
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ADDRESS_STREEET)));
+//        addressStreet.sendKeys(street);
+//        aDriver.hideKeyboard();
 
         scrollToElement(NConstants.ADDRESS_PHONE, DOWN);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ADDRESS_PHONE)));
         addressPhone.sendKeys(phone);
+//        aDriver.hideKeyboard();
 
         scrollToElement(NConstants.ADDRESS_SAVE, DOWN);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ADDRESS_SAVE)));
         addressSave.click();
+        try {
+            aDriver.hideKeyboard();
+        } catch (Exception e) {
+        }
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_PROFILE)));
 
     }
 

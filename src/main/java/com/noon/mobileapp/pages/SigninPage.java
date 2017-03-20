@@ -103,6 +103,11 @@ public class SigninPage extends BasePage {
     @FindBy(xpath=NConstants.SIGN_IN_MAIN)
     public AndroidElement signinMain;
 
+       @FindBy(xpath=NConstants.HELLO_LABEL)
+    public AndroidElement helloLabelSideMenu;
+
+
+
 	public void signinWithEmail(String userName, String userPassword) throws InterruptedException {
 		
 		test.log(LogStatus.INFO, "Launch Android Application - ");
@@ -114,38 +119,24 @@ public class SigninPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SIGN_IN_MAIN)));
 		Assert.assertTrue(isElementPresent(NConstants.SIGN_IN_MAIN), "Could not find sign in link");
         signinMain.click();
-		
+
+        super.allowAppPermission();
+
 		wait = new WebDriverWait(aDriver, 20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SIGN_IN_TAB)));
 		Assert.assertTrue(isElementPresent(NConstants.SIGN_IN_TAB), "Could not find sign in tab");
 		signinTab.click();
 
-//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.EMAIL_LINK)));
-//		emailLink.click();
-		
-//		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_WITH), "Could not find signin with text");
-//		Assert.assertTrue(isElementPresent(NConstants.FACEBOOK_BUTTON), "Could not find facebook button");
-//		Assert.assertTrue(isElementPresent(NConstants.TWITTER_BUTTON), "Could not find twitter button");
-//		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_DETAILS), "Could not find Or sign in with your details text");
-//		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_EMAIL), "Could not find email address input field");
-//		Assert.assertTrue(isElementPresent(NConstants.MOBILE_NUMBER_LINK), "Could not find mobile number link");
-//		Assert.assertTrue(isElementPresent(NConstants.PASSWORD_VIEW_IMAGE), "Could not find password image ");
-//		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_PASSWORD), "Could not find passowrd input field");
-//		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_BUTTON), "Could not find Sign in button");
-//		Assert.assertTrue(isElementPresent(NConstants.FORGOT_PASSWORD), "Could not find forgot password link");
-		/*googleButton.click();
-		wait = new WebDriverWait(aDriver, 20);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.GOOGLE_SIGNIN)));
-		googleSingin.click();*/
-
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SIGNIN_EMAIL)));
 		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_EMAIL), "Could not find email address field");
 		signinEmail.sendKeys(userName);
+//		signinEmail.replaceValue(userName);
 		aDriver.hideKeyboard();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SIGNIN_PASSWORD)));
 		Assert.assertTrue(isElementPresent(NConstants.SIGNIN_PASSWORD), "Could not find password field");
 		signinPassword.sendKeys(userPassword);
+//		signinPassword.replaceValue(userPassword);
 		aDriver.hideKeyboard();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SIGNIN_BUTTON)));
@@ -164,10 +155,24 @@ public class SigninPage extends BasePage {
 //        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MENU_HOME)));
 //        Assert.assertTrue(isElementPresent(NConstants.MENU_HOME), "Could not find HOME button");
 
-		
-
-
 	}
+
+    public void verifyLogin(){
+
+        WebDriverWait wait = new WebDriverWait(aDriver, 30);
+
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.NAVIGATION_MENU_IMAGE)));
+//        Assert.assertTrue(isElementPresent(NConstants.NAVIGATION_MENU_IMAGE), "Could not find Menu button");
+//        navigationMenuImage.click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.NAVIGATION_MENU_IMAGE)));
+        Assert.assertTrue(isElementPresent(NConstants.NAVIGATION_MENU_IMAGE), "Could not find side menu home button");
+        navigationMenuImage.click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.HELLO_LABEL)));
+        Assert.assertTrue(isElementPresent(NConstants.HELLO_LABEL), "Could not find My Account in button");
+        Assert.assertTrue(helloLabelSideMenu.getText().contains("Hello"), "Could not find My Account in button");
+    }
 
 	public void logout(){
 
@@ -196,7 +201,10 @@ public class SigninPage extends BasePage {
 //        Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_EMAIL), "Could not find user email text");
 //        Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_PASSWORD), "Could not find user password text");
 //        Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_FRAGMENT_PASSWORD), "Could not find user framgement password text");
-        Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_SIGNOUT), "Could not sign out button");
+
+		super.scrollDownToElement(NConstants.MY_PROFILE_USER_SIGNOUT);
+
+		Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE_USER_SIGNOUT), "Could not sign out button");
         myProfileUserSignout.click();
 
     }

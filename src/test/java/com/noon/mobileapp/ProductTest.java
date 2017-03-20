@@ -3,9 +3,11 @@ package com.noon.mobileapp;
 import com.noon.mobileapp.base.BaseTest;
 import com.noon.mobileapp.pages.*;
 import com.relevantcodes.extentreports.LogStatus;
+import dtos.catalog.Page;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
+import services.ProductService;
 
 public class ProductTest extends BaseTest {
 	
@@ -35,7 +37,10 @@ public class ProductTest extends BaseTest {
 
 		String userName = "testnoon10@gmail.com";
 		String password = "Test1234";
-		String searchText = "New One Minute Manager";
+		ProductService productService = new ProductService();
+		Page page = productService.getProduct("Cake");
+
+		String searchText = page.getName();
 
         signinPage.signinWithEmail(userName,password);
         searchPage.search(searchText);
