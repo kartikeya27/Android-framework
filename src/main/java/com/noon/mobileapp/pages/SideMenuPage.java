@@ -247,6 +247,14 @@ public class SideMenuPage extends BasePage {
         Assert.assertTrue(isElementPresent(NConstants.NAVIGATION_MENU_IMAGE), "Could not find side menu home button");
         navigationMenuImage.click();
     }
+    public void goToShopByCategoriesPage(){
+        WebDriverWait wait = new WebDriverWait(aDriver, 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SHOP_BY_CATEGORY)));
+        Assert.assertTrue(isElementPresent(NConstants.SHOP_BY_CATEGORY), "Could not find side menu home button");
+        shopByCategory.click();
+    }
+
+
 
 	
 }

@@ -18,6 +18,12 @@
         </classes>
     </test>
 
+	<test name="Menu Test" allow-return-values="true">
+		<classes>
+			<class name="com.noon.mobileapp.SearchTest" />
+		</classes>
+	</test>
+
 	<test name="Cart Test" allow-return-values="true">
 		<classes>
 			<class name="com.noon.mobileapp.CartTest" />
