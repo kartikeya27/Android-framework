@@ -6,6 +6,7 @@ import com.noon.mobileapp.pages.SideMenuPage;
 import com.noon.mobileapp.pages.SigninPage;
 import com.relevantcodes.extentreports.LogStatus;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import org.junit.Ignore;
 import org.openqa.selenium.support.PageFactory;
 import org.slf4j.Logger;
 import org.testng.annotations.Test;
@@ -15,7 +16,6 @@ import static org.slf4j.LoggerFactory.getLogger;
 public class AddressTest extends BaseTest {
 	
 String testName="AddressTest";
-	
 
 	@Test
 	public void addressTest() throws InterruptedException {

@@ -172,7 +172,9 @@ public class SigninPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.HELLO_LABEL)));
         Assert.assertTrue(isElementPresent(NConstants.HELLO_LABEL), "Could not find My Account in button");
         Assert.assertTrue(helloLabelSideMenu.getText().contains("Hello"), "Could not find My Account in button");
-    }
+
+        super.goBack();
+	}
 
 	public void logout(){
 
