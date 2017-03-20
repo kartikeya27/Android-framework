@@ -258,12 +258,13 @@ public interface NConstants {
 //    Side Menu elements
     String MY_ORDERS_MENU="//*[@text='My Orders']";
     String MENU_HOME = "//android.widget.CheckedTextView[@text='Home']";
-    String MENU_RETURN_EXCHANGE="//*[@text='Returns & exchange']";
+    String MENU_RETURN_EXCHANGE="//*[@text='Returns & Exchanges']";
     String SHOP_BY_CATEGORY = "//android.widget.CheckedTextView[@text='Shop by Category']";
     String TODAYS_DEALS = "//android.widget.CheckedTextView[contains(@text,'Deals')]";
     String INVITE_FRIENDS = "//*[contains(@text,'Invite your friends')]";
     String CUSTOMER_SERVICE = "//*[contains(@text,'Customer Service')]";
-    String CHAT = "//*[contains(@text,'Chat With us')]";
+    String CHAT = "//*[contains(@text,'Chat with us')]";
+    String CALL_US = "//*[contains(@text,'Call us')]";
     String ABOUT = "//*[contains(@text,'About noon')]";
 
     String TOOLBAR_LOGO = "//*[@resource-id='com.noon:id/toolbar_logo']";
@@ -326,12 +327,13 @@ public interface NConstants {
     String SECURE_CHECKOUT = "//*[contains(@text,'Secure checkout')]";
     String REMOVE_FROM_CART = "//*[contains(@text,\"Remove\")]";
     //To be replaced
-    String INCREASE_QUANTITY_IN_CART =  "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.support.v7.widget.RecyclerView[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ImageButton[2]";
-    String DECREASE_QUANTITY_IN_CART = "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.support.v7.widget.RecyclerView[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ImageButton[1]";
+    String INCREASE_QUANTITY_IN_CART =  "//android.widget.ImageButton[@index=2]";
+    String DECREASE_QUANTITY_IN_CART = "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.support.v7.widget.RecyclerView[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ImageButton[1]";
 
-    String CART_TOTAL = "//android.widget.TextView[contains(@text,'AED')]";
+//    String CART_TOTAL = "//android.widget.TextView[contains(@text,'AED')]";
+    String CART_TOTAL = " //android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.support.v7.widget.RecyclerView[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]";
     String ITEMS_IN_CART_INFO = "//android.widget.TextView[contains(@text,'in your cart')]";
-    String PRODUCT_QUANTITY = "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.support.v7.widget.RecyclerView[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]";
+    String PRODUCT_QUANTITY = "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.support.v7.widget.RecyclerView[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]";
     String CART_EMPTY_LABEL = "//*[contains(@text,'Your cart is empty')]";
 
 

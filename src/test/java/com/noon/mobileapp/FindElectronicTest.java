@@ -4,6 +4,8 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
+
+import org.junit.Ignore;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -24,7 +26,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 public class FindElectronicTest extends BaseTest {
 	String testName="FindElectronicPageTest";
 	
-	@Test
+	@Ignore
 	public void findElectronicPageTest() throws InterruptedException {
 		test = rep.startTest(testName);
 		test.log(LogStatus.INFO, "Starting the test");

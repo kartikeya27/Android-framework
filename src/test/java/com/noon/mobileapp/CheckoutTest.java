@@ -1,6 +1,7 @@
 package com.noon.mobileapp;
 
 import com.noon.mobileapp.pages.*;
+import org.junit.Ignore;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
@@ -14,7 +15,7 @@ public class CheckoutTest extends BaseTest {
 	
 	String testName="CheckoutTest";
 	
-	@Test
+	@Ignore
 	public void checkoutTest() throws InterruptedException {
 		test = rep.startTest(testName);
 		test.log(LogStatus.INFO, "Starting the checkout in test");

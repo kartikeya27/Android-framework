@@ -1,5 +1,6 @@
 package com.noon.mobileapp;
 
+import org.junit.Ignore;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
@@ -13,7 +14,7 @@ public class RegisterTest extends BaseTest {
 	
 	String testName="RegisterTest";
 	
-	@Test
+	@Ignore
 	public void registerTest() throws InterruptedException {
 		test = rep.startTest(testName);
 		test.log(LogStatus.INFO, "Starting the register test");

@@ -160,12 +160,16 @@ public class SideMenuPage extends BasePage {
        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.INVITE_FRIENDS)));
        Assert.assertTrue(isElementPresent(NConstants.INVITE_FRIENDS), "Could not find Invite Friends button");
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CUSTOMER_SERVICE)));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CALL_US)));
         Assert.assertTrue(isElementPresent(NConstants.CUSTOMER_SERVICE), "Could not find Customer Service button");
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CUSTOMER_SERVICE)));
+        Assert.assertTrue(isElementPresent(NConstants.CALL_US), "Could not find Call us button");
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CHAT)));
         Assert.assertTrue(isElementPresent(NConstants.CHAT), "Could not find Chat in button");
 
+        /*
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.TOOLBAR_LOGO)));
         toolbarLogo.click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.TOOLBAR_LOGO)));
@@ -233,23 +237,7 @@ public class SideMenuPage extends BasePage {
         Assert.assertTrue(isElementPresent(NConstants.NAVIGATION_MENU_IMAGE), "Could not find side menu home button");
         navigationMenuImage.click();
 
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.INVITE_FRIENDS)));
-//        Assert.assertTrue(isElementPresent(NConstants.INVITE_FRIENDS), "Could not find Sign in button");
-//        inviteFriends.click();
-//
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CUSTOMER_SERVICE)));
-//        Assert.assertTrue(isElementPresent(NConstants.CUSTOMER_SERVICE), "Could not find Sign in button");
-//        customerService.click();
-//
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CHAT)));
-//        Assert.assertTrue(isElementPresent(NConstants.CHAT), "Could not find Sign in button");
-//        chat.click();
-//
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ABOUT)));
-//        Assert.assertTrue(isElementPresent(NConstants.ABOUT), "Could not find Sign in button");
-//        about.click();
-
-
+*/
 
     }
 
