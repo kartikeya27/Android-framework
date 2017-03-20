@@ -38,7 +38,7 @@ String testName="AddressTest";
 		addressPage.goToAddressBook();
 		addressPage.addAnotherAddress();
 //		addressPage.addFirstAddress();
-		addressPage.addAddressSteps("Building1","1", "2", "street a", "055000000000");
+		addressPage.addAddressSteps("Building","1", "2", "street a", "055000000000");
 
 		
 		test.log(LogStatus.PASS, "Test Passed");

@@ -34,9 +34,67 @@ String testName="SigninTest";
 		String password = "Test1234";
 		
 		signinPage.signinWithEmail(userName,password);
-		signinPage.logout();
+		signinPage.verifyLogin();
+//		signinPage.logout();
 
 		
+		//test.log(LogStatus.PASS, "Test Passed");
+	}
+
+    @Test
+    //public void loginTest(Hashtable<String,String> data) throws InterruptedException {
+    public void loginPhoneTest() throws InterruptedException {
+        test = rep.startTest(testName);
+        test.log(LogStatus.INFO, "Starting the Sign in test");
+		/*if(!DataUtil.isExecutable(xls,testName)|| data.get("Runmode").equals("N")) {
+					test.log(LogStatus.SKIP, "Skipping the test as Runmode was NO");
+					throw new SkipException("Skipping the test as Runmode was NO");
+				}*/
+        launchApp();
+        allowAppPermission();
+        test.log(LogStatus.INFO, "App Launch successfully");
+
+        SigninPage signinPage = new SigninPage(aDriver,test);
+        PageFactory.initElements(new AppiumFieldDecorator(aDriver),signinPage);
+
+        String userName = "+971529961453";
+        String password = "Password1";
+
+
+        signinPage.signinWithEmail(userName,password);
+        signinPage.verifyLogin();
+//		signinPage.logout();
+
+
+        //test.log(LogStatus.PASS, "Test Passed");
+    }
+
+	@Test
+	//public void loginTest(Hashtable<String,String> data) throws InterruptedException {
+	public void logoutTest() throws InterruptedException {
+		test = rep.startTest(testName);
+		test.log(LogStatus.INFO, "Starting the Sign in test");
+		/*if(!DataUtil.isExecutable(xls,testName)|| data.get("Runmode").equals("N")) {
+					test.log(LogStatus.SKIP, "Skipping the test as Runmode was NO");
+					throw new SkipException("Skipping the test as Runmode was NO");
+				}*/
+		launchApp();
+		allowAppPermission();
+		test.log(LogStatus.INFO, "App Launch successfully");
+
+		SigninPage signinPage = new SigninPage(aDriver,test);
+		PageFactory.initElements(new AppiumFieldDecorator(aDriver),signinPage);
+
+		//String userName = data.get("userName");
+		//String password = data.get("userPassword");
+		String userName = "testnoon10@gmail.com";
+		String password = "Test1234";
+
+		signinPage.signinWithEmail(userName,password);
+//		signinPage.verifyLogin();
+		signinPage.logout();
+
+
 		//test.log(LogStatus.PASS, "Test Passed");
 	}
 	

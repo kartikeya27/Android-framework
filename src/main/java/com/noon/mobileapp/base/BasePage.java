@@ -457,4 +457,18 @@ public class BasePage {
         }
         return false;
     }
+
+    public void allowAppPermission(){
+
+        try{
+
+            WebDriverWait wait = new WebDriverWait(aDriver, 10);
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='android.widget.Button'][2]")));
+            aDriver.findElement(By.xpath("//*[@class='android.widget.Button'][2]")).click();
+            test.log(LogStatus.INFO, "App permissions popup displayed");
+
+        }catch(Exception e){
+            test.log(LogStatus.INFO, "App permissions popup did not occur");
+        }
+    }
 }

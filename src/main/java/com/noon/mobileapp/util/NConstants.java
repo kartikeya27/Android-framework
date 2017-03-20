@@ -247,13 +247,13 @@ public interface NConstants {
     String RETURN_EXCHANGE="//*[@text='Returns & exchanges']";
     String ADDRESS_BOOK="//android.widget.TextView[@text='Address Book']";
     String WALLET="//android.widget.TextView[@text='My Wallet']";
-    String MY_PROFILE="//*[@text='My Profile']";
+    String MY_PROFILE="//*[@text='Profile']";
     String MY_PROFILE_USER_IMAGE="//android.widget.ImageView[@index='0']";
     String MY_PROFILE_USER_NAME="//android.widget.TextView[@index='0']";
     String MY_PROFILE_USER_EMAIL="//android.widget.TextView[@index='1']";
     String MY_PROFILE_USER_PASSWORD="//android.widget.TextView[@index='2']";
     String MY_PROFILE_USER_FRAGMENT_PASSWORD="//android.widget.TextView[@index='3']";
-    String MY_PROFILE_USER_SIGNOUT="//*[@text='Logout']";
+    String MY_PROFILE_USER_SIGNOUT="//*[@text='Sign out']";
 
 //    Side Menu elements
     String MY_ORDERS_MENU="//*[@text='My Orders']";
@@ -267,6 +267,7 @@ public interface NConstants {
     String ABOUT = "//*[contains(@text,'About noon')]";
 
     String TOOLBAR_LOGO = "//*[@resource-id='com.noon:id/toolbar_logo']";
+    String HELLO_LABEL = "//*[@resource-id='com.noon:id/drawer_header_title_label']";
 
 //
     String CATEGORIES_LABEL = "//*[@text='Categories']";
@@ -278,7 +279,8 @@ public interface NConstants {
 //    Address Page
     String ADD_FIRST_ADDRESS = "//*[contains(@text,\"Add address\")]";
     String ADD_ANOTHER_ADDRESS = "//*[contains(@text,\"Add new address\")]";
-    String MAP_DONE = "//*[contains(@text,\"Done\")]";
+//    String MAP_DONE = "//*[contains(@text,\"Done\")]";
+    String MAP_DONE = "//*[@resource-id=\"com.noon:id/checkout_add_address_save_button\"]";
     String MAP_CANCEL = "//*[contains(@text,\"Cancel\")]";
     String LOCATE_SEARCHING_PROGRESS = "//*[contains(@resource-id,\"com.noon:id/checkout_add_address_searching\")]";
     String LOCATE_MY_LOCATION ="//*[contains(@text,\"Locate me\")]";
