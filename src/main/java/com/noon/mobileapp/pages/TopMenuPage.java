@@ -5,6 +5,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.android.AndroidKeyCode;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -45,6 +46,10 @@ public class TopMenuPage {
 	
 	public void search() {
 		
+	}
+
+	public void goBack(){
+		aDriver.pressKeyCode(AndroidKeyCode.BACK);
 	}
 	
 }

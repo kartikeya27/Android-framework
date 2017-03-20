@@ -81,9 +81,10 @@ public interface NConstants {
 	String SIGN_IN_MAIN = "//*[contains(@text,'Sign in with email or phone')]";
 	
 	//Element for Category-Fashion page
+    String FASHION_TEXT="//android.widget.TextView[@text='Fashion']";
+
 	String CATEGORY_TEXT="//android.widget.TextView[@text='Categories']";
 	String FASHION_LINK="//android.widget.TextView[@text='Fashion']";
-	String FASHION_TEXT="//android.widget.TextView[@text='Fashion']";
 	String WOMEN_TEXT="//android.widget.TextView[@text='Women']";
 	String WOMEN_CLOTHING_TEXT="//android.widget.TextView[@text='Clothing']";
 	String WOMEN_FOOTWEAR_TEXT="//android.widget.TextView[@text='Footwear']";
@@ -132,10 +133,24 @@ public interface NConstants {
 	String CAMERA_TEXT="//android.widget.TextView[@text='Cameras']";
 	String ACCESSORIES_TEXT="//android.widget.TextView[@text='Accessories']";
 
+	//toys category
+    String TOYS_TEXT = "//android.widget.TextView[@text='Toys & Games']";
 
+
+    //books category
+    String BOOKS_TEXT = "//android.widget.TextView[@text='Books, Music, & Movies']";
+
+    //health category
+    String HEALTH_TEXT = "//android.widget.TextView[@text='Health & Beauty']";
+
+    //home category
+    String HOME_TEXT = "//android.widget.TextView[@text='Home & Garden']";
+
+    //sports category
+    String SPORTS_TEXT = "//android.widget.TextView[@text='Sports']";
 	
 	//Element for Checkout page
-	String SIGNIN_CENTRAL_BUTTON="//android.widget.TextView[@text='Sign in with email or phone >']";
+	String SIGNIN_CENTRAL_BUTTON = "//android.widget.TextView[@text='Sign in with email or phone >']";
 	
 	String NO_ORDERS="//android.widget.TextView[@text='No orders to show']";
 	String SEARCH_TEXT_VIEW="//android.widget.TextView[contains(@resource-id,'com.noon:id/search_text_view')]";
@@ -347,5 +362,21 @@ public interface NConstants {
     String PLACE_ORDER_BTN = "//*[contains(@text,\"Place Order\")]";
     String SUBTOTAL = "//*[contains(@resource-id,\"com.noon:id/checkout_subtotal_value\")]";
     String GRAND_TOTAL = "//*[contains(@resource-id,\"com.noon:id/checkout_grandtotal\")]";
-	
+
+	//
+	// Categories page
+	//
+	String ALL_CATEGORIES = "//android.widget.TextView[@text='Categories']";
+	String FASHION_CAT_LINK = "//android.widget.TextView[@text='Fashion']";
+	String TOYS_CAT_LINK = "//android.widget.TextView[@text='Toys']";
+	String BABY_CAT_LINK = "//android.widget.TextView[@text='Baby']";
+	String BOOKS_CAT_LINK = "//android.widget.TextView[@text='Books, Music, & Movies']";
+	String HEALTH_CAT_LINK = "//android.widget.TextView[@text='Health & Beauty']";
+	String HOME_CAT_LINK = "//android.widget.TextView[@text='Home']";
+	String SPORTS_CAT_LINK = "//android.widget.TextView[@text='Sports']";
+	String ELECTRONICS_CAT_LINK = "//android.widget.TextView[@text='Electronics']";
+
+
+
 }
+
