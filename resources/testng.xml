@@ -36,11 +36,17 @@
 		</classes>
 	</test>
 
-	<test name="Signin Test" allow-return-values="true">
+	<test name="Signin Email Test" allow-return-values="true">
 		<classes>
-			<class name="com.noon.mobileapp.SigninTest" />
+			<class name="com.noon.mobileapp.SigninEmailTest" />
 		</classes>
 	</test>
+
+    <test name="Signin Mobile Test" allow-return-values="true">
+        <classes>
+            <class name="com.noon.mobileapp.SigninMobileTest" />
+        </classes>
+    </test>
 
 	<test name="Categories Test" allow-return-values="true">
 		<classes>
