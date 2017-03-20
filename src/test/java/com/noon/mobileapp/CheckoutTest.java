@@ -1,6 +1,7 @@
 package com.noon.mobileapp;
 
 import com.noon.mobileapp.pages.*;
+import dtos.catalog.Page;
 import org.junit.Ignore;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
@@ -9,13 +10,14 @@ import com.noon.mobileapp.base.BaseTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import services.ProductService;
 
 
 public class CheckoutTest extends BaseTest {
 	
 	String testName="CheckoutTest";
 	
-	@Ignore
+	@Test
 	public void checkoutTest() throws InterruptedException {
 		test = rep.startTest(testName);
 		test.log(LogStatus.INFO, "Starting the checkout in test");
@@ -39,7 +41,10 @@ public class CheckoutTest extends BaseTest {
 
 		String userName = "testnoon10@gmail.com";
 		String password = "Test1234";
-		String searchText = "New One Minute Manager";
+		ProductService productService = new ProductService();
+		Page page = productService.getProduct("Cake");
+
+		String searchText = page.getName();
 
         signinPage.signinWithEmail(userName,password);
         searchPage.search(searchText);
