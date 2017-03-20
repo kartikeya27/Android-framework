@@ -18,7 +18,7 @@
         </classes>
     </test>
 
-	<test name="Menu Test" allow-return-values="true">
+	<test name="Search Test" allow-return-values="true">
 		<classes>
 			<class name="com.noon.mobileapp.SearchTest" />
 		</classes>
@@ -42,6 +42,11 @@
 		</classes>
 	</test>
 
+	<test name="Categories Test" allow-return-values="true">
+		<classes>
+			<class name="com.noon.mobileapp.CategoriesTest" />
+		</classes>
+	</test>
 
 </suite>
 

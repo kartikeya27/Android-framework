@@ -96,11 +96,6 @@ public class BaseTest {
             test.log(LogStatus.INFO, "App permissions popup did not occur");
         }
 
-
-//        while (driver.findElements(By.xpath("//*[@class='android.widget.Button'][2]")).size()>0)
-//
-//        {  driver.findElement(By.xpath("//*[@class='android.widget.Button'][2]")).click();
-//        }
     }
 
 
