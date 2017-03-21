@@ -10,4 +10,14 @@ public class Utils {
         SimpleDateFormat a = new SimpleDateFormat("yyyyMMddHHmm");
         return a.format(new Date());
     }
+
+    public static void waitABit(long mils) {
+        try {
+            Thread.sleep(mils);
+        } catch (InterruptedException e) {
+//            LOG.error(e.getMessage());
+        }
+    }
 }
+
+

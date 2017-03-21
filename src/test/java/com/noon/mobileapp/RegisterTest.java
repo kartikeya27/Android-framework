@@ -1,5 +1,6 @@
 package com.noon.mobileapp;
 
+import com.noon.mobileapp.pages.SigninPage;
 import org.junit.Ignore;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
@@ -14,15 +15,22 @@ public class RegisterTest extends BaseTest {
 	
 	String testName="RegisterTest";
 	
-	@Ignore
+	@Test
 	public void registerTest() throws InterruptedException {
 		test = rep.startTest(testName);
 		test.log(LogStatus.INFO, "Starting the register test");
+
 		launchApp();
+		allowAppPermission();
+		test.log(LogStatus.INFO, "App Launch successfully");
 		
 		RegisterPage registerPage = new RegisterPage(aDriver, test);
 		PageFactory.initElements(new AppiumFieldDecorator(aDriver),registerPage);
+		SigninPage signinPage = new SigninPage(aDriver, test);
+		PageFactory.initElements(new AppiumFieldDecorator(aDriver),signinPage);
+
 		registerPage.registerTest();
+		signinPage.verifyLogin();
 	}
 	
 }
