@@ -71,15 +71,32 @@ public interface NConstants {
 	String FACEBOOK_BUTTON="//android.widget.ImageView[contains(@resource-id,'com.noon:id/facebook_button_login')]";
 	String TWITTER_BUTTON="//android.widget.ImageView[contains(@resource-id,'com.noon:id/twitter_button_login')]";
 	String REGISTER_DETAILS="//android.widget.TextView[@text='Or register with your details']";
-	String REGISTER_NAME="//android.widget.LinearLayout[@index='4']"; 
-	String REGISTER_EMAIL="//android.widget.LinearLayout[@index='5']";
+	String REGISTER_NAME="//TextInputLayout[@text='Name*']/android.widget.FrameLayout/android.widget.EditText";
+	String REGISTER_EMAIL="//TextInputLayout[@text='Email address*']/android.widget.FrameLayout/android.widget.EditText";
 	String USE_MOBILE="//android.widget.TextView[@index='6']";
-	String REGISTER_PASSWORD="//android.widget.LinearLayout[@index='7']";
-	String REGISTER_BUTTON="//android.widget.Button[@index='8']";
+	String USE_EMAIL="//android.widget.TextView[@text='Use email']";
+
+	String REGISTER_PASSWORD="//TextInputLayout[@text='Password*']/android.widget.FrameLayout/android.widget.EditText";
+	String REGISTER_BUTTON="//android.widget.Button[@text='Register']";
 	String PASSWORD_TAB="//android.widget.EditText[@index='0']";
 	String HELLO_TEXT="//*[contains(@text='Ahlan']";
 	String SIGN_IN_MAIN = "//*[contains(@text,'Sign in with email or phone')]";
-	
+
+	//
+	//OTP Page
+	//
+    String OTP_LABEL = "//android.widget.TextView[contains(@text,\"code\")]";
+    String RESEND_EMAIL_LINK = "//android.widget.TextView[@text=\"Resend email\"]";
+    String OTP_ACCEPT_ICON = "//android.widget.ImageView[@resource-id=\"com.noon:id/register_login_dialog_otp_icon\"]";
+    String OTP_DIGIT_INPUT1 = "//android.widget.EditText[@index=\"0\"]";
+    String OTP_DIGIT_INPUT2 = "//android.widget.EditText[@index=\"1\"]";
+    String OTP_DIGIT_INPUT3 = "//android.widget.EditText[@index=\"2\"]";
+    String OTP_DIGIT_INPUT4 = "//android.widget.EditText[@index=\"3\"]";
+    String OTP_DIGIT_INPUT5 = "//android.widget.EditText[@index=\"4\"]";
+    String OTP_DIGIT_INPUT6 = "//android.widget.EditText[@index=\"5\"]";
+
+
+
 	//Element for Category-Fashion page
     String FASHION_TEXT="//android.widget.TextView[@text='Fashion']";
 
