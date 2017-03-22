@@ -254,7 +254,19 @@ public class SideMenuPage extends BasePage {
         shopByCategory.click();
     }
 
+    public void goToMyAccountPage(){
+        WebDriverWait wait = new WebDriverWait(aDriver, 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_ACCOUNT)));
+        Assert.assertTrue(isElementPresent(NConstants.MY_ACCOUNT), "Could not find side menu my account link");
+        myAccount.click();
+    }
 
+    public void goToMyWallet(){
+        WebDriverWait wait = new WebDriverWait(aDriver, 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.WALLET)));
+        Assert.assertTrue(isElementPresent(NConstants.WALLET), "Could not find side menu my wallet tab");
+        wallet.click();
+    }
 
 	
 }

@@ -116,11 +116,11 @@ public class AddressPage extends BasePage {
 		Assert.assertTrue(isElementPresent(NConstants.MY_ACCOUNT), "Could not find My Account in button");
 		myAccount.click();
 
-        super.swipeToElement(NConstants.MY_PROFILE);
+        super.swipeToElement(NConstants.ADDRESS_BOOK);
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_PROFILE)));
-        Assert.assertTrue(isElementPresent(NConstants.MY_PROFILE), "Could not find my profile text");
-        myProfile.click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ADDRESS_BOOK)));
+        Assert.assertTrue(isElementPresent(NConstants.ADDRESS_BOOK), "Could not find Address Book tab");
+        addressBook.click();
 
 	}
 

@@ -22,9 +22,55 @@ public class MyWalletPage extends BasePage {
 	@FindBy(xpath=NConstants.NAVIGATION_MENU_IMAGE)
 	public AndroidElement navigationMenuImage;
 
-    @FindBy(xpath=NConstants.MENU_HOME)
-    public AndroidElement navigationMenuHome;
+	@FindBy(xpath=NConstants.TRANSACTIONS_WALLET)
+	public AndroidElement transactions;
 
+    @FindBy(xpath=NConstants.SAVED_CARDS_WALLET)
+	public AndroidElement savedCards;
+
+    @FindBy(xpath=NConstants.BALANCE_WALLET)
+	public AndroidElement balance;
+
+    @FindBy(xpath=NConstants.ADD_CARD_BTN_WALLET)
+	public AndroidElement addNewCard;
+
+    @FindBy(xpath=NConstants.DELETE_FIRST_CARD)
+	public AndroidElement deleteFirstCard;
+
+
+    public void removeLastCard(){
+        WebDriverWait wait = new WebDriverWait(aDriver, 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.DELETE_FIRST_CARD)));
+        Assert.assertTrue(isElementPresent(NConstants.DELETE_FIRST_CARD), "Could not find delete card button");
+        deleteFirstCard.click();
+        //add verification
+    }
+
+    public void waitForPageToLoad(){
+
+        WebDriverWait wait = new WebDriverWait(aDriver, 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.TRANSACTIONS_WALLET)));
+        Assert.assertTrue(isElementPresent(NConstants.TRANSACTIONS_WALLET), "Could not find transactionst tab");
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SAVED_CARDS_WALLET)));
+        Assert.assertTrue(isElementPresent(NConstants.SAVED_CARDS_WALLET), "Could not find saved cards tab");
+
+    }
+
+    public void goToSavedCards(){
+        WebDriverWait wait = new WebDriverWait(aDriver, 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SAVED_CARDS_WALLET)));
+        Assert.assertTrue(isElementPresent(NConstants.SAVED_CARDS_WALLET), "Could not find saved cards tab");
+        savedCards.click();
+    }
+
+
+    public void goToAddNewCard(){
+        WebDriverWait wait = new WebDriverWait(aDriver, 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ADD_CARD_BTN_WALLET)));
+        Assert.assertTrue(isElementPresent(NConstants.ADD_CARD_BTN_WALLET), "Could not find add card button");
+        addNewCard.click();
+    }
 
 	
 }

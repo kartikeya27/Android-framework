@@ -476,4 +476,23 @@ public class BasePage {
     public void goBack(){
         aDriver.pressKeyCode(AndroidKeyCode.BACK);
     }
+
+    public void smallVerticalScrollDownUpperLeft()
+    {
+        Dimension size = aDriver.manage().window().getSize();
+        int y_start=(int)(size.height*0.70);
+        int y_end=(int)(size.height*0.50);
+        int x=size.width/3;
+        aDriver.swipe(x,y_start,x,y_end,1000);
+    }
+
+    public void smallVerticalScrollDownUpperRight()
+    {
+        Dimension size = aDriver.manage().window().getSize();
+        int y_start=(int)(size.height*0.70);
+        int y_end=(int)(size.height*0.50);
+        int x=size.width*2/3;
+        aDriver.swipe(x,y_start,x,y_end,1000);
+    }
+
 }
