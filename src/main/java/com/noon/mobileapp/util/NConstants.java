@@ -286,6 +286,7 @@ public interface NConstants {
     String MY_PROFILE_USER_PASSWORD = "//android.widget.TextView[@index='2']";
     String MY_PROFILE_USER_FRAGMENT_PASSWORD = "//android.widget.TextView[@index='3']";
     String MY_PROFILE_USER_SIGNOUT = "//*[@text='Sign out']";
+    String MY_PROFILE_CONTINUE_SHOPPING = "//android.widget.Button[@text=\"Continue shopping\"]";
 
     //    Side Menu elements
     String MY_ORDERS_MENU = "//*[@text='My Orders']";
@@ -346,7 +347,7 @@ public interface NConstants {
     //    String PRODUCT_RELATED_PRODUCTS = ".//*[contains(@text,'Related products')]";
     String RECOMMENDED_PRODUCTS = ".//*[contains(@text,'Recommended products')]";
     String PRODUCT_SIZE_GUIDE = ".//*[contains(@text,'Size guide')]";
-    String BUY_NOW = ".//*[contains(@text,'Buy now')]";
+    String BUY_NOW = "//android.widget.Button[@text=\"Buy now\"]";
     String MORE_OFFERS = ".//*[contains(@text,'offers available')]";
     String SEE_ALL = ".//*[contains(@text,'See all')]";
 
@@ -370,7 +371,7 @@ public interface NConstants {
     //
     // Checkout
     //
-    String SELECT_DELIVERY_MSG = "//*[contains(@text,'Select your delivery method')]";
+    String SELECT_DELIVERY_MSG = "//android.widget.TextView[contains(@text,'Select your delivery method')]";
     String DEFAULT_ADDRESS = "//*[contains(@text,'Default')]";
     String PAYMENT_PAY_WITH_MSG = "//*[contains(@text,'Pay with')]";
     String PAY_ON_DELIVERY = "//*[contains(@text,'Pay on delivery')]";
