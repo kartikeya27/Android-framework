@@ -36,6 +36,12 @@ public class AddCardPage extends BasePage {
 	@FindBy(xpath=NConstants.MAKE_DEFAULT_CARD)
 	public AndroidElement cardMakeDefault;
 
+    @FindBy(xpath=NConstants.CARD_REMOVE_CONFIRMATION_MSG)
+	public AndroidElement cardRemoveConfirmationMsg;
+
+    @FindBy(xpath=NConstants.CARD_REMOVE_CONFIRMATION_BTN_YES)
+	public AndroidElement cardRemoveConfirmatioBtn;
+
 
 
     public void waitForPageToLoad() {

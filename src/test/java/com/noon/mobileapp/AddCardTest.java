@@ -47,6 +47,7 @@ String testName="AddNewCardTest";
 		walletPage.goToAddNewCard();
 
 		addCardPage.addNewCardData("Antanina","4573770040715945","2020","12", false);
+		walletPage.waitForPageToLoad();
 
 		test.log(LogStatus.PASS, "Test Passed");
 	}

@@ -154,7 +154,7 @@ public interface NConstants {
 
 
     //books category
-    String BOOKS_TEXT = "//android.widget.TextView[@text='Books, Music, & Movies']";
+    String BOOKS_TEXT = "//android.widget.TextView[@text='Books, Music & Movies']";
 
     //health category
     String HEALTH_TEXT = "//android.widget.TextView[@text='Health & Beauty']";
@@ -411,6 +411,8 @@ public interface NConstants {
     String MAKE_DEFAULT_CARD = "//android.widget.CheckBox[@resource-id='com.noon:id/checkout_card_make_default']";
     String SAVE_CARD = "//android.widget.Button[@resource-id='com.noon:id/checkout_card_save']";
     String ADD_NEW_CARD_LABEL = "//android.widget.TextView[@text='Add new card']";
+    String CARD_REMOVE_CONFIRMATION_MSG = "//android.widget.TextView[@resource-id=\"com.noon:id/error_message\"]";
+    String CARD_REMOVE_CONFIRMATION_BTN_YES =  "//android.widget.Button[@text=\"Yes\"]";
 
 
     //
