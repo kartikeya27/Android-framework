@@ -97,6 +97,9 @@ public class AddressPage extends BasePage {
    @FindBy(xpath=NConstants.MY_PROFILE)
     public AndroidElement myProfile;
 
+   @FindBy(xpath=NConstants.ADD_CHANGE_ADDRESS_CHECKOUT)
+    public AndroidElement addChangeAddressCheckout;
+
 
 	public void addAddress(String userName, String userPassword) throws InterruptedException {
 
@@ -125,7 +128,7 @@ public class AddressPage extends BasePage {
 	}
 
 	public void addAnotherAddress(){
-	    // Current location Address Book main view
+        // Current location Address Book main view
         WebDriverWait wait = new WebDriverWait(aDriver, 30);
 
         // scroll to add another address button
@@ -135,6 +138,15 @@ public class AddressPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ADD_ANOTHER_ADDRESS)));
         Assert.assertTrue(isElementPresent(NConstants.ADD_ANOTHER_ADDRESS), "Could not find Another Address button");
         addAnotherAddress.click();
+
+
+    }
+
+    public void addChangeAddressCheckoutSelect(){
+        WebDriverWait wait = new WebDriverWait(aDriver, 30);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ADD_CHANGE_ADDRESS_CHECKOUT)));
+        Assert.assertTrue(isElementPresent(NConstants.ADD_CHANGE_ADDRESS_CHECKOUT), "Could not find Add Address in checkou delivery section button");
+        addChangeAddressCheckout.click();
 
 
     }
@@ -217,7 +229,7 @@ public class AddressPage extends BasePage {
         } catch (Exception e) {
         }
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_PROFILE)));
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_PROFILE)));
 
     }
 

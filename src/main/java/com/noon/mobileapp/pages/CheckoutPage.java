@@ -111,6 +111,11 @@ public class CheckoutPage extends BasePage {
 
     }
 
+    public void verifyPaymentCheckout(){
+        WebDriverWait wait = new WebDriverWait(aDriver, 20);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.PAYMENT_PAY_WITH_MSG)));
+    }
+
 
 
 }
