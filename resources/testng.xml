@@ -36,6 +36,25 @@
 		</classes>
 	</test>
 
+    <test name="Checkout Test" allow-return-values="true">
+		<classes>
+			<class name="com.noon.mobileapp.CheckoutCardTest" />
+		</classes>
+	</test>
+
+    <test name="Checkout default address Test" allow-return-values="true">
+        <classes>
+            <class name="com.noon.mobileapp.CheckoutDefaultAddressTest" />
+        </classes>
+    </test>
+
+
+    <test name="Buy now Test" allow-return-values="true">
+        <classes>
+            <class name="com.noon.mobileapp.BuyNowTest" />
+        </classes>
+    </test>
+
 	<test name="Signin Email Test" allow-return-values="true">
 		<classes>
 			<class name="com.noon.mobileapp.SigninEmailTest" />
@@ -53,6 +72,12 @@
 			<class name="com.noon.mobileapp.CategoriesTest" />
 		</classes>
 	</test>
+
+    <test name="Profile Test" allow-return-values="true">
+        <classes>
+            <class name="com.noon.mobileapp.ProfileTest" />
+        </classes>
+    </test>
 
 	<!--<test name="Register new user Test" allow-return-values="true">-->
 		<!--<classes>-->
