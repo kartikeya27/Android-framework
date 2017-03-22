@@ -11,9 +11,9 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
-public class RegisterTest extends BaseTest {
+public class RegisterEmailTest extends BaseTest {
 	
-	String testName="RegisterTest";
+	String testName="RegisterEmailTest";
 	
 	@Test
 	public void registerTest() throws InterruptedException {

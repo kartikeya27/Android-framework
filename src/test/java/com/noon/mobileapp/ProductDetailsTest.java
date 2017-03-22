@@ -1,24 +1,20 @@
 package com.noon.mobileapp;
 
+import com.noon.mobileapp.base.BaseTest;
 import com.noon.mobileapp.pages.*;
+import com.relevantcodes.extentreports.LogStatus;
 import dtos.catalog.Page;
-import org.junit.Ignore;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
-
-import com.noon.mobileapp.base.BaseTest;
-import com.relevantcodes.extentreports.LogStatus;
-
-import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import services.ProductService;
 
-
-public class CheckoutTest extends BaseTest {
+public class ProductDetailsTest extends BaseTest {
 	
-	String testName="CheckoutTest";
+	String testName="ProductDetailsTEst";
 	
 	@Test
-	public void checkoutTest() throws InterruptedException {
+	public void productDetailsTest() throws InterruptedException {
 		test = rep.startTest(testName);
 		test.log(LogStatus.INFO, "Starting the checkout in test");
 
@@ -48,16 +44,7 @@ public class CheckoutTest extends BaseTest {
 
         signinPage.signinWithEmail(userName,password);
         searchPage.search(searchText);
-        productPage.addProductToCart();
-
-        cartPage.checkout();
-        checkoutPage.checkoutVerify();
-
-        topMenuPage.gotoHome();
-        topMenuPage.gotoCart();
-        cartPage.removeFromCart();
-        cartPage.verifyCartIsEmpty();
-
-		test.log(LogStatus.INFO, "Checkout test passed");
+        productPage.verifyProductPage(searchText);
+		test.log(LogStatus.INFO, "Product Details test passed");
 	}
 }	

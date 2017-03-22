@@ -1,4 +1,4 @@
-package com.noon.mobileapp;
+package temp;
 
 import org.junit.Ignore;
 import org.testng.SkipException;
