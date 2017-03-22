@@ -58,6 +58,9 @@ public class ProductPage extends BasePage {
     @FindBy(xpath = NConstants.SEE_ALL)
     public AndroidElement seeAll;
 
+    @FindBy(xpath = NConstants.SELECT_DELIVERY_MSG)
+    public AndroidElement deliveryMsg;
+
 
 	public void addProductToCart(){
 
@@ -71,6 +74,18 @@ public class ProductPage extends BasePage {
         cartIcon.click();
 
 
+    }
+
+    public void buyNow(){
+
+        WebDriverWait wait = new WebDriverWait(aDriver, 10);
+
+        scrollToElement(NConstants.BUY_NOW,"down");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.BUY_NOW)));
+        buyNow.click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SELECT_DELIVERY_MSG)));
+        Assert.assertTrue(isElementPresent(NConstants.SELECT_DELIVERY_MSG), "Buy now did not redirect to checkout");
     }
 
     public void verifyProductPage(String productName){
