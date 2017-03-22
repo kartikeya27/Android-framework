@@ -2,13 +2,13 @@
 
 	<test name="Product Details Test" allow-return-values="true">
 		<classes>
-			<class name="com.noon.mobileapp.ProductTest" />
+			<class name="com.noon.mobileapp.ProductDetailsTest" />
 		</classes>
 	</test>
 
 	<!--<test name="Address Test" allow-return-values="true">-->
 		<!--<classes>-->
-			<!--<class name="com.noon.mobileapp.AddressTest" />-->
+			<!--<class name="com.noon.mobileapp.AddAddressTest" />-->
 		<!--</classes>-->
 	<!--</test>-->
 
@@ -32,7 +32,7 @@
 
 	<test name="Checkout Test" allow-return-values="true">
 		<classes>
-			<class name="com.noon.mobileapp.CheckoutTest" />
+			<class name="com.noon.mobileapp.CheckoutCODTest" />
 		</classes>
 	</test>
 
@@ -56,7 +56,7 @@
 
 	<!--<test name="Register new user Test" allow-return-values="true">-->
 		<!--<classes>-->
-			<!--<class name="com.noon.mobileapp.RegisterTest" />-->
+			<!--<class name="com.noon.mobileapp.RegisterEmailTest" />-->
 		<!--</classes>-->
 	<!--</test>-->
 

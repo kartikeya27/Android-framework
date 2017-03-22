@@ -9,12 +9,13 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 import services.ProductService;
 
-public class ProductTest extends BaseTest {
+
+public class CheckoutCardTest extends BaseTest {
 	
-	String testName="ProductDetailsTEst";
+	String testName="CheckoutCardTest";
 	
 	@Test
-	public void productDetailsTest() throws InterruptedException {
+	public void checkoutTest() throws InterruptedException {
 		test = rep.startTest(testName);
 		test.log(LogStatus.INFO, "Starting the checkout in test");
 
@@ -44,7 +45,17 @@ public class ProductTest extends BaseTest {
 
         signinPage.signinWithEmail(userName,password);
         searchPage.search(searchText);
-        productPage.verifyProductPage(searchText);
-		test.log(LogStatus.INFO, "Product Details test passed");
+        productPage.addProductToCart();
+
+        cartPage.checkout();
+		checkoutPage.checkoutDefaultAddress();
+        checkoutPage.checkoutCard();
+
+        topMenuPage.gotoHome();
+        topMenuPage.gotoCart();
+        cartPage.removeFromCart();
+//        cartPage.verifyCartIsEmpty();
+
+		test.log(LogStatus.INFO, "Checkout test passed");
 	}
 }	

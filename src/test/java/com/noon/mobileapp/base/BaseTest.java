@@ -113,14 +113,14 @@ public class BaseTest {
 
 	public void beforeMethod() {
 
-		System.out.println("Started Method");
+//		System.out.println("Started Method");
 
 	}
 
 	@AfterMethod
 	public void afterMethod() {
         quit();
-		System.out.println("Finished Method");
+//		System.out.println("Finished Method");
 
 	}
 
@@ -128,7 +128,7 @@ public class BaseTest {
 
 	public void beforeClass() {
 
-		System.out.println("Started Class");
+//		System.out.println("Started Class");
 
 	}
 
@@ -136,14 +136,14 @@ public class BaseTest {
 
 	public void afterClass() {
 
-		System.out.println("Finished Class");
+//		System.out.println("Finished Class");
 
 	}
 
 	@BeforeTest
 
 	public void beforeTest() {
-		System.out.println("Started the Test");
+//		System.out.println("Started the Test");
 
 	}
 
@@ -151,14 +151,14 @@ public class BaseTest {
 
 	public void afterTest() {
 
-		System.out.println("Finished the Test");
+//		System.out.println("Finished the Test");
 
 	}
 
 	@BeforeSuite
 
 	public void beforeSuite() {
-		System.out.println("Started the Test Suite");
+//		System.out.println("Started the Test Suite");
 
 	}
 
@@ -166,7 +166,7 @@ public class BaseTest {
 
 	public void afterSuite() {
 //        quit();
-		System.out.println("Finished the Test Suite");
+//		System.out.println("Finished the Test Suite");
 
 	}
 }

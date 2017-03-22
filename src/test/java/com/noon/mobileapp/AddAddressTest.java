@@ -13,9 +13,9 @@ import org.testng.annotations.Test;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
-public class AddressTest extends BaseTest {
+public class AddAddressTest extends BaseTest {
 	
-String testName="AddressTest";
+String testName="AddAddressTest";
 
 	@Test
 	public void addressTest() throws InterruptedException {

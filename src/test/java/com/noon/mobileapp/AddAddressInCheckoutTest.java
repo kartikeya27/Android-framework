@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 import services.ProductService;
 
-public class AddAddressCheckoutTest extends BaseTest {
+public class AddAddressInCheckoutTest extends BaseTest {
 	
 String testName="AddNewCardTest";
 

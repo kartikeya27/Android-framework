@@ -378,6 +378,8 @@ public interface NConstants {
     String SUBTOTAL = "//*[contains(@resource-id,\"com.noon:id/checkout_subtotal_value\")]";
     String GRAND_TOTAL = "//*[contains(@resource-id,\"com.noon:id/checkout_grandtotal\")]";
     String ADD_NEW_CARD_PAYMENT = "//android.widget.TextView[@resource-id=\"com.noon:id/checkout_add_card\"]";
+    String PAY_WITH_CARD = "//android.widget.LinearLayout[@resource-id=\"com.noon:id/checkout_card_choose\"]";
+    String REVIEW = "//android.widget.TextView[@resource-id=\"com.noon:id/top_label_text\" and @text=\"Review\"]";
 
     //
     // Categories page
