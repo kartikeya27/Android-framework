@@ -63,6 +63,9 @@ public class CheckoutPage extends BasePage {
     @FindBy(xpath = NConstants.GRAND_TOTAL)
     public AndroidElement grandTotal;
 
+   @FindBy(xpath = NConstants.ADD_NEW_CARD_PAYMENT)
+    public AndroidElement addNewCardPayment;
+
     public void checkoutVerify(){
 
         WebDriverWait wait = new WebDriverWait(aDriver, 20);
@@ -82,5 +85,32 @@ public class CheckoutPage extends BasePage {
 
 
     }
+
+    public void checkoutPickDefaultAddress(){
+
+        WebDriverWait wait = new WebDriverWait(aDriver, 20);
+
+        scrollToElement(NConstants.SELECT_DELIVERY_MSG,"down");
+        wait = new WebDriverWait(aDriver, 20);
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.DEFAULT_ADDRESS)));
+        defaultAddress.click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.PAYMENT_PAY_WITH_MSG)));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.PAY_ON_DELIVERY)));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ADD_NEW_CARD_PAYMENT)));
+
+    }
+
+    public void checkoutPickAddNewCC(){
+
+        WebDriverWait wait = new WebDriverWait(aDriver, 20);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(NConstants.ADD_NEW_CARD_PAYMENT)));
+        addNewCardPayment.click();
+
+    }
+
+
 
 }
