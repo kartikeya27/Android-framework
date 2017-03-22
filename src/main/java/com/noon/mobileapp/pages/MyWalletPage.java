@@ -35,15 +35,22 @@ public class MyWalletPage extends BasePage {
 	public AndroidElement addNewCard;
 
     @FindBy(xpath=NConstants.DELETE_FIRST_CARD)
-	public AndroidElement deleteFirstCard;
+	public AndroidElement deleteLastCard;
+
+   @FindBy(xpath=NConstants.CARD_REMOVE_CONFIRMATION_BTN_YES)
+	public AndroidElement confirmRemove;
 
 
     public void removeLastCard(){
         WebDriverWait wait = new WebDriverWait(aDriver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.DELETE_FIRST_CARD)));
         Assert.assertTrue(isElementPresent(NConstants.DELETE_FIRST_CARD), "Could not find delete card button");
-        deleteFirstCard.click();
-        //add verification
+        deleteLastCard.click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CARD_REMOVE_CONFIRMATION_MSG)));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CARD_REMOVE_CONFIRMATION_BTN_YES)));
+        confirmRemove.click();
+
     }
 
     public void waitForPageToLoad(){

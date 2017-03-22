@@ -41,6 +41,7 @@ String testName="RemoveCardTest";
 		walletPage.waitForPageToLoad();
 		walletPage.goToSavedCards();
 		walletPage.removeLastCard();
+		walletPage.waitForPageToLoad();
 
 		test.log(LogStatus.PASS, "Test Passed");
 	}

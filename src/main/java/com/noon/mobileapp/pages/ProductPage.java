@@ -94,6 +94,8 @@ public class ProductPage extends BasePage {
         scrollToElement(NConstants.PRODUCT_SPECIFICATIONS,"down");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.PRODUCT_SPECIFICATIONS)));
 
+        /* Dynamic data - to be tested in a different scenario
+
         scrollToElement(NConstants.FREQUENTLY_BOUGHT_TOGETHER,"down");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.FREQUENTLY_BOUGHT_TOGETHER)));
 
@@ -102,6 +104,7 @@ public class ProductPage extends BasePage {
 
        scrollToElement(NConstants.RECOMMENDED_PRODUCTS,"down");
        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.RECOMMENDED_PRODUCTS)));
+        */
 
        scrollToElement(NConstants.SEE_ALL,"down");
        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SEE_ALL)));
