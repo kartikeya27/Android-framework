@@ -413,5 +413,9 @@ public interface NConstants {
     String ADD_NEW_CARD_LABEL = "//android.widget.TextView[@text='Add new card']";
 
 
+    //
+    //Checkout
+    //
+    String ADD_CHANGE_ADDRESS_CHECKOUT = "//android.widget.TextView[@text='Add or change address']";
 
 }
