@@ -422,5 +422,7 @@ public interface NConstants {
     //Checkout
     //
     String ADD_CHANGE_ADDRESS_CHECKOUT = "//android.widget.TextView[@text='Add or change address']";
+    String ADD_NEW_ADDRESS_CHECKOUT = "//android.widget.TextView[@text='Add new address']";
+
 
 }

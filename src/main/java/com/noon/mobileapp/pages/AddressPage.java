@@ -100,6 +100,9 @@ public class AddressPage extends BasePage {
    @FindBy(xpath=NConstants.ADD_CHANGE_ADDRESS_CHECKOUT)
     public AndroidElement addChangeAddressCheckout;
 
+  @FindBy(xpath=NConstants.ADD_NEW_ADDRESS_CHECKOUT)
+    public AndroidElement addNewAddressCheckout;
+
 
 	public void addAddress(String userName, String userPassword) throws InterruptedException {
 
@@ -142,12 +145,18 @@ public class AddressPage extends BasePage {
 
     }
 
-    public void addChangeAddressCheckoutSelect(){
-        WebDriverWait wait = new WebDriverWait(aDriver, 30);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ADD_CHANGE_ADDRESS_CHECKOUT)));
-        Assert.assertTrue(isElementPresent(NConstants.ADD_CHANGE_ADDRESS_CHECKOUT), "Could not find Add Address in checkou delivery section button");
-        addChangeAddressCheckout.click();
+    public void addNewAddressCheckoutSelect(){
+        WebDriverWait wait = new WebDriverWait(aDriver, 10);
 
+        try{
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ADD_CHANGE_ADDRESS_CHECKOUT)));
+            Assert.assertTrue(isElementPresent(NConstants.ADD_CHANGE_ADDRESS_CHECKOUT), "Could not find Add Address in checkou delivery section button");
+            addChangeAddressCheckout.click();
+        }catch(org.openqa.selenium.TimeoutException e){
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ADD_NEW_ADDRESS_CHECKOUT)));
+            Assert.assertTrue(isElementPresent(NConstants.ADD_NEW_ADDRESS_CHECKOUT), "Could not find Add Address in checkou delivery section button");
+            addNewAddressCheckout.click();
+        }
 
     }
 
