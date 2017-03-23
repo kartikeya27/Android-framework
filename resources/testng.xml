@@ -6,11 +6,11 @@
 		</classes>
 	</test>
 
-	<!--<test name="Address Test" allow-return-values="true">-->
-		<!--<classes>-->
-			<!--<class name="com.noon.mobileapp.AddAddressTest" />-->
-		<!--</classes>-->
-	<!--</test>-->
+	<test name="Address Test" allow-return-values="true">
+		<classes>
+			<class name="com.noon.mobileapp.AddAddressTest" />
+		</classes>
+	</test>
 
     <test name="Menu Test" allow-return-values="true">
         <classes>
@@ -36,7 +36,7 @@
 		</classes>
 	</test>
 
-    <test name="Checkout Test" allow-return-values="true">
+    <test name="Checkout Card Test" allow-return-values="true">
 		<classes>
 			<class name="com.noon.mobileapp.CheckoutCardTest" />
 		</classes>
@@ -79,11 +79,35 @@
         </classes>
     </test>
 
-	<!--<test name="Register new user Test" allow-return-values="true">-->
-		<!--<classes>-->
-			<!--<class name="com.noon.mobileapp.RegisterEmailTest" />-->
-		<!--</classes>-->
-	<!--</test>-->
+	<test name="Register new user Test" allow-return-values="true">
+		<classes>
+			<class name="com.noon.mobileapp.RegisterEmailTest" />
+		</classes>
+	</test>
+
+    <test name="Add address in checkout Test" allow-return-values="true">
+		<classes>
+			<class name="com.noon.mobileapp.AddAddressInCheckoutTest" />
+		</classes>
+	</test>
+
+    <test name="Add card in checkout Test" allow-return-values="true">
+		<classes>
+			<class name="com.noon.mobileapp.AddCardInCheckoutTest" />
+		</classes>
+	</test>
+
+    <test name="Add card in wallet Test" allow-return-values="true">
+    <classes>
+        <class name="com.noon.mobileapp.AddCardTest" />
+    </classes>
+    </test>
+
+    <test name="Remove card in wallet Test" allow-return-values="true">
+        <classes>
+            <class name="com.noon.mobileapp.RemoveCardTest" />
+        </classes>
+    </test>
 
 </suite>
 
