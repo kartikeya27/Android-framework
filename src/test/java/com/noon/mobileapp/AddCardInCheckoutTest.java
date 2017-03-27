@@ -17,7 +17,7 @@ public class AddCardInCheckoutTest extends BaseTest {
 String testName="AddNewCardTest";
 
 	@Test
-	public void addNewCardTest() throws InterruptedException {
+	public void addNewCardInCheckoutTest() throws InterruptedException {
 		test = rep.startTest(testName);
 		test.log(LogStatus.INFO, "Starting add new card test");
 

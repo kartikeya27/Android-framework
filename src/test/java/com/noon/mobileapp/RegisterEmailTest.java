@@ -16,7 +16,7 @@ public class RegisterEmailTest extends BaseTest {
 	String testName="RegisterEmailTest";
 	
 	@Test
-	public void registerTest() throws InterruptedException {
+	public void registerEmailTest() throws InterruptedException {
 		test = rep.startTest(testName);
 		test.log(LogStatus.INFO, "Starting the register test");
 

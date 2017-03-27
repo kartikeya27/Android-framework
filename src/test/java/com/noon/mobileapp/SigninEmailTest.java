@@ -12,7 +12,7 @@ public class SigninEmailTest extends BaseTest {
 String testName="SigninEmailTest";
 
 	@Test
-	public void loginTest() throws InterruptedException {
+	public void loginEmailTest() throws InterruptedException {
 		test = rep.startTest(testName);
 		test.log(LogStatus.INFO, "Starting the Sign in test");
 

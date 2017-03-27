@@ -58,10 +58,11 @@ public interface NConstants {
     String SIGNIN_PASSWORD = "//*[contains(@text,'Password')]";
     String SIGNIN_BUTTON = "//*[contains(@text,'Login')]";
     String FORGOT_PASSWORD = "//android.widget.TextView[@text='Forgot password?']";
-    String SIGNIN_EMAIL = "//*[contains(@text,'Phone number or email address*')]";
+    String SIGNIN_EMAIL = "//*[contains(@text,'Email address*')]";
+    String SIGNIN_PHONE = "//*[contains(@text,'Phone number*')]";
     String SIGNIN_WITH = "//android.widget.TextView[@text='Sign in with']";
     String MOBILE_NUMBER_LINK = "//android.widget.TextView[@text='Use mobile number']";
-    String EMAIL_LINK = "//android.widget.TextView[@text='Use email address']";
+    String EMAIL_LINK = "//android.widget.TextView[@text='Use email']";
     String PASSWORD_VIEW_IMAGE = "//android.widget.ImageButton[@index='1']";
     String GOOGLE_SIGNIN = "//android.widget.LinearLayout[@index='1']";
     String REGISTER_TAB = "//android.widget.TextView[@text='Register']";
