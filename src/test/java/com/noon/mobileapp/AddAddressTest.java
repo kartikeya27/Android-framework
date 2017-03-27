@@ -18,7 +18,7 @@ public class AddAddressTest extends BaseTest {
 String testName="AddAddressTest";
 
 	@Test
-	public void addressTest() throws InterruptedException {
+	public void addAddressInMyAddressesTest() throws InterruptedException {
 		test = rep.startTest(testName);
 		test.log(LogStatus.INFO, "Starting the Address in test");
 

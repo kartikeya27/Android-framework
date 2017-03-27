@@ -15,7 +15,7 @@ public class CheckoutDefaultAddressTest extends BaseTest {
 	String testName="CheckoutDefaultAddressTest";
 	
 	@Test
-	public void checkoutTest() throws InterruptedException {
+	public void checkoutDefaultAddressTest() throws InterruptedException {
 		test = rep.startTest(testName);
 		test.log(LogStatus.INFO, "Starting the checkout default address in test");
 
