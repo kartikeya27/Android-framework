@@ -93,8 +93,6 @@ public interface NConstants {
     String OTP_DIGIT_INPUT2 = "//android.widget.EditText[@index=\"1\"]";
     String OTP_DIGIT_INPUT3 = "//android.widget.EditText[@index=\"2\"]";
     String OTP_DIGIT_INPUT4 = "//android.widget.EditText[@index=\"3\"]";
-    String OTP_DIGIT_INPUT5 = "//android.widget.EditText[@index=\"4\"]";
-    String OTP_DIGIT_INPUT6 = "//android.widget.EditText[@index=\"5\"]";
 
 
     //Element for Category-Fashion page
@@ -295,7 +293,7 @@ public interface NConstants {
     String MENU_RETURN_EXCHANGE = "//*[@text='Returns & Exchanges']";
     String SHOP_BY_CATEGORY = "//android.widget.CheckedTextView[@text='Shop by Category']";
     String TODAYS_DEALS = "//android.widget.CheckedTextView[contains(@text,'Deals')]";
-    String INVITE_FRIENDS = "//*[contains(@text,'Invite your friends')]";
+    String INVITE_FRIENDS = "//*[contains(@text,'Share noon with friends')]";
     String CUSTOMER_SERVICE = "//*[contains(@text,'Customer Service')]";
     String CHAT = "//*[contains(@text,'Chat with us')]";
     String CALL_US = "//*[contains(@text,'Call us')]";
@@ -360,12 +358,11 @@ public interface NConstants {
     String REMOVE_FROM_CART = "//*[contains(@text,\"Remove\")]";
     //To be replaced
     String INCREASE_QUANTITY_IN_CART = "//android.widget.ImageButton[@index=2]";
-    String DECREASE_QUANTITY_IN_CART = "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.support.v7.widget.RecyclerView[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ImageButton[1]";
-
+    String DECREASE_QUANTITY_IN_CART = "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.RelativeLayout[1]/android.view.ViewGroup[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.support.v7.widget.RecyclerView[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ImageButton[1]";
     //    String CART_TOTAL = "//android.widget.TextView[contains(@text,'AED')]";
     String CART_TOTAL = " //android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.support.v7.widget.RecyclerView[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]";
     String ITEMS_IN_CART_INFO = "//android.widget.TextView[contains(@text,'in your cart')]";
-    String PRODUCT_QUANTITY = "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.support.v7.widget.RecyclerView[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]";
+    String PRODUCT_QUANTITY = "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.widget.RelativeLayout[1]/android.view.ViewGroup[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.support.v7.widget.RecyclerView[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]";
     String CART_EMPTY_LABEL = "//*[contains(@text,'Your cart is empty')]";
 
 
@@ -390,7 +387,7 @@ public interface NConstants {
     String FASHION_CAT_LINK = "//android.widget.TextView[@text='Fashion']";
     String TOYS_CAT_LINK = "//android.widget.TextView[@text='Toys']";
     String BABY_CAT_LINK = "//android.widget.TextView[@text='Baby']";
-    String BOOKS_CAT_LINK = "//android.widget.TextView[@text='Books, Music, & Movies']";
+    String BOOKS_CAT_LINK = "//android.widget.TextView[@text='Books, Music & Movies']";
     String HEALTH_CAT_LINK = "//android.widget.TextView[@text='Health & Beauty']";
     String HOME_CAT_LINK = "//android.widget.TextView[@text='Home']";
     String SPORTS_CAT_LINK = "//android.widget.TextView[@text='Sports']";

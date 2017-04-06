@@ -90,12 +90,6 @@ public class RegisterPage extends BasePage {
    @FindBy(xpath=NConstants.OTP_DIGIT_INPUT4)
     public AndroidElement otpDigit4;
 
-   @FindBy(xpath=NConstants.OTP_DIGIT_INPUT5)
-    public AndroidElement otpDigit5;
-
-   @FindBy(xpath=NConstants.OTP_DIGIT_INPUT6)
-    public AndroidElement otpDigit6;
-
     @FindBy(xpath = NConstants.CART_ICON)
     public AndroidElement cartIcon;
 
@@ -177,8 +171,6 @@ public class RegisterPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.OTP_DIGIT_INPUT2)));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.OTP_DIGIT_INPUT3)));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.OTP_DIGIT_INPUT4)));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.OTP_DIGIT_INPUT5)));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.OTP_DIGIT_INPUT6)));
 
         char[] otpCharArray = verificationCode.toCharArray();
         Character[] charObjectArray = ArrayUtils.toObject(otpCharArray);
@@ -186,8 +178,6 @@ public class RegisterPage extends BasePage {
         otpDigit2.sendKeys(charObjectArray[1].toString());
         otpDigit3.sendKeys(charObjectArray[2].toString());
         otpDigit4.sendKeys(charObjectArray[3].toString());
-        otpDigit5.sendKeys(charObjectArray[4].toString());
-        otpDigit6.sendKeys(charObjectArray[5].toString());
 
 //        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CART_ICON)));
 //        Assert.assertTrue(isElementPresent(NConstants.CART_ICON), "OTP issue ");

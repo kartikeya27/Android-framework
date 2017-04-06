@@ -56,7 +56,7 @@ String testName="AddNewCardTest";
 		String password = "Test1234";
 
         ProductService productService = new ProductService();
-        Page page = productService.getProduct("Cake");
+        Page page = productService.getProduct("Toy");
 
         String searchText = page.getName();
 

@@ -103,11 +103,11 @@
     </classes>
     </test>
 
-    <test name="Remove card in wallet Test" allow-return-values="true">
-        <classes>
-            <class name="com.noon.mobileapp.RemoveCardTest" />
-        </classes>
-    </test>
+    <!--<test name="Remove card in wallet Test" allow-return-values="true">-->
+        <!--<classes>-->
+            <!--<class name="com.noon.mobileapp.RemoveCardTest" />-->
+        <!--</classes>-->
+    <!--</test>-->
 
 </suite>
 
