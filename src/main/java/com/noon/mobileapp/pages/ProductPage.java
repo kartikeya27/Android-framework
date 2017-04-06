@@ -121,8 +121,8 @@ public class ProductPage extends BasePage {
        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.RECOMMENDED_PRODUCTS)));
         */
 
-       scrollToElement(NConstants.SEE_ALL,"down");
-       wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SEE_ALL)));
+//       scrollToElement(NConstants.SEE_ALL,"down");
+//       wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SEE_ALL)));
 
 //       scrollUpToElement(title);
 //       wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(title)));

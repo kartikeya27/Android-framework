@@ -34,7 +34,7 @@ public class BuyNowTest extends BaseTest {
         PageFactory.initElements(new AppiumFieldDecorator(aDriver),cartPage);
 
         ProductService productService = new ProductService();
-        Page page = productService.getProduct("Cake");
+        Page page = productService.getProduct("Toy");
 
 		String searchText = page.getName();
 		String userName = "testnoon10@gmail.com";
