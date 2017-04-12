@@ -48,6 +48,9 @@ public class CheckoutPage extends BasePage {
     @FindBy(xpath = NConstants.DEFAULT_ADDRESS)
     public AndroidElement defaultAddress;
 
+  @FindBy(xpath = NConstants.HOME_ADDRESS)
+    public AndroidElement homeAddress;
+
     @FindBy(xpath = NConstants.PAYMENT_PAY_WITH_MSG)
     public AndroidElement paymentMsg;
 
@@ -82,8 +85,9 @@ public class CheckoutPage extends BasePage {
         scrollToElement(NConstants.SELECT_DELIVERY_MSG,"down");
         wait = new WebDriverWait(aDriver, 20);
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.DEFAULT_ADDRESS)));
-        defaultAddress.click();
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.DEFAULT_ADDRESS)));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.HOME_ADDRESS)));
+        homeAddress.click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.PAYMENT_PAY_WITH_MSG)));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.PAY_ON_DELIVERY)));
@@ -133,8 +137,9 @@ public class CheckoutPage extends BasePage {
         scrollToElement(NConstants.SELECT_DELIVERY_MSG,"down");
         wait = new WebDriverWait(aDriver, 20);
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.DEFAULT_ADDRESS)));
-        defaultAddress.click();
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.DEFAULT_ADDRESS)));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.HOME_ADDRESS)));
+        homeAddress.click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.PAYMENT_PAY_WITH_MSG)));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.PAY_ON_DELIVERY)));

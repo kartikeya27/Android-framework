@@ -79,11 +79,11 @@
         </classes>
     </test>
 
-	<test name="Register new user Test" allow-return-values="true">
-		<classes>
-			<class name="com.noon.mobileapp.RegisterEmailTest" />
-		</classes>
-	</test>
+	<!--<test name="Register new user Test" allow-return-values="true">-->
+		<!--<classes>-->
+			<!--<class name="com.noon.mobileapp.RegisterEmailTest" />-->
+		<!--</classes>-->
+	<!--</test>-->
 
     <test name="Add address in checkout Test" allow-return-values="true">
 		<classes>

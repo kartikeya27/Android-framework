@@ -371,6 +371,7 @@ public interface NConstants {
     //
     String SELECT_DELIVERY_MSG = "//android.widget.TextView[contains(@text,'Select your delivery method')]";
     String DEFAULT_ADDRESS = "//*[contains(@text,'Default')]";
+    String HOME_ADDRESS = "//android.widget.TextView[@text=\"Home\"]";
     String PAYMENT_PAY_WITH_MSG = "//*[contains(@text,'Pay with')]";
     String PAY_ON_DELIVERY = "//*[contains(@text,'Pay on delivery')]";
     String PLACE_ORDER_BTN = "//*[contains(@text,\"Place Order\")]";
@@ -399,7 +400,7 @@ public interface NConstants {
     String TRANSACTIONS_WALLET = "//android.widget.TextView[@text='Transactions']";
     String SAVED_CARDS_WALLET = "//android.widget.TextView[@text='Saved cards']";
     String BALANCE_WALLET = "//android.widget.TextView[@resource-id='com.noon:id/my_account_wallet_host_your_balance_value']";
-    String ADD_CARD_BTN_WALLET = "//android.widget.Button[@resource-id='com.noon:id/walled_saved_cards_add_new']";
+    String ADD_CARD_BTN_WALLET = "//android.widget.Button[@resource-id=\"android:id/button1\"]";
     String DELETE_FIRST_CARD = "//android.widget.TextView[@resource-id='com.noon:id/manage_payments_list_item_delete_button']";
 
     //
