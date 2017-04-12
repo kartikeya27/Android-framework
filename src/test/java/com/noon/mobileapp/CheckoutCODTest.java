@@ -10,6 +10,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import services.ProductService;
+import com.noon.mobileapp.base.BaseTest;
 
 
 public class CheckoutCODTest extends BaseTest {
@@ -21,6 +22,10 @@ public class CheckoutCODTest extends BaseTest {
 		test = rep.startTest(testName);
 		test.log(LogStatus.INFO, "Starting the checkout in test");
 
+		String userName = "testnoon10@gmail.com";
+		String password = "Test1234";
+
+		emptyCart(userName,password);
         launchApp();
         allowAppPermission();
 
@@ -38,8 +43,7 @@ public class CheckoutCODTest extends BaseTest {
         PageFactory.initElements(new AppiumFieldDecorator(aDriver),productPage);
         PageFactory.initElements(new AppiumFieldDecorator(aDriver),topMenuPage);
 
-		String userName = "testnoon10@gmail.com";
-		String password = "Test1234";
+
 		ProductService productService = new ProductService();
 		Page page = productService.getProduct("Toy");
 
@@ -53,10 +57,10 @@ public class CheckoutCODTest extends BaseTest {
 		checkoutPage.checkoutDefaultAddress();
         checkoutPage.checkoutCod();
 
-        topMenuPage.gotoHome();
-        topMenuPage.gotoCart();
-        cartPage.removeFromCart();
-        cartPage.verifyCartIsEmpty();
+//        topMenuPage.gotoHome();
+//        topMenuPage.gotoCart();
+//        cartPage.removeFromCart();
+//        cartPage.verifyCartIsEmpty();
 
 		test.log(LogStatus.INFO, "Checkout test passed");
 	}

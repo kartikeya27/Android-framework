@@ -23,6 +23,8 @@ public class SearchTest extends BaseTest {
 		test = rep.startTest(testName);
 		test.log(LogStatus.INFO, "Starting the search item test");
 
+		String userName = "testnoon10@gmail.com";
+		String password = "Test1234";
 		launchApp();
 		allowAppPermission();
 
@@ -38,8 +40,6 @@ public class SearchTest extends BaseTest {
 		Page page = productService.getProduct("Toy");
 
 		String searchText = page.getName();
-		String userName = "testnoon10@gmail.com";
-		String password = "Test1234";
 
 //        signinPage.signinWithEmail(userName,password);
 		searchPage.search(searchText);

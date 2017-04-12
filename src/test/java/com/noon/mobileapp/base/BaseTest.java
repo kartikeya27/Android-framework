@@ -23,6 +23,7 @@ import com.relevantcodes.extentreports.LogStatus;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
+import services.CheckoutService;
 
 public class BaseTest {
 	
@@ -97,6 +98,11 @@ public class BaseTest {
         }
 
     }
+
+    public void emptyCart(String login, String password){
+    	CheckoutService cs = new CheckoutService();
+    	cs.emptyCart(login,password);
+	}
 
 
     public void quit() {

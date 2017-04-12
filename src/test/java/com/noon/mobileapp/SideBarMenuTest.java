@@ -17,7 +17,9 @@ public class SideBarMenuTest extends BaseTest {
 	public void sideBarMenuTest() throws InterruptedException {
 		test = rep.startTest(testName);
 		test.log(LogStatus.INFO, "Starting SideBarMenu test");
-		
+
+        String userName = "testnoon10@gmail.com";
+        String password = "Test1234";
 		launchApp();
 		allowAppPermission();
 		test.log(LogStatus.INFO, "Apps Launched successfully");
@@ -28,8 +30,6 @@ public class SideBarMenuTest extends BaseTest {
         PageFactory.initElements(new AppiumFieldDecorator(aDriver),menuPage);
         PageFactory.initElements(new AppiumFieldDecorator(aDriver),signinPage);
 
-        String userName = "testnoon10@gmail.com";
-        String password = "Test1234";
 
         signinPage.signinWithEmail(userName,password);
         menuPage.goToMenuPage();

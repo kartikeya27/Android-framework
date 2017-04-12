@@ -20,6 +20,10 @@ public class CartTest extends BaseTest {
 	public void cartTest() throws InterruptedException {
 		test = rep.startTest(testName);
 		test.log(LogStatus.INFO, "Starting the cart test");
+
+		String userName = "testnoon10@gmail.com";
+		String password = "Test1234";
+		emptyCart(userName,password);
 		launchApp();
 		allowAppPermission();
 
@@ -37,8 +41,6 @@ public class CartTest extends BaseTest {
         Page page = productService.getProduct("Toy");
 
 		String searchText = page.getName();
-		String userName = "testnoon10@gmail.com";
-		String password = "Test1234";
 
         signinPage.signinWithEmail(userName,password);
 		searchPage.search(searchText);

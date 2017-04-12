@@ -19,6 +19,9 @@ public class CheckoutCardTest extends BaseTest {
 		test = rep.startTest(testName);
 		test.log(LogStatus.INFO, "Starting the checkout in test");
 
+		String userName = "testnoon10@gmail.com";
+		String password = "Test1234";
+		emptyCart(userName,password);
         launchApp();
         allowAppPermission();
 
@@ -36,8 +39,6 @@ public class CheckoutCardTest extends BaseTest {
         PageFactory.initElements(new AppiumFieldDecorator(aDriver),productPage);
         PageFactory.initElements(new AppiumFieldDecorator(aDriver),topMenuPage);
 
-		String userName = "testnoon10@gmail.com";
-		String password = "Test1234";
 		ProductService productService = new ProductService();
 		Page page = productService.getProduct("Toy");
 
@@ -51,9 +52,9 @@ public class CheckoutCardTest extends BaseTest {
 		checkoutPage.checkoutDefaultAddress();
         checkoutPage.checkoutCard();
 
-        topMenuPage.gotoHome();
-        topMenuPage.gotoCart();
-        cartPage.removeFromCart();
+//        topMenuPage.gotoHome();
+//        topMenuPage.gotoCart();
+//        cartPage.removeFromCart();
 //        cartPage.verifyCartIsEmpty();
 
 		test.log(LogStatus.INFO, "Checkout test passed");

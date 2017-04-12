@@ -22,6 +22,9 @@ String testName="AddAddressTest";
 		test = rep.startTest(testName);
 		test.log(LogStatus.INFO, "Starting the Address in test");
 
+		String userName = "testnoon10@gmail.com";
+		String password = "Test1234";
+		emptyCart(userName,password);		emptyCart(userName,password);
 		launchApp();
 		allowAppPermission();
 		test.log(LogStatus.INFO, "App Launch successfully");
@@ -33,8 +36,7 @@ String testName="AddAddressTest";
 		SideMenuPage sideMenuPage = new SideMenuPage(aDriver,test);
 		PageFactory.initElements(new AppiumFieldDecorator(aDriver),sideMenuPage);
 
- 		String userName = "testnoon10@gmail.com";
-		String password = "Test1234";
+
 		
 		signinPage.signinWithEmail(userName,password);
 		sideMenuPage.goToMenuPage();
