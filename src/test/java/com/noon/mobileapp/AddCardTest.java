@@ -19,6 +19,9 @@ String testName="AddNewCardTest";
 		test = rep.startTest(testName);
 		test.log(LogStatus.INFO, "Starting add new card test");
 
+		String userName = "testnoon10@gmail.com";
+		String password = "Test1234";
+		emptyCart(userName,password);
 		launchApp();
 		allowAppPermission();
 		test.log(LogStatus.INFO, "App Launch successfully");
@@ -35,8 +38,7 @@ String testName="AddNewCardTest";
 		AddCardPage addCardPage = new AddCardPage(aDriver, test);
 		PageFactory.initElements(new AppiumFieldDecorator(aDriver),addCardPage);
 
-		String userName = "testnoon10@gmail.com";
-		String password = "Test1234";
+
 		
 		signinPage.signinWithEmail(userName,password);
 		menuPage.goToMenuPage();

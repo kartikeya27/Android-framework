@@ -20,6 +20,9 @@ String testName="ProfileTest";
 		test = rep.startTest(testName);
 		test.log(LogStatus.INFO, "Starting the Sign in test");
 
+        String userName = "testnoon10@gmail.com";
+        String password = "Test1234";
+
 		launchApp();
 		allowAppPermission();
 		test.log(LogStatus.INFO, "App Launch successfully");
@@ -33,8 +36,6 @@ String testName="ProfileTest";
         ProfilePage profilePage = new ProfilePage(aDriver,test);
 		PageFactory.initElements(new AppiumFieldDecorator(aDriver),profilePage);
 
-		String userName = "testnoon10@gmail.com";
-		String password = "Test1234";
 		String name = "John Smith";
 
 		signinPage.signinWithEmail(userName,password);

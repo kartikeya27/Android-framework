@@ -18,6 +18,8 @@ public class ProductDetailsTest extends BaseTest {
 		test = rep.startTest(testName);
 		test.log(LogStatus.INFO, "Starting the checkout in test");
 
+		String userName = "testnoon10@gmail.com";
+		String password = "Test1234";
         launchApp();
         allowAppPermission();
 
@@ -35,8 +37,6 @@ public class ProductDetailsTest extends BaseTest {
         PageFactory.initElements(new AppiumFieldDecorator(aDriver),productPage);
         PageFactory.initElements(new AppiumFieldDecorator(aDriver),topMenuPage);
 
-		String userName = "testnoon10@gmail.com";
-		String password = "Test1234";
 		ProductService productService = new ProductService();
 		Page page = productService.getProduct("Toy");
 

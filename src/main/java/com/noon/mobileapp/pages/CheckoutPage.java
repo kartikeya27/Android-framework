@@ -120,7 +120,7 @@ public class CheckoutPage extends BasePage {
 //        defaultAddress.click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.PAYMENT_PAY_WITH_MSG)));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.PAY_ON_DELIVERY)));
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.PAY_ON_DELIVERY)));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.PAY_WITH_CARD)));
         // choose existing card
         payWithCard.click();

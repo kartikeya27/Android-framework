@@ -18,6 +18,8 @@ String testName="RemoveCardTest";
 		test = rep.startTest(testName);
 		test.log(LogStatus.INFO, "Starting remove card test");
 
+		String userName = "testnoon10@gmail.com";
+		String password = "Test1234";
 		launchApp();
 		allowAppPermission();
 		test.log(LogStatus.INFO, "App Launch successfully");
@@ -31,8 +33,6 @@ String testName="RemoveCardTest";
 		MyWalletPage walletPage = new MyWalletPage(aDriver, test);
 		PageFactory.initElements(new AppiumFieldDecorator(aDriver),walletPage);
 
-		String userName = "testnoon10@gmail.com";
-		String password = "Test1234";
 		
 		signinPage.signinWithEmail(userName,password);
 		menuPage.goToMenuPage();
