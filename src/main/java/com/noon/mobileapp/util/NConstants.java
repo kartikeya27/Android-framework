@@ -56,7 +56,7 @@ public interface NConstants {
     String SIGN_IN_LINK = "//android.widget.TextView[@text='Register or Sign In']";
     String SIGN_IN_TAB = "//android.widget.TextView[contains(@resource-id,'android:id/text1') and @text='Sign in']";
     String SIGNIN_PASSWORD = "//*[contains(@text,'Password')]";
-    String SIGNIN_BUTTON = "//*[contains(@text,'Login')]";
+    String SIGNIN_BUTTON = "//android.widget.Button[contains(@text,'Sign in')]";
     String FORGOT_PASSWORD = "//android.widget.TextView[@text='Forgot password?']";
     String SIGNIN_EMAIL = "//*[contains(@text,'Email address*')]";
     String SIGNIN_PHONE = "//*[contains(@text,'Phone number*')]";
