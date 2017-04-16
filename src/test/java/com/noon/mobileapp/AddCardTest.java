@@ -21,7 +21,6 @@ String testName="AddNewCardTest";
 
 		String userName = "testnoon10@gmail.com";
 		String password = "Test1234";
-		emptyCart(userName,password);
 		launchApp();
 		allowAppPermission();
 		test.log(LogStatus.INFO, "App Launch successfully");
