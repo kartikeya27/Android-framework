@@ -57,6 +57,9 @@ public class SearchPage extends BasePage {
 	
 	@FindBy(xpath=NConstants.SEARCH_TEXT_VIEW)
 	public AndroidElement searchTextView;
+
+	@FindBy(xpath=NConstants.SEARCH_EDIT_TEXT_VIEW)
+	public AndroidElement searchEditTextView;
 	
 	@FindBy(xpath=NConstants.SEARCH_IMAGEVIEW)
 	public AndroidElement searchImageview;
@@ -260,22 +263,22 @@ public class SearchPage extends BasePage {
 
         WebDriverWait wait = new WebDriverWait(aDriver, 20);
 
-        wait = new WebDriverWait(aDriver, 20);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SEARCH_TEXT_VIEW)));
-        MultiTouchAction multiTouch = new MultiTouchAction(aDriver);
-        TouchAction action1 = new TouchAction(aDriver);
-        action1.press(searchTextView).waitAction(300).moveTo(10, 0).release();
-        multiTouch.add(action1).perform();
-
         wait = new WebDriverWait(aDriver, 100);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SEARCH_BAR_CONTAINER)));
-        searchBarContainer.sendKeys(searchItem);
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SEARCH_BAR_CONTAINER)));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SEARCH_TEXT_VIEW)));
+        searchTextView.click();
+        searchEditTextView.sendKeys(searchItem);
         aDriver.hideKeyboard();
 
+
+
         String label = String.format(NConstants.LIST_ITEM_LABEL,searchItem);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(label)));
         Assert.assertTrue(isElementPresent(label), "Could not select search product label: "+label);
         aDriver.pressKeyCode(66); // This is virtual keyboard enter key value
-        itemProductTitle.click();
+        String titleElem = String.format(NConstants.ITEM_PRODUCT_TITILE,searchItem);
+        aDriver.findElementByXPath(titleElem).click();
+//        itemProductTitle.click();
 
         wait = new WebDriverWait(aDriver, 100);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ITEM_IMAGE)));
@@ -286,6 +289,38 @@ public class SearchPage extends BasePage {
 //        navigationMenuImage.click();
 
     }
+
+	public void search2(String searchItem) throws InterruptedException {
+
+		WebDriverWait wait = new WebDriverWait(aDriver, 20);
+
+		wait = new WebDriverWait(aDriver, 20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SEARCH_TEXT_VIEW)));
+		MultiTouchAction multiTouch = new MultiTouchAction(aDriver);
+		TouchAction action1 = new TouchAction(aDriver);
+		action1.press(searchTextView).waitAction(300).moveTo(10, 0).release();
+		multiTouch.add(action1).perform();
+
+		wait = new WebDriverWait(aDriver, 100);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SEARCH_BAR_CONTAINER)));
+		searchBarContainer.sendKeys(searchItem);
+		aDriver.hideKeyboard();
+
+		String label = String.format(NConstants.LIST_ITEM_LABEL,searchItem);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(label)));
+		Assert.assertTrue(isElementPresent(label), "Could not select search product label: "+label);
+		aDriver.pressKeyCode(66); // This is virtual keyboard enter key value
+		itemProductTitle.click();
+
+		wait = new WebDriverWait(aDriver, 100);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.ITEM_IMAGE)));
+		Assert.assertTrue(isElementPresent(NConstants.ITEM_IMAGE), "Could not load product image: "+NConstants.ITEM_IMAGE);
+		String basicInfo = String.format(NConstants.PRODUCT_BASIC_INFO,searchItem);
+		Assert.assertTrue(isElementPresent(basicInfo), "Could not load product basic info: "+basicInfo);
+		Assert.assertTrue(isElementPresent(NConstants.PRODUCT_PRICE), "Could not load product price: "+NConstants.PRODUCT_PRICE);
+//        navigationMenuImage.click();
+
+	}
 
     public void someOtherStuff(){
 

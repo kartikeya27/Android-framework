@@ -109,6 +109,21 @@ public class SigninPage extends BasePage {
     @FindBy(xpath=NConstants.SIGNIN_PHONE)
     public AndroidElement signinPhone;
 
+    @FindBy(xpath=NConstants.LOGIN_FB)
+    public AndroidElement signinFB;
+
+   @FindBy(xpath=NConstants.FB_LOGIN_BTN)
+    public AndroidElement loginBtnFB;
+
+   @FindBy(xpath=NConstants.FB_UESR)
+    public AndroidElement userFB;
+
+    @FindBy(xpath=NConstants.FB_PASS)
+    public AndroidElement passFB;
+
+    @FindBy(xpath=NConstants.FB_OK_BTN)
+    public AndroidElement okFB;
+
 
 
 	public void signinWithEmail(String userName, String userPassword) throws InterruptedException {
@@ -266,5 +281,39 @@ public class SigninPage extends BasePage {
         myProfileUserSignout.click();
 
     }
-	
+
+    public void signinWithFB(String user, String password) throws InterruptedException {
+
+        WebDriverWait wait = new WebDriverWait(aDriver, 20);
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.LOGIN_FB)));
+        Assert.assertTrue(isElementPresent(NConstants.LOGIN_FB), "Could not find sign link");
+        signinFB.click();
+
+        super.allowAppPermission();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.FB_UESR)));
+        Assert.assertTrue(isElementPresent(NConstants.FB_UESR), "Could not find FB login user");
+        userFB.sendKeys(user);
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.FB_PASS)));
+        Assert.assertTrue(isElementPresent(NConstants.FB_PASS), "Could not find FB password box");
+        passFB.sendKeys(password);
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.FB_LOGIN_BTN)));
+        Assert.assertTrue(isElementPresent(NConstants.FB_LOGIN_BTN), "Could not find phone field");
+        loginBtnFB.click();
+//        aDriver.hideKeyboard();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.FB_OK_BTN)));
+        Assert.assertTrue(isElementPresent(NConstants.FB_OK_BTN), "Could not find ok button");
+        okFB.click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.NAVIGATION_MENU_IMAGE)));
+        Assert.assertTrue(isElementPresent(NConstants.NAVIGATION_MENU_IMAGE), "Could not find navigation meny icon");
+
+
+    }
+
+
 }
