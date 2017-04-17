@@ -134,6 +134,7 @@ public class AddressPage extends BasePage {
         // Current location Address Book main view
         WebDriverWait wait = new WebDriverWait(aDriver, 30);
 
+        this.
         // scroll to add another address button
         scrollToElement(NConstants.ADD_ANOTHER_ADDRESS, DOWN);
 

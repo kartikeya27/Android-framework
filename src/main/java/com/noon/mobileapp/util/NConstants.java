@@ -169,8 +169,9 @@ public interface NConstants {
 
     String NO_ORDERS = "//android.widget.TextView[@text='No orders to show']";
     String SEARCH_TEXT_VIEW = "//android.widget.TextView[contains(@resource-id,'com.noon:id/search_text_view')]";
+    String SEARCH_EDIT_TEXT_VIEW = "//android.widget.EditText[contains(@resource-id,'com.noon:id/search_edit_text_view')]";
     String SEARCH_IMAGEVIEW = "//android.widget.ImageView[@index='1']";
-    String SEARCH_BAR_CONTAINER = "//android.widget.EditText[contains(@resource-id,'com.noon:id/search_edit_text_view')]";
+    String SEARCH_BAR_CONTAINER = "//android.widget.EditText[@resource-id='com.noon:id/search_edit_text_view']";
     String LIST_ITEM_LABEL = "//android.widget.TextView[@text=\"%s\"]";
     String PRODUCT_RESULT = "//android.widget.TextView[contains(@resource-id,'com.noon:id/search_results_count')]";
     String ITEM_IMAGE = "//android.view.View[@NAF='true']";
@@ -192,7 +193,8 @@ public interface NConstants {
     String ITEM_DESCRIPTION_DETAIL = "//android.widget.TextView[@index='0']";
 
 
-    String ITEM_PRODUCT_TITILE = "//android.widget.TextView[contains(@resource-id,'com.noon:id/list_item_product_title')]";
+//    String ITEM_PRODUCT_TITILE = "//android.widget.TextView[contains(@resource-id,'com.noon:id/list_item_product_title')]";
+    String ITEM_PRODUCT_TITILE = "//android.widget.TextView[@resource-id='com.noon:id/list_item_product_title' and @text=\"%s\"]";
     String PRODUCT_CART = "//android.widget.ImageButton[contains(@resource-id,'com.noon:id/list_item_cart')]";
     String PRODUCT_MENU_CART = "//android.widget.TextView[contains(@resource-id,'com.noon:id/toolbar_menu_cart')]";
 
@@ -270,6 +272,22 @@ public interface NConstants {
     String PAY_BUTTON = "//android.widget.Button[contains(@resource-id,'btnCardCSPayment')]";
     String FOOTER_TEXT = "//android.view.View[contains(@resource-id,'footer-text')]";
     String FOOTER_LOGO = "//android.view.View[contains(@resource-id,'footer-logo')]";
+
+
+    String LOGIN_FB = "//*[@resource-id=\"com.noon:id/facebook_button_login\"]";
+    String LOGIN_GOOGLE = "//*[@resource-id=\"com.noon:id/google_button_login\"]";
+
+    //FB LOGIN PAGE
+    String FB_UESR = "//*[@content-desc=\"Email address or phone number\"]";
+    String FB_PASS = "//android.widget.EditText[@index=1]";
+    String FB_LOGIN_BTN = "//*[@content-desc=\"Log In \"]";
+    String FB_OK_BTN = "//android.widget.Button[@content-desc=\"OK \"]";
+
+
+
+    //GOOGLE LOGIN PAGE
+    String G_USER = "";
+    String G_PASS = "";
 
 
     //	MyAccount page elements
@@ -400,18 +418,18 @@ public interface NConstants {
     String TRANSACTIONS_WALLET = "//android.widget.TextView[@text='Transactions']";
     String SAVED_CARDS_WALLET = "//android.widget.TextView[@text='Saved cards']";
     String BALANCE_WALLET = "//android.widget.TextView[@resource-id='com.noon:id/my_account_wallet_host_your_balance_value']";
-    String ADD_CARD_BTN_WALLET = "//android.widget.Button[@resource-id=\"android:id/button1\"]";
+    String ADD_CARD_BTN_WALLET = "//android.widget.Button[@text=\"Add new card\"]";
     String DELETE_FIRST_CARD = "//android.widget.TextView[@resource-id='com.noon:id/manage_payments_list_item_delete_button']";
 
     //
     //Add new card
     //
     String NAME_ON_CARD = "//android.widget.EditText[@index=0]";
-    String CARD_NNUMBER = "//android.widget.EditText[@resource-id=\"com.noon:id/checkout_card_number\"]";
+    String CARD_NNUMBER = "//android.widget.EditText[@resource-id=\"com.noon:id/card_number\"]";
     String MONTH_CARD = "//android.widget.TextView[@resource-id='android:id/text1' and @text='Month']";
     String YEAR_CARD = "//android.widget.TextView[@resource-id='android:id/text1' and @text='Year']";
     String MAKE_DEFAULT_CARD = "//android.widget.CheckBox[@resource-id='com.noon:id/checkout_card_make_default']";
-    String SAVE_CARD = "//android.widget.Button[@resource-id='com.noon:id/checkout_card_save']";
+    String SAVE_CARD = "//android.widget.Button[@resource-id='com.noon:id/card_save']";
     String ADD_NEW_CARD_LABEL = "//android.widget.TextView[@text='Add new card']";
     String CARD_REMOVE_CONFIRMATION_MSG = "//android.widget.TextView[@resource-id=\"com.noon:id/error_message\"]";
     String CARD_REMOVE_CONFIRMATION_BTN_YES =  "//android.widget.Button[@text=\"Yes\"]";
