@@ -103,11 +103,11 @@ public class ProductPage extends BasePage {
 //        scrollToElement(NConstants.MORE_OFFERS,"down");
 //        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MORE_OFFERS)));
 
-        scrollToElement(NConstants.PRODUCT_DESCRIPTION,"down");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.PRODUCT_DESCRIPTION)));
-
-        scrollToElement(NConstants.PRODUCT_SPECIFICATIONS,"down");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.PRODUCT_SPECIFICATIONS)));
+//        scrollToElement(NConstants.PRODUCT_DESCRIPTION,"down");
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.PRODUCT_DESCRIPTION)));
+//
+//        scrollToElement(NConstants.PRODUCT_SPECIFICATIONS,"down");
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.PRODUCT_SPECIFICATIONS)));
 
         /* Dynamic data - to be tested in a different scenario
 
@@ -121,8 +121,8 @@ public class ProductPage extends BasePage {
        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.RECOMMENDED_PRODUCTS)));
         */
 
-//       scrollToElement(NConstants.SEE_ALL,"down");
-//       wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SEE_ALL)));
+       scrollToElement(NConstants.SEE_ALL,"down");
+       wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SEE_ALL)));
 
 //       scrollUpToElement(title);
 //       wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(title)));
