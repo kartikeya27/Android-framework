@@ -4,6 +4,7 @@ import com.noon.mobileapp.base.BaseTest;
 import com.noon.mobileapp.pages.*;
 import com.relevantcodes.extentreports.LogStatus;
 import dtos.catalog.Page;
+import dtos.catalog.ProductByNinResponse;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
@@ -38,11 +39,13 @@ public class ProductDetailsTest extends BaseTest {
         PageFactory.initElements(new AppiumFieldDecorator(aDriver),topMenuPage);
 
 		ProductService productService = new ProductService();
-		Page page = productService.getProduct("Toy");
+//		Page page = productService.getProduct("Toy");
 
-		String searchText = page.getName();
+        ProductByNinResponse prod = productService.getTestProduct();
 
-        signinPage.signinWithEmail(userName,password);
+		String searchText = prod.getName();
+
+//        signinPage.signinWithEmail(userName,password);
         searchPage.search(searchText);
         productPage.verifyProductPage(searchText);
 		test.log(LogStatus.INFO, "Product Details test passed");
