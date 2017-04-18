@@ -7,14 +7,14 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
-public class SigninFBTest extends BaseTest {
+public class SigninGoogleTest extends BaseTest {
 	
-String testName="SigninFacebookTest";
+String testName="SigninGoogleTest";
 
 	@Test
-	public void loginFacebookTest() throws InterruptedException {
+	public void loginGoogleTest() throws InterruptedException {
 		test = rep.startTest(testName);
-		test.log(LogStatus.INFO, "Starting the Sign FB test");
+		test.log(LogStatus.INFO, "Starting the Sign Google test");
 
 		launchApp();
 		allowAppPermission();
@@ -26,7 +26,7 @@ String testName="SigninFacebookTest";
 		String userName = "testnoon11@gmail.com";
 		String password = "W3lcome!";
 		
-		signinPage.signinWithFB(userName,password);
+		signinPage.signinWithGoogle(userName,password);
 		signinPage.verifyLogin();
 		signinPage.logout();
 
