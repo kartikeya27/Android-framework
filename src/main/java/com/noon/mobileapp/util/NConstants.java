@@ -279,6 +279,7 @@ public interface NConstants {
 
     //FB LOGIN PAGE
     String FB_UESR = "//*[@content-desc=\"Email or Phone\"]";
+    String FB_UESR2 = "//*[@content-desc=\"Email address or phone number\"]";
     String FB_PASS = "//android.widget.EditText[@index=1]";
     String FB_LOGIN_BTN = "//*[@content-desc=\"Log In \"]";
     String FB_OK_BTN = "//android.widget.Button[@content-desc=\"OK \"]";

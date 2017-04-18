@@ -115,8 +115,11 @@ public class SigninPage extends BasePage {
    @FindBy(xpath=NConstants.FB_LOGIN_BTN)
     public AndroidElement loginBtnFB;
 
-   @FindBy(xpath=NConstants.FB_UESR)
+    @FindBy(xpath=NConstants.FB_UESR)
     public AndroidElement userFB;
+
+   @FindBy(xpath=NConstants.FB_UESR2)
+    public AndroidElement userFB2;
 
     @FindBy(xpath=NConstants.FB_PASS)
     public AndroidElement passFB;
@@ -302,7 +305,7 @@ public class SigninPage extends BasePage {
 
     public void signinWithFB(String user, String password) throws InterruptedException {
 
-        WebDriverWait wait = new WebDriverWait(aDriver, 20);
+        WebDriverWait wait = new WebDriverWait(aDriver, 10);
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.LOGIN_FB)));
         Assert.assertTrue(isElementPresent(NConstants.LOGIN_FB), "Could not find sign link");
@@ -310,9 +313,17 @@ public class SigninPage extends BasePage {
 
         super.allowAppPermission();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.FB_UESR)));
-        Assert.assertTrue(isElementPresent(NConstants.FB_UESR), "Could not find FB login user");
-        userFB.sendKeys(user);
+        try{
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.FB_UESR2)));
+            Assert.assertTrue(isElementPresent(NConstants.FB_UESR2), "Could not find FB login user");
+            userFB2.sendKeys(user);
+
+        }catch(org.openqa.selenium.TimeoutException e){
+            e.printStackTrace();
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.FB_UESR)));
+            Assert.assertTrue(isElementPresent(NConstants.FB_UESR), "Could not find FB login user");
+            userFB.sendKeys(user);
+        }
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.FB_PASS)));
         Assert.assertTrue(isElementPresent(NConstants.FB_PASS), "Could not find FB password box");
