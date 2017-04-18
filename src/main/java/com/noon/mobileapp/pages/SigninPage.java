@@ -124,9 +124,27 @@ public class SigninPage extends BasePage {
     @FindBy(xpath=NConstants.FB_OK_BTN)
     public AndroidElement okFB;
 
+    @FindBy(xpath=NConstants.LOGIN_GOOGLE)
+    public AndroidElement signinGoogle;
+
+    @FindBy(xpath=NConstants.GOOGLE_USER)
+    public AndroidElement userGoogle;
+
+    @FindBy(xpath=NConstants.GOOGLE_PASS)
+    public AndroidElement passGoogle;
+
+    @FindBy(xpath=NConstants.GOOGLE_NEXT)
+    public AndroidElement btnNext;
+
+    @FindBy(xpath=NConstants.GOOGLE_NEXT2)
+    public AndroidElement btnNext2;
+
+    @FindBy(xpath=NConstants.GOOGLE_ACCEPT)
+    public AndroidElement btnAccept;
 
 
-	public void signinWithEmail(String userName, String userPassword) throws InterruptedException {
+
+    public void signinWithEmail(String userName, String userPassword) throws InterruptedException {
 		
 		test.log(LogStatus.INFO, "Launch Android Application - ");
 		WebDriverWait wait = new WebDriverWait(aDriver, 20);
@@ -308,6 +326,43 @@ public class SigninPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.FB_OK_BTN)));
         Assert.assertTrue(isElementPresent(NConstants.FB_OK_BTN), "Could not find ok button");
         okFB.click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.NAVIGATION_MENU_IMAGE)));
+        Assert.assertTrue(isElementPresent(NConstants.NAVIGATION_MENU_IMAGE), "Could not find navigation meny icon");
+
+
+    }
+
+    public void signinWithGoogle(String user, String password) throws InterruptedException {
+
+        WebDriverWait wait = new WebDriverWait(aDriver, 20);
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.LOGIN_GOOGLE)));
+        Assert.assertTrue(isElementPresent(NConstants.LOGIN_GOOGLE), "Could not find sign link");
+        signinGoogle.click();
+
+        super.allowAppPermission();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.GOOGLE_USER)));
+        Assert.assertTrue(isElementPresent(NConstants.GOOGLE_USER), "Could not find Google login user");
+        userGoogle.sendKeys(user);
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.GOOGLE_PASS)));
+        Assert.assertTrue(isElementPresent(NConstants.GOOGLE_PASS), "Could not find Google password box");
+        passGoogle.sendKeys(password);
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.GOOGLE_NEXT)));
+        Assert.assertTrue(isElementPresent(NConstants.GOOGLE_NEXT), "Could not find Next button");
+        btnNext.click();
+//        aDriver.hideKeyboard();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.GOOGLE_ACCEPT)));
+        Assert.assertTrue(isElementPresent(NConstants.GOOGLE_ACCEPT), "Could not find accept button");
+        btnAccept.click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.GOOGLE_NEXT2)));
+        Assert.assertTrue(isElementPresent(NConstants.GOOGLE_NEXT2), "Could not find Next button");
+        btnNext2.click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.NAVIGATION_MENU_IMAGE)));
         Assert.assertTrue(isElementPresent(NConstants.NAVIGATION_MENU_IMAGE), "Could not find navigation meny icon");

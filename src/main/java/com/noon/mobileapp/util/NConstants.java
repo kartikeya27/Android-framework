@@ -278,7 +278,7 @@ public interface NConstants {
     String LOGIN_GOOGLE = "//*[@resource-id=\"com.noon:id/google_button_login\"]";
 
     //FB LOGIN PAGE
-    String FB_UESR = "//*[@content-desc=\"Email address or phone number\"]";
+    String FB_UESR = "//*[@content-desc=\"Email or Phone\"]";
     String FB_PASS = "//android.widget.EditText[@index=1]";
     String FB_LOGIN_BTN = "//*[@content-desc=\"Log In \"]";
     String FB_OK_BTN = "//android.widget.Button[@content-desc=\"OK \"]";
@@ -286,8 +286,12 @@ public interface NConstants {
 
 
     //GOOGLE LOGIN PAGE
-    String G_USER = "";
-    String G_PASS = "";
+    String GOOGLE_USER = "//android.widget.EditText";
+    String GOOGLE_PASS = "//android.widget.EditText";
+
+    String GOOGLE_NEXT = "//android.view.View[@content-desc=\"NEXT\"]";
+    String GOOGLE_ACCEPT = "//android.view.View[@content-desc=\"ACCEPT\"]";
+    String GOOGLE_NEXT2 = "//android.widget.Button[@text=\"Next\"]";
 
 
     //	MyAccount page elements
