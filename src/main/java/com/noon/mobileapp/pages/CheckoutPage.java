@@ -72,6 +72,9 @@ public class CheckoutPage extends BasePage {
    @FindBy(xpath = NConstants.ADD_NEW_CARD_PAYMENT)
     public AndroidElement addNewCardPayment;
 
+   @FindBy(xpath = NConstants.ADD_NEW_CARD_SAVED_CARDS)
+    public AndroidElement addNewCardSavedCards;
+
    @FindBy(xpath = NConstants.PAY_WITH_CARD)
     public AndroidElement payWithCard;
 
@@ -155,6 +158,16 @@ public class CheckoutPage extends BasePage {
         addNewCardPayment.click();
 
     }
+      public void checkoutPickAddNewCCSavedCArds(){
+
+        WebDriverWait wait = new WebDriverWait(aDriver, 20);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(NConstants.ADD_NEW_CARD_SAVED_CARDS)));
+          addNewCardSavedCards.click();
+
+    }
+
+
 
     public void verifyPaymentCheckout(){
         WebDriverWait wait = new WebDriverWait(aDriver, 20);

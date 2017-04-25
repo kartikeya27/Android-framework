@@ -39,9 +39,9 @@ public class ProductDetailsTest extends BaseTest {
         PageFactory.initElements(new AppiumFieldDecorator(aDriver),topMenuPage);
 
 		ProductService productService = new ProductService();
-//		Page page = productService.getProduct("Toy");
+		Page prod = productService.getProduct("Toy");
 
-        ProductByNinResponse prod = productService.getTestProduct();
+//        ProductByNinResponse prod = productService.getTestProduct();
 
 		String searchText = prod.getName();
 
