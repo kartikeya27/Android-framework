@@ -67,6 +67,7 @@ String testName="AddNewCardTest";
         cartPage.checkout();
         checkoutPage.checkoutPickDefaultAddress();
         checkoutPage.checkoutPickAddNewCC();
+		checkoutPage.checkoutPickAddNewCCSavedCArds();
 		addCardPage.addNewCardData("Antanina","4573770040715945","2020","12", false);
 
 		test.log(LogStatus.PASS, "Test Passed");

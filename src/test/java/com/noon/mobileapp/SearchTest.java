@@ -41,11 +41,10 @@ public class SearchTest extends BaseTest {
 		PageFactory.initElements(new AppiumFieldDecorator(aDriver),signinPage);
 
 		ProductService productService = new ProductService();
-//		Page page = productService.getProduct("Toy");
-        boolean isAlpha = false;
-        ProductByNinResponse prod = null;
-        prod = productService.getTestProduct();
-        System.out.println("Name: " + prod.getName());
+		Page prod = productService.getProduct("Toy");
+//        ProductByNinResponse prod = null;
+//        prod = productService.getTestProduct();
+//        System.out.println("Name: " + prod.getName());
 
 		String searchText = prod.getName();
 
