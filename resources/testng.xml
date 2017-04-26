@@ -85,11 +85,11 @@
 		<!--</classes>-->
 	<!--</test>-->
 
-    <!--<test name="Add address in checkout Test" allow-return-values="true">-->
-		<!--<classes>-->
-			<!--<class name="com.noon.mobileapp.AddAddressInCheckoutTest" />-->
-		<!--</classes>-->
-	<!--</test>-->
+    <test name="Add address in checkout Test" allow-return-values="true">
+		<classes>
+			<class name="com.noon.mobileapp.AddAddressInCheckoutTest" />
+		</classes>
+	</test>
 
 
 
