@@ -6,11 +6,11 @@
 		</classes>
 	</test>
 
-	<!--<test name="Address Test" allow-return-values="true">-->
-		<!--<classes>-->
-			<!--<class name="com.noon.mobileapp.AddAddressTest" />-->
-		<!--</classes>-->
-	<!--</test>-->
+	<test name="Address Test" allow-return-values="true">
+		<classes>
+			<class name="com.noon.mobileapp.AddAddressTest" />
+		</classes>
+	</test>
 
     <test name="Menu Test" allow-return-values="true">
         <classes>
@@ -90,7 +90,6 @@
 			<class name="com.noon.mobileapp.AddAddressInCheckoutTest" />
 		</classes>
 	</test>
-
 
 
     <test name="Add card in wallet Test" allow-return-values="true">
