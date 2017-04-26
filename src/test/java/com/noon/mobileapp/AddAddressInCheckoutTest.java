@@ -66,9 +66,10 @@ String testName="AddNewCardTest";
         productPage.addProductToCart();
         cartPage.checkout();
         addressPage.addNewAddressCheckoutSelect();
-        allowAppPermissionOne();
-//		addressPage.addAnotherAddress();
+
+		addressPage.addAnotherAddress();
 //		addressPage.addFirstAddress();
+		allowAppPermissionOne();
 		addressPage.addAddressSteps("Building","1", "2", "street a", "055000000000");
         checkoutPage.verifyPaymentCheckout();
 

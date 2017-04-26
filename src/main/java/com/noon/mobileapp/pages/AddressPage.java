@@ -41,6 +41,9 @@ public class AddressPage extends BasePage {
 	@FindBy(xpath=NConstants.MAP_CANCEL)
 	public AndroidElement mapCancel;
 
+	@FindBy(xpath=NConstants.MAP_FOUND)
+	public AndroidElement mapFound;
+
 	@FindBy(xpath=NConstants.LOCATE_SEARCHING_PROGRESS)
 	public AndroidElement locateSearchiingInProgress;
 
@@ -181,13 +184,20 @@ public class AddressPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MAP_CANCEL)));
         Assert.assertTrue(isElementPresent(NConstants.MAP_CANCEL), "Could not find Map Cancell Location button");
 
+
+
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MAP_FOUND)));
+//        Assert.assertTrue(isElementPresent(NConstants.MAP_FOUND), "Could not find We Found You");
+//        mapFound.click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.LOCATE_MY_LOCATION)));
+        Assert.assertTrue(isElementPresent(NConstants.LOCATE_MY_LOCATION), "Could not find locate me icon");
+        locateMe.click();
+
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.LOCATE_SEARCHING_PROGRESS)));
         Assert.assertTrue(isElementPresent(NConstants.LOCATE_SEARCHING_PROGRESS), "Could not find Map Locating");
         locateSearchiingInProgress.click();
-
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.LOCATE_MY_LOCATION)));
-//        Assert.assertTrue(isElementPresent(NConstants.LOCATE_MY_LOCATION), "Could not find locate me icon");
-//        locateMe.click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.LOCATE_MY_LOCATION)));
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MAP_DONE)));
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(NConstants.MAP_DONE)));

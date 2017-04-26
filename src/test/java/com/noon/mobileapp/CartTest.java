@@ -47,7 +47,6 @@ public class CartTest extends BaseTest {
 		productPage.addProductToCart();
 		cartPage.increase();
 		cartPage.increase();
-        cartPage.increase();
         cartPage.decrease();
         cartPage.removeFromCart();
 		cartPage.verifyCartIsEmpty();
