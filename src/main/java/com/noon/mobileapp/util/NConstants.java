@@ -408,6 +408,7 @@ public interface NConstants {
     String ADD_NEW_CARD_SAVED_CARDS = "//android.widget.Button[@resource-id=\"com.noon:id/checkout_saved_cards_add_new\"]";
     String PAY_WITH_CARD = "//android.widget.LinearLayout[@resource-id=\"com.noon:id/checkout_card_choose\"]";
     String REVIEW = "//android.widget.TextView[@resource-id=\"com.noon:id/top_label_text\" and @text=\"Review\"]";
+    String PAIMENT_OPTION_COD_REVIEW  = "//*[@resource-id=\"com.noon:id/checkout_pay_with_selected_details\" and @text=\"Pay on delivery\"]";
 
     //
     // Categories page

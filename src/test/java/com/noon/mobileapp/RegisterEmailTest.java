@@ -10,6 +10,7 @@ import com.noon.mobileapp.pages.RegisterPage;
 import com.relevantcodes.extentreports.LogStatus;
 
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import objects.User;
 
 public class RegisterEmailTest extends BaseTest {
 	
@@ -29,7 +30,9 @@ public class RegisterEmailTest extends BaseTest {
 		SigninPage signinPage = new SigninPage(aDriver, test);
 		PageFactory.initElements(new AppiumFieldDecorator(aDriver),signinPage);
 
-		registerPage.registerTest();
+        User user = new User("android");
+
+		registerPage.registerTest(user.getEmail());
 		signinPage.verifyLogin();
 	}
 	
