@@ -93,7 +93,7 @@ public class RegisterPage extends BasePage {
     @FindBy(xpath = NConstants.CART_ICON)
     public AndroidElement cartIcon;
 
-    public void registerTest() {
+    public void registerTest(String email) {
 
 		test.log(LogStatus.INFO, "Launch Android Application - ");
 		WebDriverWait wait = new WebDriverWait(aDriver, 20);
@@ -160,7 +160,7 @@ public class RegisterPage extends BasePage {
 
         Utils.waitABit(15000);
 
-        OTPExtractionService otpExtractionService = new OTPExtractionService();
+        OTPExtractionService otpExtractionService = new OTPExtractionService(email);
         String verificationCode = otpExtractionService.getVerificationCodeRegistration();
 
         //enter OTP data

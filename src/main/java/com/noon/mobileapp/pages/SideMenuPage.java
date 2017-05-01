@@ -145,8 +145,8 @@ public class SideMenuPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SHOP_BY_CATEGORY)));
         Assert.assertTrue(isElementPresent(NConstants.SHOP_BY_CATEGORY), "Could not find Shop by Catehory button");
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.TODAYS_DEALS)));
-        Assert.assertTrue(isElementPresent(NConstants.TODAYS_DEALS), "Could not find Today's Deals button");
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.TODAYS_DEALS)));
+//        Assert.assertTrue(isElementPresent(NConstants.TODAYS_DEALS), "Could not find Today's Deals button");
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.MY_ORDERS_MENU)));
         Assert.assertTrue(isElementPresent(NConstants.MY_ORDERS_MENU), "Could not find My Orders button");

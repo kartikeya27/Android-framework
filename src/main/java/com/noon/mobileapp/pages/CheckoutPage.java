@@ -81,6 +81,9 @@ public class CheckoutPage extends BasePage {
   @FindBy(xpath = NConstants.REVIEW)
     public AndroidElement reviewLabel;
 
+  @FindBy(xpath = NConstants.PAIMENT_OPTION_COD_REVIEW)
+    public AndroidElement paymentCodReview;
+
     public void checkoutDefaultAddress(){
 
         WebDriverWait wait = new WebDriverWait(aDriver, 20);
@@ -110,6 +113,7 @@ public class CheckoutPage extends BasePage {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.SUBTOTAL)));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.GRAND_TOTAL)));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.PAIMENT_OPTION_COD_REVIEW)));
 
 
     }
