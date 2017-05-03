@@ -24,6 +24,8 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import services.CheckoutService;
+import services.AddressService;
+import services.CheckoutService;
 
 public class BaseTest {
 	
@@ -121,6 +123,45 @@ public class BaseTest {
     	CheckoutService cs = new CheckoutService();
     	cs.emptyCart(login,password);
 	}
+
+	public void deleteAllAddresses(String login, String password){
+        AddressService addressService = new AddressService();
+        addressService.deleteAllAddresses(login,password);
+    }
+
+    public void addDefaultAddress(String login, String password){
+        AddressService addressService = new AddressService();
+
+        String type = "home";
+        String user_title = "";
+        String user_name = "Noontest";
+        String zip_code = "";
+        String company_name = "";
+        String mobile_number = "+971588989160";
+        String apartment_number = "1";
+        String floor_number = "0";
+        String building_name = "Emaar Square Bldg 3";
+        String street_name = "Al Sa'ada Street";
+        String area_name = "Downtown Dubai";
+        String landmark = "Emaar Square";
+        String city = "Dubai";
+        String country = "AE";
+        String address_name = "";
+        String gps_lat = "25.233758";
+        String gps_long = "55.362766";
+        boolean is_default = true;
+        boolean deliverable = true;
+
+
+        jsonobjects.Address address = new jsonobjects.Address(type, user_title, user_name, zip_code, company_name, mobile_number, apartment_number, floor_number, building_name, street_name, area_name, landmark, city, country, address_name, gps_lat, gps_long, is_default, deliverable);
+
+        String addId = addressService.addAddress(address,login,password);
+    }
+
+    public void addTestProductToCart(String login, String password){
+        CheckoutService checkoutService = new CheckoutService();
+        checkoutService.addTestItemToCart(login,password);
+    }
 
 
     public void quit() {

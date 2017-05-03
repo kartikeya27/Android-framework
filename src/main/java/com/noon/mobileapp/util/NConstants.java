@@ -401,7 +401,7 @@ public interface NConstants {
     String HOME_ADDRESS = "//android.widget.TextView[@text=\"Home\"]";
     String PAYMENT_PAY_WITH_MSG = "//*[contains(@text,'Pay with')]";
     String PAY_ON_DELIVERY = "//*[contains(@text,'Pay on delivery')]";
-    String PLACE_ORDER_BTN = "//*[contains(@text,\"Place Order\")]";
+    String PLACE_ORDER_BTN = "//*[contains(@text,\"Place order\")]";
     String SUBTOTAL = "//*[contains(@resource-id,\"com.noon:id/checkout_subtotal_value\")]";
     String GRAND_TOTAL = "//*[contains(@resource-id,\"com.noon:id/checkout_grandtotal\")]";
     String ADD_NEW_CARD_PAYMENT = "//android.widget.TextView[@resource-id=\"com.noon:id/checkout_add_card\"]";
@@ -409,6 +409,15 @@ public interface NConstants {
     String PAY_WITH_CARD = "//android.widget.LinearLayout[@resource-id=\"com.noon:id/checkout_card_choose\"]";
     String REVIEW = "//android.widget.TextView[@resource-id=\"com.noon:id/top_label_text\" and @text=\"Review\"]";
     String PAIMENT_OPTION_COD_REVIEW  = "//*[@resource-id=\"com.noon:id/checkout_pay_with_selected_details\" and @text=\"Pay on delivery\"]";
+    String DEILVERY_OPTIONS_DROPDOWN  = "//*[@resource-id=\"com.noon:id/delivery_options_spinner\"]";
+    String DELIVERY_STANDARD  = "//android.widget.TextView[@text=\"Standard\"]";
+    String TIMESLOTS_OPTIONS_DROPDOWN  = "//*[@resource-id=\"com.noon:id/time_slots_spinner\"]";
+    String TIMESLOTS_FIRST  = "//android.widget.TextView[@text=\"From 9AM to 5PM\"]";
+
+    String MABROOK_ORDER  = "//android.widget.TextView[contains(@text,\"Mabrook!\")]";
+    String GO_TO_ORDER_THANK_YOU  = "//*[@resource-id=\"com.noon:id/thank_you_go_to_order\"]";
+
+
 
     //
     // Categories page

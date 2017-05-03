@@ -61,6 +61,12 @@ public class CartPage extends BasePage {
 
     }
 
+    public void goToCart(){
+        WebDriverWait wait = new WebDriverWait(aDriver, 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NConstants.CART_ICON)));
+        cartIcon.click();
+    }
+
     public void increase(){
         WebDriverWait wait;
 
